@@ -1,0 +1,191 @@
+[
+  {
+    "UID": 220000000001,
+    "GameDataID": "RevivalTime",
+    "GameDataValue": 5,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000002,
+    "GameDataID": "TrainingPoint",
+    "GameDataValue": 100,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000003,
+    "GameDataID": "GachaBonusCount",
+    "GameDataValue": 77,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000004,
+    "GameDataID": "GachaBonusType",
+    "GameDataValue": 2,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000005,
+    "GameDataID": "StatReset",
+    "GameDataValue": 1000,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000006,
+    "GameDataID": "PvpReward",
+    "GameDataValue": 70000000006,
+    "GameDataCount": 10,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000007,
+    "GameDataID": "PveReward",
+    "GameDataValue": 70000030063,
+    "GameDataCount": 3,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000008,
+    "GameDataID": "PveTeamTime",
+    "GameDataValue": 15,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000009,
+    "GameDataID": "PveTeamMaxMonster",
+    "GameDataValue": 100,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000010,
+    "GameDataID": "PveTeamLimitTime",
+    "GameDataValue": 10,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000011,
+    "GameDataID": "SystemMessageTime",
+    "GameDataValue": 0,
+    "GameDataCount": 300,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000012,
+    "GameDataID": "AchievePointMaxCount",
+    "GameDataValue": 1000,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000013,
+    "GameDataID": "PvPTicketMaxCount",
+    "GameDataValue": 10,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000014,
+    "GameDataID": "PveTicketMaxCount",
+    "GameDataValue": 5,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000015,
+    "GameDataID": "BossDungeonTicketMaxCount",
+    "GameDataValue": 10,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000016,
+    "GameDataID": "TrainingDungeonTicketMaxCount",
+    "GameDataValue": 5,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000017,
+    "GameDataID": "DungeonTeamTicketMaxCount",
+    "GameDataValue": 5,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000018,
+    "GameDataID": "SplashDamageBlade",
+    "GameDataValue": 0,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.85
+  },
+  {
+    "UID": 220000000019,
+    "GameDataID": "SplashDamageGuntlet",
+    "GameDataValue": 0,
+    "GameDataCount": 0,
+    "GameDataRatio": 1.0
+  },
+  {
+    "UID": 220000000020,
+    "GameDataID": "SplashDamageSpear",
+    "GameDataValue": 0,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.7
+  },
+  {
+    "UID": 220000000021,
+    "GameDataID": "SplashDamageSword",
+    "GameDataValue": 0,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.95
+  },
+  {
+    "UID": 220000000022,
+    "GameDataID": "SplashDamageNone",
+    "GameDataValue": 0,
+    "GameDataCount": 0,
+    "GameDataRatio": 1.0
+  },
+  {
+    "UID": 220000000023,
+    "GameDataID": "Coin_PvpRelayTicket ",
+    "GameDataValue": 10,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000024,
+    "GameDataID": "NeedMaterialCountForRulletLock",
+    "GameDataValue": 1,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000025,
+    "GameDataID": "PvpRelayReward ",
+    "GameDataValue": 70000040157,
+    "GameDataCount": 2,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000026,
+    "GameDataID": "GachaEventOn",
+    "GameDataValue": 1,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000027,
+    "GameDataID": "EventCoinRatio",
+    "GameDataValue": 0,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  }
+]

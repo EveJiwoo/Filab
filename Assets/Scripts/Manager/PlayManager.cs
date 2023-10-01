@@ -15,8 +15,35 @@ public class PlayManager : MonoBehaviour
 {
     static public PlayManager Instance = null;
 
+    Player mPlayer;
+
+    Map mMap;
+    public Map map { get { return mMap; } }
+
     private void Awake()
     {
         Instance = this;
+
+        mPlayer = GameObject.FindObjectOfType<Player>();
+        var map = GameObject.FindObjectOfType<Map>();
+        mPlayer.transform.position = map.kStartPosition.position;
+
+        LoadMap(map);
+    }
+
+    void Start()
+    {
+        
+    }
+
+    public void LoadMap(Map _map)
+    {
+        
+        PlayerCamera.Instance.SetPosition(mPlayer.transform);
+
+        if(mMap != null)
+            Destroy(mMap.gameObject);
+
+        mMap = _map;        
     }
 }

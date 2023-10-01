@@ -8,7 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Starting City.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/City Bank.unity
-    guid: 990869e986535402cad8a59c91f162f4
   m_configObjects: {}

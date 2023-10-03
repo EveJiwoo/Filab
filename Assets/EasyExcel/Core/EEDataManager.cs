@@ -59,7 +59,8 @@ namespace EasyExcel
 		public List<T> GetListJson<T>()where T:EERowData
 		{
 			var type = typeof(T);
-			var a= Resources.Load<TextAsset>("Data/" + type.Name + ".json");
+			//var a= Resources.Load<TextAsset>("Data/" + type.Name + ".json");
+			var a = Resources.Load<TextAsset>("Data/" + type.Name);
 			if (a == default)
 			{
 #if LOG

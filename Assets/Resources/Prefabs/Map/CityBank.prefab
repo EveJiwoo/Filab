@@ -76,8 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d711a2efe6355498f20f948e8f2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kEnterArea: {fileID: 7988746285208535861}
-  kEnterMap: {fileID: 1790884059, guid: f35940879d48c354db7ed837927f263a, type: 3}
+  kPortal: {fileID: 11400000, guid: 4e9e01d52022e554893245fc8fb1a1b1, type: 2}
 --- !u!61 &7988746285208535861
 BoxCollider2D:
   m_ObjectHideFlags: 0

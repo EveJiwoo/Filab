@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    [Header("맵 시작점")]
-    public Transform kStartPosition;
+    [Header("맵 초기화 시작점")]
+    public Transform kResetPosition;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
     }

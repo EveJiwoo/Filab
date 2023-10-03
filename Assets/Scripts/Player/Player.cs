@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     
     GameObject mModel;
 
+    public bool isPortalTransit { get; set; }
+
     void Awake()
     {
         mModel = transform.Find("Model").gameObject;
@@ -24,6 +26,8 @@ public class Player : MonoBehaviour
 
         mSpriteRenderer = mModel.GetComponent<SpriteRenderer>();
         mAnimator = mModel.GetComponent<Animator>();
+
+        isPortalTransit = false;
     }
 
     private void Update()

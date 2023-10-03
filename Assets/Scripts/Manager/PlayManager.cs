@@ -16,6 +16,7 @@ public class PlayManager : MonoBehaviour
     static public PlayManager Instance = null;
 
     Player mPlayer;
+    public Player player { get { return mPlayer; } }
 
     Map mMap;
     public Map map { get { return mMap; } }
@@ -25,10 +26,10 @@ public class PlayManager : MonoBehaviour
         Instance = this;
 
         mPlayer = GameObject.FindObjectOfType<Player>();
-        var map = GameObject.FindObjectOfType<Map>();
-        mPlayer.transform.position = map.kStartPosition.position;
+        var map = GameObject.FindObjectOfType<Map>();        
 
-        LoadMap(map);
+        LoadMap(map, map.kResetPosition.position);
+        Mng.play.player.isPortalTransit = false;
     }
 
     void Start()
@@ -36,14 +37,17 @@ public class PlayManager : MonoBehaviour
         
     }
 
-    public void LoadMap(Map _map)
+    public void LoadMap(Map _map, Vector3 _pos)
     {
-        
-        PlayerCamera.Instance.SetPosition(mPlayer.transform);
+        Mng.play.player.isPortalTransit = true;
 
-        if(mMap != null)
+        mPlayer.transform.position = _pos;
+        PlayerCamera.Instance.SetPosition(mPlayer.transform);        
+
+        if (mMap != null)
             Destroy(mMap.gameObject);
 
-        mMap = _map;        
+        mMap = _map;
+
     }
 }

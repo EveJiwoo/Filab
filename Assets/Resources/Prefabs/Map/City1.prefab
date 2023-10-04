@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960928547}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1152539269}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ResetPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 1438297843}
   - component: {fileID: 1438297845}
   - component: {fileID: 1438297844}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: MyHome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 1847842582}
   - component: {fileID: 8428497925072266882}
   - component: {fileID: 2879913503785892291}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: CityBank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 170616820068796463}
   - component: {fileID: 170616820068796460}
   - component: {fileID: 170616820068796456}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Stores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 170616820820447721}
   - component: {fileID: 170616820820447723}
   - component: {fileID: 170616820820447720}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Dock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 170616820982341847}
   - component: {fileID: 170616820982341841}
   - component: {fileID: 170616820982341846}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2408,7 +2408,7 @@ GameObject:
   - component: {fileID: 170616821012799659}
   - component: {fileID: 170616821012799656}
   - component: {fileID: 170616821012799657}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2822,7 +2822,7 @@ GameObject:
   - component: {fileID: 170616821120569045}
   - component: {fileID: 170616821120569047}
   - component: {fileID: 170616821120569044}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Store top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3032,7 +3032,7 @@ GameObject:
   - component: {fileID: 170616821248517822}
   - component: {fileID: 170616821248517816}
   - component: {fileID: 170616821248517817}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14745,7 +14745,7 @@ GameObject:
   - component: {fileID: 170616821418005749}
   - component: {fileID: 170616821418005706}
   - component: {fileID: 170616821418005748}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15485,7 +15485,7 @@ GameObject:
   - component: {fileID: 170616821593250873}
   - component: {fileID: 170616821593250878}
   - component: {fileID: 1790884059}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: City1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15543,6 +15543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kResetPosition: {fileID: 1152539269}
+  kPlayBGM: {fileID: 8300000, guid: 470544d826c66474292cba7d3aa87ef3, type: 3}
 --- !u!1 &170616821707760943
 GameObject:
   m_ObjectHideFlags: 0
@@ -15553,7 +15554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 170616821707760942}
   - component: {fileID: 170616821707760937}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15619,7 +15620,7 @@ GameObject:
   - component: {fileID: 170616821937717158}
   - component: {fileID: 170616821937717152}
   - component: {fileID: 170616821937717153}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18310,7 +18311,7 @@ GameObject:
   - component: {fileID: 1228531074873413225}
   - component: {fileID: 6054257254450412883}
   - component: {fileID: 1428863215437871891}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -30,6 +30,8 @@ public class PortalTransition : MonoBehaviour
         Map map = Instantiate<Map>(kPortal.loadMap);
         Transform portalTf = map.transform.Find(kPortal.portalName);
         Mng.play.LoadMap(map, portalTf.position);
+
+        Mng.sound.PlayBgm(map.kPlayBGM);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

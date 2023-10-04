@@ -250,6 +250,24 @@ public class SoundManager : MonoBehaviour
         mCurBgmSoundPath = _key;
     }
 
+    /// <summary>배경 재생</summary>
+    public void PlayBgm(AudioClip _clip)
+    {
+        if (IsPlayBgm(_clip.name) == true)
+            return;
+                
+        if(mAudioClipPoolList.ContainsKey(_clip.name) == false)
+            mAudioClipPoolList[_clip.name] = _clip;
+
+        Release(mCurBgmSoundPath);
+
+        mBgmAudioSource.clip = _clip;
+        mBgmAudioSource.loop = true;
+        mBgmAudioSource.Play();
+
+        mCurBgmSoundPath = _clip.name;
+    }
+
     public void StopBGM()
     {
         mBgmAudioSource.Stop();

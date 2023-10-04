@@ -6,6 +6,8 @@ public class Map : MonoBehaviour
 {
     [Header("맵 초기화 시작점")]
     public Transform kResetPosition;
+    [Header("맵 테마 음악 오디오클립")]
+    public AudioClip kPlayBGM;
 
     // Start is called before the first frame update
     void Awake()

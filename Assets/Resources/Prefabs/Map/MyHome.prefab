@@ -3276,3 +3276,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kResetPosition: {fileID: 4294059106887956752}
+  kPlayBGM: {fileID: 8300000, guid: c4e759ea513c31d41b51684b42ea38ab, type: 3}

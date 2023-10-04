@@ -2128,6 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kResetPosition: {fileID: 8868305377453464383}
+  kPlayBGM: {fileID: 8300000, guid: 6c9f8fc809371224caeb2f481dd06cc0, type: 3}
 --- !u!1 &4930355262656774038
 GameObject:
   m_ObjectHideFlags: 0

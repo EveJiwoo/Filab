@@ -30,6 +30,7 @@ public class PlayManager : MonoBehaviour
 
         LoadMap(map, map.kResetPosition.position);
         Mng.play.player.isPortalTransit = false;
+        Mng.sound.PlayBgm(map.kPlayBGM);
     }
 
     void Start()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242069677142800932}
   m_Layer: 0
-  m_Name: StartPosition
+  m_Name: ResetPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2046,7 +2046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f504f7ec3318444ab878450ee685736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kStartPosition: {fileID: 242069677142800932}
+  kResetPosition: {fileID: 242069677142800932}
+  kPlayBGM: {fileID: 8300000, guid: d9544df379cbbaf46ad61885fd078234, type: 3}
 --- !u!1 &2620971227247007651
 GameObject:
   m_ObjectHideFlags: 0

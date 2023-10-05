@@ -18,4 +18,11 @@ namespace EnumDef
         Down,
     }        
 
+    public enum EventReactType
+    {
+        None,
+        CityBankDepositPopup,
+        CityBankCDAccountPopup,
+        CityBankLoanPopup,
+    }
 }

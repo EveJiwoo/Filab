@@ -7,18 +7,24 @@ using UnityEngine;
 public class MainCanvas : MonoBehaviour
 {
     static public MainCanvas Instance;
-/*
-    public UIIngamePanel kIngame;
-    public UIResultPanel kResult;
-    public UITitlePanel kTitle;
-*/
+    
+    [HideInInspector]
+    public UITownMenu kTownMenu;
+
+    [HideInInspector]
+    public UICityBankDepositPopup kCityBankPopup;
+    [HideInInspector]
+    public UICityBankCDAccountPopup kCityBankCDAccountPopup;
+    [HideInInspector]
+    public UICityBankLoanPopup kCityBankLoanPopup;
+
     private void Awake()
     {
         Instance = this;
-/*
-        kIngame = GetComponentInChildren<UIIngamePanel>(true);
-        kResult = GetComponentInChildren<UIResultPanel>(true);
-        kTitle = GetComponentInChildren<UITitlePanel>(true);
-*/
+
+        kTownMenu = GetComponentInChildren<UITownMenu>(true);
+        kCityBankPopup = GetComponentInChildren<UICityBankDepositPopup>(true);
+        kCityBankCDAccountPopup = GetComponentInChildren<UICityBankCDAccountPopup>(true);
+        kCityBankLoanPopup = GetComponentInChildren<UICityBankLoanPopup>(true);
     }
 }

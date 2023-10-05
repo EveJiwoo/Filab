@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     
     GameObject mModel;
 
+    public bool isCanMove { get; set; }
     public bool isPortalTransit { get; set; }
 
     void Awake()
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         mAnimator = mModel.GetComponent<Animator>();
 
         isPortalTransit = false;
+        isCanMove = true;
     }
 
     private void Update()
@@ -43,6 +45,11 @@ public class Player : MonoBehaviour
     void InputUpdate()    
     {
         mMoveHorizon = MoveDirection.None;
+        mMoveVeritcal = MoveDirection.None;
+
+        if (isCanMove == false)
+            return;
+
         if (Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true){
             mMoveHorizon = MoveDirection.Left;            
         }
@@ -50,7 +57,7 @@ public class Player : MonoBehaviour
             mMoveHorizon = MoveDirection.Right;
         }
 
-        mMoveVeritcal = MoveDirection.None;
+        
         if (Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.W) == true){
             mMoveVeritcal = MoveDirection.Up;
         }

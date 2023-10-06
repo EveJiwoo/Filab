@@ -30,6 +30,8 @@ public class PlayManager : MonoBehaviour
     public float kTimeSpeed = 5000f;
 
     DateTime mCurDateTime;
+    int mCurYear = 0;
+    int mCurMonth = 0;
 
     Player mPlayer;
     public Player player { get { return mPlayer; } }
@@ -59,6 +61,9 @@ public class PlayManager : MonoBehaviour
         else
             mCurDateTime = DateTime.Parse(time);
 
+        //시간 갱신
+        TimeUpdate(mCurDateTime);
+
         isTimer = true;
     }
 
@@ -82,11 +87,20 @@ public class PlayManager : MonoBehaviour
 
     private void Update()
     {
-        if( isTimer == true )
-        {
+        if( isTimer == true ){
             mCurDateTime = mCurDateTime.AddSeconds(Time.deltaTime * kTimeSpeed);
+            TimeUpdate(mCurDateTime);
+        }
+    }
 
-            Mng.canvas.kTownMenu.SetDateTime(mCurDateTime);
+    void TimeUpdate(DateTime _time)
+    {
+        Mng.canvas.kTownMenu.SetDateTime(_time);
+
+        if( mCurMonth != mCurDateTime.Month){
+            mCurMonth = mCurDateTime.Month;
+            float rate = Mng.table.GetBaseInterestRate(_time);
+            Mng.canvas.kTownMenu.TempRate(rate);
         }
     }
 

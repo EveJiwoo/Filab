@@ -8,3 +8,4 @@ Logs
 *.sln
 *.csproj
 UserSettings
+.vscode

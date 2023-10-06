@@ -82,7 +82,7 @@ namespace EasyExcel
 			return data;
 		}
 
-		[MenuItem("D1Play/Excel Exporter", false, priority:4)]
+		[MenuItem("GameTool/Excel Exporter", false, priority:4)]
 		public static void OpenWindow()
 		{
 			kTotalMenu = GetWindow<OdinEasyExcelMenuTree>();

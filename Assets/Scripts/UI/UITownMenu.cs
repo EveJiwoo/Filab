@@ -11,6 +11,9 @@ public class UITownMenu : MonoBehaviour
     [Header("시:분 표기")]
     public TMP_Text kHMText;
 
+    [Header("테스트 금리 표기")]
+    public TMP_Text kRateText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +31,10 @@ public class UITownMenu : MonoBehaviour
         kYMDText.text = $"{_time.Year} / {_time.Month} / {_time.Day}";
 
         kHMText.text = $"{StringHelper.ConvertInteger_D(_time.Hour, 2)} : {StringHelper.ConvertInteger_D(_time.Minute, 2)}";
+    }
+
+    public void TempRate(float _rate)
+    {
+        kRateText.text = $"{_rate * 100}%";
     }
 }

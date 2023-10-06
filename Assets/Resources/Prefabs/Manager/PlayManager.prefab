@@ -49,4 +49,4 @@ MonoBehaviour:
   kStartDay: 1
   kStartHour: 8
   kStartMin: 0
-  kTimeSpeed: 500
+  kTimeSpeed: 250000

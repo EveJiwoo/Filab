@@ -13,6 +13,7 @@ public class UIBase : MonoBehaviour
         if( kIsPopupType == true )
         {
             Mng.play.player.isCanMove = false;
+            Mng.play.isTimer = false;
         }
     }
 
@@ -21,6 +22,7 @@ public class UIBase : MonoBehaviour
         if (kIsPopupType == true)
         {
             Mng.play.player.isCanMove = true;
+            Mng.play.isTimer = true;
         }
     }
 }

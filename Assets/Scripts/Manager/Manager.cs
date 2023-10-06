@@ -67,6 +67,5 @@ public class Manager : MonoBehaviour
         ///////////////////////////////////////////////////////////////////////////////////////
         //게임 시작
 
-        Mng.sound.PlayBgm("Sound/BGM");
     }
 }

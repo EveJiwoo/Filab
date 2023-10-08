@@ -17,6 +17,9 @@ public partial class TableManager : MonoBehaviour
 	private List<BaseInterestRateTable_Client> mBaseInterestRateList;
 	public List<BaseInterestRateTable_Client> baseInterestRateList { get { return mBaseInterestRateList; } }
 
+	private List<ItemDataTable_Client> mItemDataTableList;
+	public List<ItemDataTable_Client> itemDataTableList { get { return mItemDataTableList; } }
+
 	static public TableManager Instance
 	{
 		get
@@ -40,6 +43,7 @@ public partial class TableManager : MonoBehaviour
 	{		
 		mGameDataList = _ee.GetListJson<GameDataTable_Client>();
 		mBaseInterestRateList = _ee.GetListJson<BaseInterestRateTable_Client>();
+		mItemDataTableList = _ee.GetListJson<ItemDataTable_Client>();
 	}    
 
     public GameDataTable_Client FindGameDataTable(long _uid)
@@ -55,6 +59,16 @@ public partial class TableManager : MonoBehaviour
 	public BaseInterestRateTable_Client FindBaseInterestRateTable(long _uid)
 	{
 		BaseInterestRateTable_Client data = mBaseInterestRateList.Find(d => d.UID == _uid);
+		if (data != default) return data;
+#if LOG
+	    Log.Error($"UID [{_uid}] 와 맞는 데이터가 없습니다");
+#endif
+		return default;
+	}
+
+	public ItemDataTable_Client FindItemDataTable_Client(long _uid)
+	{
+		ItemDataTable_Client data = mItemDataTableList.Find(d => d.UID == _uid);
 		if (data != default) return data;
 #if LOG
 	    Log.Error($"UID [{_uid}] 와 맞는 데이터가 없습니다");

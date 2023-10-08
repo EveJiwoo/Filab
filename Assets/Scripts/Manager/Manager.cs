@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +17,14 @@ public class Manager : MonoBehaviour
     public PlayManager kPlayManager;
     [Header("사운드 매니저")]
     public SoundManager kSoundManager;
-    
-    
+
+    [PropertySpace]
+    [Button("시작날짜 초기화")]
+    void ResetGameDateTime()
+    {
+        PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, "");
+    }
+
     private void Awake()
     {
         Instance = this;

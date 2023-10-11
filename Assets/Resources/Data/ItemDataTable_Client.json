@@ -27,7 +27,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6324",
     "Description": ""
   },
   {
@@ -58,7 +59,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6325",
     "Description": ""
   },
   {
@@ -89,7 +91,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6326",
     "Description": ""
   },
   {
@@ -120,7 +123,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6327",
     "Description": ""
   },
   {
@@ -151,7 +155,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6328",
     "Description": ""
   },
   {
@@ -182,7 +187,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6329",
     "Description": ""
   },
   {
@@ -213,7 +219,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6330",
     "Description": ""
   },
   {
@@ -244,7 +251,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6331",
     "Description": ""
   },
   {
@@ -275,7 +283,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6332",
     "Description": ""
   },
   {
@@ -306,7 +315,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6333",
     "Description": ""
   },
   {
@@ -337,7 +347,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6334",
     "Description": ""
   },
   {
@@ -368,7 +379,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6335",
     "Description": ""
   },
   {
@@ -399,7 +411,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6336",
     "Description": ""
   },
   {
@@ -430,7 +443,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6337",
     "Description": ""
   },
   {
@@ -461,7 +475,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6338",
     "Description": ""
   },
   {
@@ -492,7 +507,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6339",
     "Description": ""
   },
   {
@@ -523,7 +539,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6340",
     "Description": ""
   },
   {
@@ -554,7 +571,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6341",
     "Description": ""
   },
   {
@@ -585,7 +603,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6342",
     "Description": ""
   },
   {
@@ -616,7 +635,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6343",
     "Description": ""
   },
   {
@@ -647,7 +667,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6344",
     "Description": ""
   },
   {
@@ -678,7 +699,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6345",
     "Description": ""
   },
   {
@@ -709,7 +731,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6346",
     "Description": ""
   },
   {
@@ -740,7 +763,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6347",
     "Description": ""
   },
   {
@@ -771,7 +795,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6348",
     "Description": ""
   },
   {
@@ -802,7 +827,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6349",
     "Description": ""
   },
   {
@@ -833,7 +859,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6350",
     "Description": ""
   },
   {
@@ -864,7 +891,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6351",
     "Description": ""
   },
   {
@@ -895,7 +923,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6352",
     "Description": ""
   },
   {
@@ -926,7 +955,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6353",
     "Description": ""
   },
   {
@@ -957,7 +987,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6354",
     "Description": ""
   },
   {
@@ -988,7 +1019,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6355",
     "Description": ""
   },
   {
@@ -1019,7 +1051,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6356",
     "Description": ""
   },
   {
@@ -1050,7 +1083,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6357",
     "Description": ""
   },
   {
@@ -1081,7 +1115,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6358",
     "Description": ""
   },
   {
@@ -1112,7 +1147,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6359",
     "Description": ""
   },
   {
@@ -1143,7 +1179,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6360",
     "Description": ""
   },
   {
@@ -1174,7 +1211,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6361",
     "Description": ""
   },
   {
@@ -1205,7 +1243,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6362",
     "Description": ""
   },
   {
@@ -1236,7 +1275,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6363",
     "Description": ""
   },
   {
@@ -1267,7 +1307,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6364",
     "Description": ""
   },
   {
@@ -1298,7 +1339,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6365",
     "Description": ""
   },
   {
@@ -1329,7 +1371,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6366",
     "Description": ""
   },
   {
@@ -1360,7 +1403,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6367",
     "Description": ""
   },
   {
@@ -1391,7 +1435,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6368",
     "Description": ""
   },
   {
@@ -1422,7 +1467,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6369",
     "Description": ""
   },
   {
@@ -1453,7 +1499,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6370",
     "Description": ""
   },
   {
@@ -1484,7 +1531,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6371",
     "Description": ""
   },
   {
@@ -1515,7 +1563,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6372",
     "Description": ""
   },
   {
@@ -1546,7 +1595,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6373",
     "Description": ""
   },
   {
@@ -1577,7 +1627,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6374",
     "Description": ""
   },
   {
@@ -1608,7 +1659,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6375",
     "Description": ""
   },
   {
@@ -1639,7 +1691,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6376",
     "Description": ""
   },
   {
@@ -1670,7 +1723,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6377",
     "Description": ""
   },
   {
@@ -1701,7 +1755,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6378",
     "Description": ""
   },
   {
@@ -1732,7 +1787,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6379",
     "Description": ""
   },
   {
@@ -1763,7 +1819,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6380",
     "Description": ""
   },
   {
@@ -1794,7 +1851,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6381",
     "Description": ""
   },
   {
@@ -1825,7 +1883,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6382",
     "Description": ""
   },
   {
@@ -1856,7 +1915,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6383",
     "Description": ""
   },
   {
@@ -1887,7 +1947,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6384",
     "Description": ""
   },
   {
@@ -1918,7 +1979,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6385",
     "Description": ""
   },
   {
@@ -1949,7 +2011,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6386",
     "Description": ""
   },
   {
@@ -1980,7 +2043,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6387",
     "Description": ""
   },
   {
@@ -2011,7 +2075,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6388",
     "Description": ""
   },
   {
@@ -2042,7 +2107,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6389",
     "Description": ""
   },
   {
@@ -2073,7 +2139,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6390",
     "Description": ""
   },
   {
@@ -2104,7 +2171,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6391",
     "Description": ""
   },
   {
@@ -2135,7 +2203,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6392",
     "Description": ""
   },
   {
@@ -2166,7 +2235,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6393",
     "Description": ""
   },
   {
@@ -2197,7 +2267,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6394",
     "Description": ""
   },
   {
@@ -2228,7 +2299,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6395",
     "Description": ""
   },
   {
@@ -2259,7 +2331,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6396",
     "Description": ""
   },
   {
@@ -2290,7 +2363,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6397",
     "Description": ""
   },
   {
@@ -2321,7 +2395,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6398",
     "Description": ""
   },
   {
@@ -2352,7 +2427,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6399",
     "Description": ""
   },
   {
@@ -2383,7 +2459,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6400",
     "Description": ""
   },
   {
@@ -2414,7 +2491,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6401",
     "Description": ""
   },
   {
@@ -2445,7 +2523,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6402",
     "Description": ""
   },
   {
@@ -2476,7 +2555,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6403",
     "Description": ""
   },
   {
@@ -2507,7 +2587,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6404",
     "Description": ""
   },
   {
@@ -2538,7 +2619,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6405",
     "Description": ""
   },
   {
@@ -2569,7 +2651,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6406",
     "Description": ""
   },
   {
@@ -2600,7 +2683,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6407",
     "Description": ""
   },
   {
@@ -2631,7 +2715,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6408",
     "Description": ""
   },
   {
@@ -2662,7 +2747,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6409",
     "Description": ""
   },
   {
@@ -2693,7 +2779,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6410",
     "Description": ""
   },
   {
@@ -2724,7 +2811,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6411",
     "Description": ""
   },
   {
@@ -2755,7 +2843,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6412",
     "Description": ""
   },
   {
@@ -2786,7 +2875,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6413",
     "Description": ""
   },
   {
@@ -2817,7 +2907,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6414",
     "Description": ""
   },
   {
@@ -2848,7 +2939,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6415",
     "Description": ""
   },
   {
@@ -2879,7 +2971,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6416",
     "Description": ""
   },
   {
@@ -2910,7 +3003,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6417",
     "Description": ""
   },
   {
@@ -2941,7 +3035,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6418",
     "Description": ""
   },
   {
@@ -2972,7 +3067,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6419",
     "Description": ""
   },
   {
@@ -3003,7 +3099,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6420",
     "Description": ""
   },
   {
@@ -3034,7 +3131,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6421",
     "Description": ""
   },
   {
@@ -3065,7 +3163,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6422",
     "Description": ""
   },
   {
@@ -3096,7 +3195,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6423",
     "Description": ""
   },
   {
@@ -3127,7 +3227,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6424",
     "Description": ""
   },
   {
@@ -3158,7 +3259,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6425",
     "Description": ""
   },
   {
@@ -3189,7 +3291,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6426",
     "Description": ""
   },
   {
@@ -3220,7 +3323,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6427",
     "Description": ""
   },
   {
@@ -3251,7 +3355,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6428",
     "Description": ""
   },
   {
@@ -3282,7 +3387,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6429",
     "Description": ""
   },
   {
@@ -3313,7 +3419,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6430",
     "Description": ""
   },
   {
@@ -3344,7 +3451,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6431",
     "Description": ""
   },
   {
@@ -3375,7 +3483,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6432",
     "Description": ""
   },
   {
@@ -3406,7 +3515,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6433",
     "Description": ""
   },
   {
@@ -3437,7 +3547,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6434",
     "Description": ""
   },
   {
@@ -3468,7 +3579,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6435",
     "Description": ""
   },
   {
@@ -3499,7 +3611,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6436",
     "Description": ""
   },
   {
@@ -3530,7 +3643,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6437",
     "Description": ""
   },
   {
@@ -3561,7 +3675,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6438",
     "Description": ""
   },
   {
@@ -3592,7 +3707,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6439",
     "Description": ""
   },
   {
@@ -3623,7 +3739,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6440",
     "Description": ""
   },
   {
@@ -3654,7 +3771,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6441",
     "Description": ""
   },
   {
@@ -3685,7 +3803,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6442",
     "Description": ""
   },
   {
@@ -3716,7 +3835,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6443",
     "Description": ""
   },
   {
@@ -3747,7 +3867,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6444",
     "Description": ""
   },
   {
@@ -3778,7 +3899,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6445",
     "Description": ""
   },
   {
@@ -3809,7 +3931,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6446",
     "Description": ""
   },
   {
@@ -3840,7 +3963,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6447",
     "Description": ""
   },
   {
@@ -3871,7 +3995,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6448",
     "Description": ""
   },
   {
@@ -3902,7 +4027,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6449",
     "Description": ""
   },
   {
@@ -3933,7 +4059,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6450",
     "Description": ""
   },
   {
@@ -3964,7 +4091,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6451",
     "Description": ""
   },
   {
@@ -3995,7 +4123,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6452",
     "Description": ""
   },
   {
@@ -4026,7 +4155,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6453",
     "Description": ""
   },
   {
@@ -4057,7 +4187,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6454",
     "Description": ""
   },
   {
@@ -4088,7 +4219,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6455",
     "Description": ""
   },
   {
@@ -4119,7 +4251,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "BlackSmithItemAtlas",
+    "SpriteName": "6456",
     "Description": ""
   },
   {
@@ -4150,7 +4283,8 @@
     "SkillId": 0,
     "ActorId": 0,
     "IconId": 0,
-    "DerciptionId": 0,
+    "AtlasName": "",
+    "SpriteName": "",
     "Description": ""
   }
 ]

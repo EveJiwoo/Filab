@@ -127,8 +127,12 @@ namespace SheetData
 		public int IconId { get { return _IconId; } set{_IconId=value; } }
 
 		[SerializeField]
-		private int _DerciptionId;
-		public int DerciptionId { get { return _DerciptionId; } set{_DerciptionId=value; } }
+		private string _AtlasName;
+		public string AtlasName { get { return _AtlasName; } set{_AtlasName=value; } }
+
+		[SerializeField]
+		private string _SpriteName;
+		public string SpriteName { get { return _SpriteName; } set{_SpriteName=value; } }
 
 		[SerializeField]
 		private string _Description;
@@ -169,7 +173,8 @@ namespace SheetData
 			TryParse(sheet[row][column++], out _SkillId);
 			TryParse(sheet[row][column++], out _ActorId);
 			TryParse(sheet[row][column++], out _IconId);
-			TryParse(sheet[row][column++], out _DerciptionId);
+			TryParse(sheet[row][column++], out _AtlasName);
+			TryParse(sheet[row][column++], out _SpriteName);
 			TryParse(sheet[row][column++], out _Description);
 		}
 #endif

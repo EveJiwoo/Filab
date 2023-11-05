@@ -28,10 +28,10 @@ public class UITradeShopPopup : UIBase
         foreach (var item in mItemIconList)
             item.onClick += OnItemIconClick;
 
-        SetItemData(CityType.City1);
+        SetCitySellItem(CityType.City1);
     }
 
-    private void OnDisable()
+    protected override void onDisable()
     {
         kScrollRect.verticalNormalizedPosition = 1f;
 
@@ -46,7 +46,7 @@ public class UITradeShopPopup : UIBase
         
     }
 
-    public void SetItemData(CityType _type)
+    public void SetCitySellItem(CityType _type)
     {
         mItemDataList = Mng.data.GetSellItemList(_type);
         
@@ -54,6 +54,7 @@ public class UITradeShopPopup : UIBase
         foreach(var tableData in mItemDataList){
             mItemIconList[fillCount].gameObject.SetActive(true);
             mItemIconList[fillCount].SetSprite(Mng.canvas.GetSprite(tableData.AtlasName, tableData.SpriteName));
+            mItemIconList[fillCount].SetPrice(Mng.data.GetShopRealSellPrice(tableData));
             fillCount++;
         }        
 
@@ -68,6 +69,6 @@ public class UITradeShopPopup : UIBase
         var data = mItemDataList[_index];
         kSelectItemImage.sprite = Mng.canvas.GetSprite(data.AtlasName, data.SpriteName);
         kSelectItemName.text = data.Name;
-        kSelectItemPrice.text = data.OrignalBuyPrice.ToString();
+        kSelectItemPrice.text = Mng.data.GetShopRealSellPrice(data).ToString();
     }
 }

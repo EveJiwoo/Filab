@@ -53,9 +53,12 @@ public class DataManager : MonoBehaviour
         return mCityItemSellList[_type];
     }
 
-    // Update is called once per frame
-    void Update()
+    public int GetShopRealSellPrice(ItemDataTable_Client _data)
     {
-        
+        int year = Mng.play.curDateTime.Year;
+        int month = Mng.play.curDateTime.Month;
+        float rate = Mng.table.GetItemPriceRate(year, month);
+
+        return (int)((float)_data.OrignalSellPrice * (1f + rate * 0.01f));
     }
 }

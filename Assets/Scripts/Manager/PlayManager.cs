@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using EnumDef;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -30,6 +31,8 @@ public class PlayManager : MonoBehaviour
     public float kTimeSpeed = 5000f;
 
     DateTime mCurDateTime;
+    public DateTime curDateTime {  get { return mCurDateTime; } }
+
     int mCurYear = 0;
     int mCurMonth = 0;
 
@@ -108,5 +111,11 @@ public class PlayManager : MonoBehaviour
     {
         //현재까지의 시간 저장
         PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, mCurDateTime.ToString());
+    }
+
+    [Button("날짜 초기화")]
+    void ResetDateTeim()
+    {
+        PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
     }
 }

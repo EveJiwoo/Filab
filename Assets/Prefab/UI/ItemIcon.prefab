@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kSprite: {fileID: 8336841221739588871}
   kCountText: {fileID: 6066255130350189803}
-  kSellPriceText: {fileID: 8107324473167737155}
+  kPriceText: {fileID: 8107324473167737155}
 --- !u!1 &5964834087957094668
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 7312647937308944812}
   - component: {fileID: 8107324473167737155}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 1945319177626345987}
   - component: {fileID: 6066255130350189803}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

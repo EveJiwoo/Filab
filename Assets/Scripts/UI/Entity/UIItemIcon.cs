@@ -12,11 +12,21 @@ public class UIItemIcon : MonoBehaviour
 
     public Image kSprite;
     public TMP_Text kCountText;
-    public TMP_Text kSellPriceText;
+    public TMP_Text kPriceText;
+
+    private void Awake()
+    {
+        //kPriceText.text = "";
+    }
 
     public void SetSprite(Sprite _sprite)
     {
         kSprite.sprite = _sprite;
+    }
+
+    public void SetPrice(int _price)
+    {
+        kPriceText.text = _price.ToString() + " G";
     }
 
     public void OnIconButtonClick()

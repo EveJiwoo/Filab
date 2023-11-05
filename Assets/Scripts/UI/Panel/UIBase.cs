@@ -15,7 +15,11 @@ public class UIBase : MonoBehaviour
             Mng.play.player.isCanMove = false;
             Mng.play.isTimer = false;
         }
+
+        onEanble();
     }
+
+    protected virtual void onEanble() { }
 
     private void OnDisable()
     {
@@ -24,5 +28,9 @@ public class UIBase : MonoBehaviour
             Mng.play.player.isCanMove = true;
             Mng.play.isTimer = true;
         }
+
+        onDisable();
     }
+
+    protected virtual void onDisable() {}
 }

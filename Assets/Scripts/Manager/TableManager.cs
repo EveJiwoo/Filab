@@ -20,6 +20,9 @@ public partial class TableManager : MonoBehaviour
 	private List<ItemDataTable_Client> mItemDataTableList;
 	public List<ItemDataTable_Client> itemDataTableList { get { return mItemDataTableList; } }
 
+	private List<ItemPriceRateTable_Client> mItemPriceRateTableList;
+	public List<ItemPriceRateTable_Client> itemPriceRateTableList { get { return mItemPriceRateTableList; } }
+
 	static public TableManager Instance
 	{
 		get
@@ -44,6 +47,7 @@ public partial class TableManager : MonoBehaviour
 		mGameDataList = _ee.GetListJson<GameDataTable_Client>();
 		mBaseInterestRateList = _ee.GetListJson<BaseInterestRateTable_Client>();
 		mItemDataTableList = _ee.GetListJson<ItemDataTable_Client>();
+		mItemPriceRateTableList = _ee.GetListJson<ItemPriceRateTable_Client>();
 	}    
 
     public GameDataTable_Client FindGameDataTable(long _uid)
@@ -98,6 +102,32 @@ public partial class TableManager : MonoBehaviour
 #if LOG
 	    Log.Error($"UID [{_uid}] 와 맞는 데이터가 없습니다");
 #endif
+		return 0f;
+	}
+
+	public float GetItemPriceRate(int _year, int _month)
+    {
+		var findData = mItemPriceRateTableList.Find(_p => _p.Year == _year);
+		if(findData == null)
+        {
+			Debug.LogError($"{_year}년 {_month}월의 가격 변동 정보가 없습니다.");
+			return 0f;
+        }
+		switch(_month){
+			case 1:		return findData.Jan;
+			case 2:		return findData.Feb;
+			case 3:		return findData.Mar;
+			case 4:		return findData.Apr;
+			case 5:		return findData.May;
+			case 6:		return findData.Jun;
+			case 7:		return findData.Jul;
+			case 8:		return findData.Aug;
+			case 9:		return findData.Sep;
+			case 10:	return findData.Oct;
+			case 11:	return findData.Nov;
+			case 12:	return findData.Dec;
+		}
+
 		return 0f;
 	}
 }

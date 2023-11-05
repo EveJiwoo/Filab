@@ -12,7 +12,7 @@ public class UIInventory : MonoBehaviour
     void Awake()
     {
         mItemIconList = kItemListGo.GetComponentsInChildren<UIItemIcon>();
-        for(int i = 0; i < 99; i++)
+        for(int i = 0; i < ConstDef.MAX_ITEM_TYPE_COUNT; i++)
         {
             var table = Mng.table.FindItemDataTable_Client(200000000001 + i);
             mItemIconList[i].SetSprite( Mng.canvas.GetSprite(table.AtlasName, table.SpriteName) );

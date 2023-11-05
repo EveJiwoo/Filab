@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,23 +8,19 @@ using UnityEngine.UI;
 
 public class UIItemIcon : MonoBehaviour
 {
+    public Action<int> onClick;
+
     public Image kSprite;
     public TMP_Text kCountText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public TMP_Text kSellPriceText;
 
     public void SetSprite(Sprite _sprite)
     {
         kSprite.sprite = _sprite;
+    }
+
+    public void OnIconButtonClick()
+    {
+        onClick?.Invoke(transform.GetSiblingIndex());
     }
 }

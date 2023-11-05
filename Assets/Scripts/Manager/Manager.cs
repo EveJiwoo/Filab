@@ -36,18 +36,18 @@ public class Manager : MonoBehaviour
         ///////////////////////////////////////////////////////////////////////////////////////
         //매니저 초기화
 
-        GameObject go = Instantiate(kDataManager.gameObject);
-        go.transform.parent = transform;
-        go.name = "DataManager";
-/*
-        while (DataManager.Instance == null)
-            yield return null;
-*/
-        go = Instantiate(kTableManager.gameObject);
+        GameObject go = Instantiate(kTableManager.gameObject);
         go.transform.parent = transform;
         go.name = "TableManager";
 
         while (TableManager.Instance == null)
+            yield return null;
+
+        go = Instantiate(kDataManager.gameObject);
+        go.transform.parent = transform;
+        go.name = "DataManager";
+
+        while (DataManager.Instance == null)
             yield return null;
 
         go = Instantiate(kSoundManager.gameObject);

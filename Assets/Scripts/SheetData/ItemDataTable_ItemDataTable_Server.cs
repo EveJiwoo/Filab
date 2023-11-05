@@ -23,84 +23,8 @@ namespace SheetData
 		public long UID { get { return _UID; } set{_UID=value; } }
 
 		[SerializeField]
-		private string _CurrencyType;
-		public string CurrencyType { get { return _CurrencyType; } set{_CurrencyType=value; } }
-
-		[SerializeField]
-		private int _ItemType;
-		public int ItemType { get { return _ItemType; } set{_ItemType=value; } }
-
-		[SerializeField]
-		private int _ProductionRate;
-		public int ProductionRate { get { return _ProductionRate; } set{_ProductionRate=value; } }
-
-		[SerializeField]
-		private int _ItemEquipType;
-		public int ItemEquipType { get { return _ItemEquipType; } set{_ItemEquipType=value; } }
-
-		[SerializeField]
-		private int _IsStackType;
-		public int IsStackType { get { return _IsStackType; } set{_IsStackType=value; } }
-
-		[SerializeField]
-		private int _StackMaxCount;
-		public int StackMaxCount { get { return _StackMaxCount; } set{_StackMaxCount=value; } }
-
-		[SerializeField]
-		private int _DurabilityMaxValue;
-		public int DurabilityMaxValue { get { return _DurabilityMaxValue; } set{_DurabilityMaxValue=value; } }
-
-		[SerializeField]
-		private int _DurabilityRegenValue;
-		public int DurabilityRegenValue { get { return _DurabilityRegenValue; } set{_DurabilityRegenValue=value; } }
-
-		[SerializeField]
-		private int _DurabilityRegenTicTime;
-		public int DurabilityRegenTicTime { get { return _DurabilityRegenTicTime; } set{_DurabilityRegenTicTime=value; } }
-
-		[SerializeField]
-		private int _IsDurabilityRepare;
-		public int IsDurabilityRepare { get { return _IsDurabilityRepare; } set{_IsDurabilityRepare=value; } }
-
-		[SerializeField]
-		private int _DurabilityReparePrice;
-		public int DurabilityReparePrice { get { return _DurabilityReparePrice; } set{_DurabilityReparePrice=value; } }
-
-		[SerializeField]
-		private int _DurabilityRepareValue;
-		public int DurabilityRepareValue { get { return _DurabilityRepareValue; } set{_DurabilityRepareValue=value; } }
-
-		[SerializeField]
-		private int _DurabilityRepareTime;
-		public int DurabilityRepareTime { get { return _DurabilityRepareTime; } set{_DurabilityRepareTime=value; } }
-
-		[SerializeField]
-		private int _UpgradeGroupId;
-		public int UpgradeGroupId { get { return _UpgradeGroupId; } set{_UpgradeGroupId=value; } }
-
-		[SerializeField]
-		private int _PhysicalDamage;
-		public int PhysicalDamage { get { return _PhysicalDamage; } set{_PhysicalDamage=value; } }
-
-		[SerializeField]
-		private int _PhysicalDefense;
-		public int PhysicalDefense { get { return _PhysicalDefense; } set{_PhysicalDefense=value; } }
-
-		[SerializeField]
-		private int _AttackRange;
-		public int AttackRange { get { return _AttackRange; } set{_AttackRange=value; } }
-
-		[SerializeField]
-		private int _AttackSpeed;
-		public int AttackSpeed { get { return _AttackSpeed; } set{_AttackSpeed=value; } }
-
-		[SerializeField]
-		private int _MoveSpeed;
-		public int MoveSpeed { get { return _MoveSpeed; } set{_MoveSpeed=value; } }
-
-		[SerializeField]
-		private int _Weight;
-		public int Weight { get { return _Weight; } set{_Weight=value; } }
+		private string _Name;
+		public string Name { get { return _Name; } set{_Name=value; } }
 
 		[SerializeField]
 		private int _OrignalBuyPrice;
@@ -111,20 +35,84 @@ namespace SheetData
 		public int OrignalSellPrice { get { return _OrignalSellPrice; } set{_OrignalSellPrice=value; } }
 
 		[SerializeField]
-		private int _DropEffectSoundId;
-		public int DropEffectSoundId { get { return _DropEffectSoundId; } set{_DropEffectSoundId=value; } }
+		private bool _City1Sell;
+		public bool City1Sell { get { return _City1Sell; } set{_City1Sell=value; } }
 
 		[SerializeField]
-		private int _SkillId;
-		public int SkillId { get { return _SkillId; } set{_SkillId=value; } }
+		private bool _City2Sell;
+		public bool City2Sell { get { return _City2Sell; } set{_City2Sell=value; } }
 
 		[SerializeField]
-		private int _ActorId;
-		public int ActorId { get { return _ActorId; } set{_ActorId=value; } }
+		private bool _City3Sell;
+		public bool City3Sell { get { return _City3Sell; } set{_City3Sell=value; } }
 
 		[SerializeField]
-		private int _IconId;
-		public int IconId { get { return _IconId; } set{_IconId=value; } }
+		private bool _City4Sell;
+		public bool City4Sell { get { return _City4Sell; } set{_City4Sell=value; } }
+
+		[SerializeField]
+		private bool _City5Sell;
+		public bool City5Sell { get { return _City5Sell; } set{_City5Sell=value; } }
+
+		[SerializeField]
+		private bool _City6Sell;
+		public bool City6Sell { get { return _City6Sell; } set{_City6Sell=value; } }
+
+		[SerializeField]
+		private bool _City7Sell;
+		public bool City7Sell { get { return _City7Sell; } set{_City7Sell=value; } }
+
+		[SerializeField]
+		private bool _City8Sell;
+		public bool City8Sell { get { return _City8Sell; } set{_City8Sell=value; } }
+
+		[SerializeField]
+		private bool _City9Sell;
+		public bool City9Sell { get { return _City9Sell; } set{_City9Sell=value; } }
+
+		[SerializeField]
+		private bool _City10Sell;
+		public bool City10Sell { get { return _City10Sell; } set{_City10Sell=value; } }
+
+		[SerializeField]
+		private bool _City11Sell;
+		public bool City11Sell { get { return _City11Sell; } set{_City11Sell=value; } }
+
+		[SerializeField]
+		private bool _City12Sell;
+		public bool City12Sell { get { return _City12Sell; } set{_City12Sell=value; } }
+
+		[SerializeField]
+		private bool _City13Sell;
+		public bool City13Sell { get { return _City13Sell; } set{_City13Sell=value; } }
+
+		[SerializeField]
+		private bool _City14Sell;
+		public bool City14Sell { get { return _City14Sell; } set{_City14Sell=value; } }
+
+		[SerializeField]
+		private bool _City15Sell;
+		public bool City15Sell { get { return _City15Sell; } set{_City15Sell=value; } }
+
+		[SerializeField]
+		private bool _City16Sell;
+		public bool City16Sell { get { return _City16Sell; } set{_City16Sell=value; } }
+
+		[SerializeField]
+		private bool _City17Sell;
+		public bool City17Sell { get { return _City17Sell; } set{_City17Sell=value; } }
+
+		[SerializeField]
+		private bool _City18Sell;
+		public bool City18Sell { get { return _City18Sell; } set{_City18Sell=value; } }
+
+		[SerializeField]
+		private bool _City19Sell;
+		public bool City19Sell { get { return _City19Sell; } set{_City19Sell=value; } }
+
+		[SerializeField]
+		private bool _City20Sell;
+		public bool City20Sell { get { return _City20Sell; } set{_City20Sell=value; } }
 
 		[SerializeField]
 		private string _AtlasName;
@@ -147,32 +135,29 @@ namespace SheetData
 		public ItemDataTable_Server(List<List<string>> sheet, int row, int column)
 		{
 			TryParse(sheet[row][column++], out _UID);
-			TryParse(sheet[row][column++], out _CurrencyType);
-			TryParse(sheet[row][column++], out _ItemType);
-			TryParse(sheet[row][column++], out _ProductionRate);
-			TryParse(sheet[row][column++], out _ItemEquipType);
-			TryParse(sheet[row][column++], out _IsStackType);
-			TryParse(sheet[row][column++], out _StackMaxCount);
-			TryParse(sheet[row][column++], out _DurabilityMaxValue);
-			TryParse(sheet[row][column++], out _DurabilityRegenValue);
-			TryParse(sheet[row][column++], out _DurabilityRegenTicTime);
-			TryParse(sheet[row][column++], out _IsDurabilityRepare);
-			TryParse(sheet[row][column++], out _DurabilityReparePrice);
-			TryParse(sheet[row][column++], out _DurabilityRepareValue);
-			TryParse(sheet[row][column++], out _DurabilityRepareTime);
-			TryParse(sheet[row][column++], out _UpgradeGroupId);
-			TryParse(sheet[row][column++], out _PhysicalDamage);
-			TryParse(sheet[row][column++], out _PhysicalDefense);
-			TryParse(sheet[row][column++], out _AttackRange);
-			TryParse(sheet[row][column++], out _AttackSpeed);
-			TryParse(sheet[row][column++], out _MoveSpeed);
-			TryParse(sheet[row][column++], out _Weight);
+			TryParse(sheet[row][column++], out _Name);
 			TryParse(sheet[row][column++], out _OrignalBuyPrice);
 			TryParse(sheet[row][column++], out _OrignalSellPrice);
-			TryParse(sheet[row][column++], out _DropEffectSoundId);
-			TryParse(sheet[row][column++], out _SkillId);
-			TryParse(sheet[row][column++], out _ActorId);
-			TryParse(sheet[row][column++], out _IconId);
+			TryParse(sheet[row][column++], out _City1Sell);
+			TryParse(sheet[row][column++], out _City2Sell);
+			TryParse(sheet[row][column++], out _City3Sell);
+			TryParse(sheet[row][column++], out _City4Sell);
+			TryParse(sheet[row][column++], out _City5Sell);
+			TryParse(sheet[row][column++], out _City6Sell);
+			TryParse(sheet[row][column++], out _City7Sell);
+			TryParse(sheet[row][column++], out _City8Sell);
+			TryParse(sheet[row][column++], out _City9Sell);
+			TryParse(sheet[row][column++], out _City10Sell);
+			TryParse(sheet[row][column++], out _City11Sell);
+			TryParse(sheet[row][column++], out _City12Sell);
+			TryParse(sheet[row][column++], out _City13Sell);
+			TryParse(sheet[row][column++], out _City14Sell);
+			TryParse(sheet[row][column++], out _City15Sell);
+			TryParse(sheet[row][column++], out _City16Sell);
+			TryParse(sheet[row][column++], out _City17Sell);
+			TryParse(sheet[row][column++], out _City18Sell);
+			TryParse(sheet[row][column++], out _City19Sell);
+			TryParse(sheet[row][column++], out _City20Sell);
 			TryParse(sheet[row][column++], out _AtlasName);
 			TryParse(sheet[row][column++], out _SpriteName);
 			TryParse(sheet[row][column++], out _Description);

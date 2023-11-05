@@ -16,10 +16,10 @@ public class UIBase : MonoBehaviour
             Mng.play.isTimer = false;
         }
 
-        onEanble();
+        onEnable();
     }
 
-    protected virtual void onEanble() { }
+    protected virtual void onEnable() { }
 
     private void OnDisable()
     {

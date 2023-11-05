@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIInventory : MonoBehaviour
+public class UIInventory : UIBase
 {
     public GameObject kItemListGo;
 
@@ -12,16 +12,33 @@ public class UIInventory : MonoBehaviour
     void Awake()
     {
         mItemIconList = kItemListGo.GetComponentsInChildren<UIItemIcon>();
-        for(int i = 0; i < ConstDef.MAX_ITEM_TYPE_COUNT; i++)
-        {
-            var table = Mng.table.FindItemDataTable_Client(200000000001 + i);
-            mItemIconList[i].SetSprite( Mng.canvas.GetSprite(table.AtlasName, table.SpriteName) );
-        }        
+               
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    protected override void onEnable()
+    {
+        for (int i = 0; i < ConstDef.MAX_ITEM_TYPE_COUNT; i++)
+        {
+            if( i < Mng.data.invenItemInfoList.Count)
+            {
+                mItemIconList[i].gameObject.SetActive(true);
+
+                var itemInfo = Mng.data.invenItemInfoList[i];
+
+                var table = Mng.table.FindItemDataTable_Client(itemInfo.uid);
+                mItemIconList[i].SetSprite(Mng.canvas.GetSprite(table.AtlasName, table.SpriteName));
+                mItemIconList[i].SetCount(itemInfo.count);
+            }
+            else
+            {
+                mItemIconList[i].gameObject.SetActive(false);
+            }            
+        }
     }
 }

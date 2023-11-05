@@ -22,11 +22,18 @@ public class UIItemIcon : MonoBehaviour
     public void SetSprite(Sprite _sprite)
     {
         kSprite.sprite = _sprite;
+        kPriceText.text = "";
+        kCountText.text = "";
     }
 
     public void SetPrice(int _price)
     {
         kPriceText.text = _price.ToString() + " G";
+    }
+
+    public void SetCount(int _count)
+    {
+        kCountText.text = _count.ToString();
     }
 
     public void OnIconButtonClick()

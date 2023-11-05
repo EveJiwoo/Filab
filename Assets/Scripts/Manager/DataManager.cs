@@ -1,3 +1,4 @@
+using ClassDef;
 using EnumDef;
 using SheetData;
 using System.Collections;
@@ -8,6 +9,9 @@ public class DataManager : MonoBehaviour
 {
     static public DataManager Instance = null;
 
+    List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
+    public List<InvenItemInfo> invenItemInfoList { get { return mInvenItemInfoList; } }
+
     Dictionary<CityType, List<ItemDataTable_Client>> mCityItemSellList = new Dictionary<CityType, List<ItemDataTable_Client>>();
 
     // Start is called before the first frame update
@@ -15,7 +19,10 @@ public class DataManager : MonoBehaviour
     {
         Instance = this;
 
-        foreach(var data in Mng.table.itemDataTableList)
+        AddInventory(200000000001, 20, 100);
+        AddInventory(200000000002, 9, 2000);
+
+        foreach (var data in Mng.table.itemDataTableList)
         {
             if( data.City1Sell == true) AddCityItemSellList(CityType.City1, data);
             if (data.City2Sell == true) AddCityItemSellList(CityType.City2, data);
@@ -51,6 +58,33 @@ public class DataManager : MonoBehaviour
     public List<ItemDataTable_Client> GetSellItemList(CityType _type)
     {
         return mCityItemSellList[_type];
+    }
+
+    public void AddInventory(long _uid, int _count, float _price)
+    {
+        var item = mInvenItemInfoList.Find(_p => _p.uid == _uid);
+        
+        if( item == null){
+            InvenItemInfo newItem = new InvenItemInfo();
+            newItem.uid = _uid;
+            mInvenItemInfoList.Add(newItem);
+
+            item = newItem;
+        }
+
+        item.AddCount(_count, _price);
+    }
+
+    public void RemoveInventory(long _uid, int _count, float _price)
+    {
+        var item = mInvenItemInfoList.Find(_p => _p.uid == _uid);
+
+        if (item == null){
+            Debug.LogError($"인벤토리에는 {_uid} UID 아이템이 존재하지 않습니다.");
+            return;
+        }
+
+        item.RemoveCount(_count);
     }
 
     public int GetShopRealSellPrice(ItemDataTable_Client _data)

@@ -1,6 +1,7 @@
 using ClassDef;
 using EnumDef;
 using SheetData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -94,5 +95,17 @@ public class DataManager : MonoBehaviour
         float rate = Mng.table.GetItemPriceRate(year, month);
 
         return (int)((float)_data.OrignalSellPrice * (1f + rate * 0.01f));
+    }
+
+    /// <summary> 이번달 대출 금리 </summary>
+    public float GetLoanRate(DateTime _dt)
+    {
+        return Mng.table.GetBaseInterestRate(_dt) + Mng.table.GetLoanInterestRate(_dt);
+    }
+
+    /// <summary> 이번달 예금 금리 </summary>
+    public float GetDepositRate(DateTime _dt)
+    {
+        return Mng.table.GetBaseInterestRate(_dt) + Mng.table.GetDepositInterestRate(_dt);
     }
 }

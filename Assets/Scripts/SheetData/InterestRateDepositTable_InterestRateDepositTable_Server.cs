@@ -15,7 +15,7 @@ using EasyExcel;
 namespace SheetData
 {
 	[Serializable]
-	public class ItemPriceRateTable_Client : EERowData
+	public class InterestRateDepositTable_Server : EERowData
 	{
 		[EEKeyField]
 		[SerializeField]
@@ -75,12 +75,12 @@ namespace SheetData
 		public float month12 { get { return _month12; } set{_month12=value; } }
 
 
-		public ItemPriceRateTable_Client()
+		public InterestRateDepositTable_Server()
 		{
 		}
 
 #if UNITY_EDITOR
-		public ItemPriceRateTable_Client(List<List<string>> sheet, int row, int column)
+		public InterestRateDepositTable_Server(List<List<string>> sheet, int row, int column)
 		{
 			TryParse(sheet[row][column++], out _UID);
 			TryParse(sheet[row][column++], out _Year);
@@ -103,14 +103,14 @@ namespace SheetData
 		}
 	}
 
-	public class ItemPriceRateTable_ItemPriceRateTable_Client : EERowDataCollection
+	public class InterestRateDepositTable_InterestRateDepositTable_Server : EERowDataCollection
 	{
 		
-		public List<ItemPriceRateTable_Client> elements = new List<ItemPriceRateTable_Client>();
+		public List<InterestRateDepositTable_Server> elements = new List<InterestRateDepositTable_Server>();
 
 		public override void AddData(EERowData data)
 		{
-			elements.Add(data as ItemPriceRateTable_Client);
+			elements.Add(data as InterestRateDepositTable_Server);
 		}
 
 		public override int GetDataCount()
@@ -118,11 +118,7 @@ namespace SheetData
 			return elements.Count;
 		}
 
-	
-public List<ItemPriceRateTable_Client> OnGetAllData()
-		{		
-return elements;
-		}		public override EERowData GetData(int index)
+		public override EERowData GetData(int index)
 		{
 			return elements[index];
 		}

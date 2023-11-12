@@ -27,52 +27,52 @@ namespace SheetData
 		public int Year { get { return _Year; } set{_Year=value; } }
 
 		[SerializeField]
-		private float _Jan;
-		public float Jan { get { return _Jan; } set{_Jan=value; } }
+		private float _month1;
+		public float month1 { get { return _month1; } set{_month1=value; } }
 
 		[SerializeField]
-		private float _Feb;
-		public float Feb { get { return _Feb; } set{_Feb=value; } }
+		private float _month2;
+		public float month2 { get { return _month2; } set{_month2=value; } }
 
 		[SerializeField]
-		private float _Mar;
-		public float Mar { get { return _Mar; } set{_Mar=value; } }
+		private float _month3;
+		public float month3 { get { return _month3; } set{_month3=value; } }
 
 		[SerializeField]
-		private float _Apr;
-		public float Apr { get { return _Apr; } set{_Apr=value; } }
+		private float _month4;
+		public float month4 { get { return _month4; } set{_month4=value; } }
 
 		[SerializeField]
-		private float _May;
-		public float May { get { return _May; } set{_May=value; } }
+		private float _month5;
+		public float month5 { get { return _month5; } set{_month5=value; } }
 
 		[SerializeField]
-		private float _Jun;
-		public float Jun { get { return _Jun; } set{_Jun=value; } }
+		private float _month6;
+		public float month6 { get { return _month6; } set{_month6=value; } }
 
 		[SerializeField]
-		private float _Jul;
-		public float Jul { get { return _Jul; } set{_Jul=value; } }
+		private float _month7;
+		public float month7 { get { return _month7; } set{_month7=value; } }
 
 		[SerializeField]
-		private float _Aug;
-		public float Aug { get { return _Aug; } set{_Aug=value; } }
+		private float _month8;
+		public float month8 { get { return _month8; } set{_month8=value; } }
 
 		[SerializeField]
-		private float _Sep;
-		public float Sep { get { return _Sep; } set{_Sep=value; } }
+		private float _month9;
+		public float month9 { get { return _month9; } set{_month9=value; } }
 
 		[SerializeField]
-		private float _Oct;
-		public float Oct { get { return _Oct; } set{_Oct=value; } }
+		private float _month10;
+		public float month10 { get { return _month10; } set{_month10=value; } }
 
 		[SerializeField]
-		private float _Nov;
-		public float Nov { get { return _Nov; } set{_Nov=value; } }
+		private float _month11;
+		public float month11 { get { return _month11; } set{_month11=value; } }
 
 		[SerializeField]
-		private float _Dec;
-		public float Dec { get { return _Dec; } set{_Dec=value; } }
+		private float _month12;
+		public float month12 { get { return _month12; } set{_month12=value; } }
 
 
 		public ItemPriceRateTable_Server()
@@ -84,18 +84,18 @@ namespace SheetData
 		{
 			TryParse(sheet[row][column++], out _UID);
 			TryParse(sheet[row][column++], out _Year);
-			TryParse(sheet[row][column++], out _Jan);
-			TryParse(sheet[row][column++], out _Feb);
-			TryParse(sheet[row][column++], out _Mar);
-			TryParse(sheet[row][column++], out _Apr);
-			TryParse(sheet[row][column++], out _May);
-			TryParse(sheet[row][column++], out _Jun);
-			TryParse(sheet[row][column++], out _Jul);
-			TryParse(sheet[row][column++], out _Aug);
-			TryParse(sheet[row][column++], out _Sep);
-			TryParse(sheet[row][column++], out _Oct);
-			TryParse(sheet[row][column++], out _Nov);
-			TryParse(sheet[row][column++], out _Dec);
+			TryParse(sheet[row][column++], out _month1);
+			TryParse(sheet[row][column++], out _month2);
+			TryParse(sheet[row][column++], out _month3);
+			TryParse(sheet[row][column++], out _month4);
+			TryParse(sheet[row][column++], out _month5);
+			TryParse(sheet[row][column++], out _month6);
+			TryParse(sheet[row][column++], out _month7);
+			TryParse(sheet[row][column++], out _month8);
+			TryParse(sheet[row][column++], out _month9);
+			TryParse(sheet[row][column++], out _month10);
+			TryParse(sheet[row][column++], out _month11);
+			TryParse(sheet[row][column++], out _month12);
 		}
 #endif
 		public override void OnAfterSerialized()

@@ -15,7 +15,7 @@ using EasyExcel;
 namespace SheetData
 {
 	[Serializable]
-	public class BaseInterestRateTable_Client : EERowData
+	public class InterestRateBaseTable_Client : EERowData
 	{
 		[EEKeyField]
 		[SerializeField]
@@ -75,12 +75,12 @@ namespace SheetData
 		public float month12 { get { return _month12; } set{_month12=value; } }
 
 
-		public BaseInterestRateTable_Client()
+		public InterestRateBaseTable_Client()
 		{
 		}
 
 #if UNITY_EDITOR
-		public BaseInterestRateTable_Client(List<List<string>> sheet, int row, int column)
+		public InterestRateBaseTable_Client(List<List<string>> sheet, int row, int column)
 		{
 			TryParse(sheet[row][column++], out _UID);
 			TryParse(sheet[row][column++], out _Year);
@@ -103,14 +103,14 @@ namespace SheetData
 		}
 	}
 
-	public class BaseInterestRateTable_BaseInterestRateTable_Client : EERowDataCollection
+	public class InterestRateBaseTable_InterestRateBaseTable_Client : EERowDataCollection
 	{
 		
-		public List<BaseInterestRateTable_Client> elements = new List<BaseInterestRateTable_Client>();
+		public List<InterestRateBaseTable_Client> elements = new List<InterestRateBaseTable_Client>();
 
 		public override void AddData(EERowData data)
 		{
-			elements.Add(data as BaseInterestRateTable_Client);
+			elements.Add(data as InterestRateBaseTable_Client);
 		}
 
 		public override int GetDataCount()
@@ -119,7 +119,7 @@ namespace SheetData
 		}
 
 	
-public List<BaseInterestRateTable_Client> OnGetAllData()
+public List<InterestRateBaseTable_Client> OnGetAllData()
 		{		
 return elements;
 		}		public override EERowData GetData(int index)

@@ -11,7 +11,10 @@ public class DataManager : MonoBehaviour
     static public DataManager Instance = null;
 
     List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
-    public List<InvenItemInfo> invenItemInfoList { get { return mInvenItemInfoList; } }
+    public List<InvenItemInfo> invenItemInfoList { 
+        get { return mInvenItemInfoList; }
+        set { mInvenItemInfoList = value; } 
+    }
 
     Dictionary<CityType, List<ItemDataTable_Client>> mCityItemSellList = new Dictionary<CityType, List<ItemDataTable_Client>>();
 
@@ -19,9 +22,6 @@ public class DataManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-
-        AddInventory(200000000001, 20, 100);
-        AddInventory(200000000002, 9, 2000);
 
         foreach (var data in Mng.table.itemDataTableList)
         {

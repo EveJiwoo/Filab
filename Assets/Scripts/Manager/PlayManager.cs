@@ -7,6 +7,7 @@ using System.Text;
 using EnumDef;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using ClassDef;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -68,6 +69,8 @@ public class PlayManager : MonoBehaviour
         TimeUpdate(mCurDateTime);
 
         isTimer = true;
+        
+        Mng.data.invenItemInfoList = ES3.Load("Inventory", Application.dataPath + "/Inventory.dat", new List<InvenItemInfo>());
     }
 
     void Start()
@@ -111,11 +114,20 @@ public class PlayManager : MonoBehaviour
     {
         //현재까지의 시간 저장
         PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, mCurDateTime.ToString());
+        
+        ES3.Save("Inventory", Mng.data.invenItemInfoList, Application.dataPath + "/Inventory.dat");
     }
 
     [Button("날짜 초기화")]
-    void ResetDateTeim()
+    void ResetDateTime()
     {
         PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
+    }
+
+    [Button("데이터 초기화")]
+    void ResetInventory()
+    {
+        PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
+        ES3.DeleteFile(Application.dataPath + "/Inventory.dat");
     }
 }

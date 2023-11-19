@@ -10,13 +10,13 @@ public class DataManager : MonoBehaviour
 {
     static public DataManager Instance = null;
 
-    List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
-    public List<InvenItemInfo> invenItemInfoList { 
+    List<ItemInfo> mInvenItemInfoList = new List<ItemInfo>();
+    public List<ItemInfo> invenItemInfoList { 
         get { return mInvenItemInfoList; }
         set { mInvenItemInfoList = value; } 
     }
 
-    Dictionary<CityType, List<ItemDataTable_Client>> mCityItemSellList = new Dictionary<CityType, List<ItemDataTable_Client>>();
+    Dictionary<CityType, ShopInfo> mCityShopList = new Dictionary<CityType, ShopInfo>();
 
     // Start is called before the first frame update
     void Awake()
@@ -25,40 +25,44 @@ public class DataManager : MonoBehaviour
 
         foreach (var data in Mng.table.itemDataTableList)
         {
-            if( data.City1Sell == true) AddCityItemSellList(CityType.City1, data);
-            if (data.City2Sell == true) AddCityItemSellList(CityType.City2, data);
-            if (data.City3Sell == true) AddCityItemSellList(CityType.City3, data);
-            if (data.City4Sell == true) AddCityItemSellList(CityType.City4, data);
-            if (data.City5Sell == true) AddCityItemSellList(CityType.City5, data);
-            if (data.City6Sell == true) AddCityItemSellList(CityType.City6, data);
-            if (data.City7Sell == true) AddCityItemSellList(CityType.City7, data);
-            if (data.City8Sell == true) AddCityItemSellList(CityType.City8, data);
-            if (data.City9Sell == true) AddCityItemSellList(CityType.City9, data);
-            if (data.City10Sell == true) AddCityItemSellList(CityType.City10, data);
-            if (data.City11Sell == true) AddCityItemSellList(CityType.City11, data);
-            if (data.City12Sell == true) AddCityItemSellList(CityType.City12, data);
-            if (data.City13Sell == true) AddCityItemSellList(CityType.City13, data);
-            if (data.City14Sell == true) AddCityItemSellList(CityType.City14, data);
-            if (data.City15Sell == true) AddCityItemSellList(CityType.City15, data);
-            if (data.City16Sell == true) AddCityItemSellList(CityType.City16, data);
-            if (data.City17Sell == true) AddCityItemSellList(CityType.City17, data);
-            if (data.City18Sell == true) AddCityItemSellList(CityType.City18, data);
-            if (data.City19Sell == true) AddCityItemSellList(CityType.City19, data);
-            if (data.City20Sell == true) AddCityItemSellList(CityType.City20, data);
+            if( data.City1Sell == true) SetCityItemSellList(CityType.City1, data);
+            if (data.City2Sell == true) SetCityItemSellList(CityType.City2, data);
+            if (data.City3Sell == true) SetCityItemSellList(CityType.City3, data);
+            if (data.City4Sell == true) SetCityItemSellList(CityType.City4, data);
+            if (data.City5Sell == true) SetCityItemSellList(CityType.City5, data);
+            if (data.City6Sell == true) SetCityItemSellList(CityType.City6, data);
+            if (data.City7Sell == true) SetCityItemSellList(CityType.City7, data);
+            if (data.City8Sell == true) SetCityItemSellList(CityType.City8, data);
+            if (data.City9Sell == true) SetCityItemSellList(CityType.City9, data);
+            if (data.City10Sell == true) SetCityItemSellList(CityType.City10, data);
+            if (data.City11Sell == true) SetCityItemSellList(CityType.City11, data);
+            if (data.City12Sell == true) SetCityItemSellList(CityType.City12, data);
+            if (data.City13Sell == true) SetCityItemSellList(CityType.City13, data);
+            if (data.City14Sell == true) SetCityItemSellList(CityType.City14, data);
+            if (data.City15Sell == true) SetCityItemSellList(CityType.City15, data);
+            if (data.City16Sell == true) SetCityItemSellList(CityType.City16, data);
+            if (data.City17Sell == true) SetCityItemSellList(CityType.City17, data);
+            if (data.City18Sell == true) SetCityItemSellList(CityType.City18, data);
+            if (data.City19Sell == true) SetCityItemSellList(CityType.City19, data);
+            if (data.City20Sell == true) SetCityItemSellList(CityType.City20, data);
         }
     }
 
-    void AddCityItemSellList(CityType _city, ItemDataTable_Client _data)
+    void SetCityItemSellList(CityType _city, ItemDataTable_Client _data)
     {
-        if (mCityItemSellList.ContainsKey(_city) == false)
-            mCityItemSellList[_city] = new List<ItemDataTable_Client>();
+        if (mCityShopList.ContainsKey(_city) == false)
+            mCityShopList[_city] = new ShopInfo();
 
-        mCityItemSellList[_city].Add(_data);
+        ItemInfo info = new ItemInfo();
+        info.table = _data;
+        info.Set(99);
+
+        mCityShopList[_city].sellList.Add(info);
     }
 
-    public List<ItemDataTable_Client> GetSellItemList(CityType _type)
+    public ShopInfo GetSellItemList(CityType _type)
     {
-        return mCityItemSellList[_type];
+        return mCityShopList[_type];
     }
 
     public void AddInventory(long _uid, int _count, float _price)
@@ -66,14 +70,14 @@ public class DataManager : MonoBehaviour
         var item = mInvenItemInfoList.Find(_p => _p.uid == _uid);
         
         if( item == null){
-            InvenItemInfo newItem = new InvenItemInfo();
+            ItemInfo newItem = new ItemInfo();
             newItem.uid = _uid;
             mInvenItemInfoList.Add(newItem);
 
             item = newItem;
         }
 
-        item.AddCount(_count, _price);
+        item.Add(_count, _price);
     }
 
     public void RemoveInventory(long _uid, int _count, float _price)
@@ -85,7 +89,7 @@ public class DataManager : MonoBehaviour
             return;
         }
 
-        item.RemoveCount(_count);
+        item.Remove(_count);
     }
 
     public int GetShopRealSellPrice(ItemDataTable_Client _data)

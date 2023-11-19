@@ -1,3 +1,4 @@
+using ClassDef;
 using EnumDef;
 using SheetData;
 using System.Collections;
@@ -11,7 +12,7 @@ public class UITradeShopPopup : UIBase
     public GameObject kItemListGo;
 
     UIItemIcon[] mItemIconList;
-    List<ItemDataTable_Client> mItemDataList;
+    ShopInfo mItemDataList;
     [Header("아이템 리스트 스크롤")]
     public ScrollRect kScrollRect;
     [Header("선택된 아이템 이미지")]
@@ -51,10 +52,10 @@ public class UITradeShopPopup : UIBase
         mItemDataList = Mng.data.GetSellItemList(_type);
         
         int fillCount = 0;
-        foreach(var tableData in mItemDataList){
+        foreach(var item in mItemDataList.sellList){
             mItemIconList[fillCount].gameObject.SetActive(true);
-            mItemIconList[fillCount].SetSprite(Mng.canvas.GetSprite(tableData.AtlasName, tableData.SpriteName));
-            mItemIconList[fillCount].SetPrice(Mng.data.GetShopRealSellPrice(tableData));
+            mItemIconList[fillCount].SetSprite(Mng.canvas.GetSprite(item.table.AtlasName, item.table.SpriteName));
+            mItemIconList[fillCount].SetPrice(Mng.data.GetShopRealSellPrice(item.table));
             fillCount++;
         }        
 
@@ -66,9 +67,9 @@ public class UITradeShopPopup : UIBase
 
     void OnItemIconClick(int _index)
     {
-        var data = mItemDataList[_index];
-        kSelectItemImage.sprite = Mng.canvas.GetSprite(data.AtlasName, data.SpriteName);
-        kSelectItemName.text = data.Name;
-        kSelectItemPrice.text = Mng.data.GetShopRealSellPrice(data).ToString();
+        var item = mItemDataList.sellList[_index];
+        kSelectItemImage.sprite = Mng.canvas.GetSprite(item.table.AtlasName, item.table.SpriteName);
+        kSelectItemName.text = item.table.Name;
+        kSelectItemPrice.text = Mng.data.GetShopRealSellPrice(item.table).ToString();
     }
 }

@@ -70,7 +70,7 @@ public class PlayManager : MonoBehaviour
 
         isTimer = true;
         
-        Mng.data.invenItemInfoList = ES3.Load("Inventory", Application.dataPath + "/Inventory.dat", new List<InvenItemInfo>());
+        Mng.data.invenItemInfoList = ES3.Load("Inventory", Application.dataPath + "/Inventory.dat", new List<ItemInfo>());
     }
 
     void Start()

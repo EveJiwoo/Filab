@@ -55,9 +55,10 @@ public class DataManager : MonoBehaviour
 
         ItemInfo info = new ItemInfo();
         info.table = _data;
-        info.Set(99);
+        info.uid = _data.UID;
+        //info.Set(99);
 
-        mCityShopList[_city].sellList.Add(info);
+        //mCityShopList[_city].sellList.Add(info);
     }
 
     public ShopInfo GetSellItemList(CityType _type)
@@ -98,7 +99,7 @@ public class DataManager : MonoBehaviour
         int month = Mng.play.curDateTime.Month;
         float rate = Mng.table.GetItemPriceRate(year, month);
 
-        return (int)((float)_data.OrignalSellPrice * (1f + rate * 0.01f));
+        return (int)((float)_data.OrignalSellPrice * rate);
     }
 
     /// <summary> 이번달 대출 금리 </summary>
@@ -111,5 +112,12 @@ public class DataManager : MonoBehaviour
     public float GetDepositRate(DateTime _dt)
     {
         return Mng.table.GetBaseInterestRate(_dt) + Mng.table.GetDepositInterestRate(_dt);
+    }
+
+    public void PriceUpdate(DateTime _today)
+    {
+        //상점가 변동액 반영
+
+        //물가 변동율 반영
     }
 }

@@ -26,7 +26,7 @@ public class UIItemIcon : MonoBehaviour
         kCountText.text = "";
     }
 
-    public void SetPrice(int _price)
+    public void SetPrice(long _price)
     {
         kPriceText.text = _price.ToString() + " G";
     }

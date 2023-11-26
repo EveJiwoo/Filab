@@ -70,7 +70,7 @@ public class PlayManager : MonoBehaviour
 
         isTimer = true;
         
-        Mng.data.invenItemInfoList = ES3.Load("Inventory", Application.dataPath + "/Inventory.dat", new List<ItemInfo>());
+        Mng.data.invenItemInfoList = ES3.Load("MyInventory", Application.dataPath + "/MyInventory.dat", new List<InvenItemInfo>());
     }
 
     void Start()
@@ -115,7 +115,7 @@ public class PlayManager : MonoBehaviour
         //현재까지의 시간 저장
         PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, mCurDateTime.ToString());
         
-        ES3.Save("Inventory", Mng.data.invenItemInfoList, Application.dataPath + "/Inventory.dat");
+        ES3.Save("MyInventory", Mng.data.invenItemInfoList, Application.dataPath + "/MyInventory.dat");
     }
 
     [Button("날짜 초기화")]
@@ -128,6 +128,6 @@ public class PlayManager : MonoBehaviour
     void ResetInventory()
     {
         PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
-        ES3.DeleteFile(Application.dataPath + "/Inventory.dat");
+        ES3.DeleteFile(Application.dataPath + "/MyInventory.dat");
     }
 }

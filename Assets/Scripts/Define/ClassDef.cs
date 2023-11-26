@@ -16,19 +16,21 @@ namespace ClassDef
     {
         public long uid;
         public int count;
-        
-        public long shopSellPrice { get { return table.OrignalSellPrice; } }
-        public long shopBuyPrice { get { return table.OrignalBuyPrice; } }
+
+        /// <summary> 물가 반영율 </summary>
+        public float marketRate;
+        /// <summary> 상점에 존재하면 할인, 존재하지 않으면 프리미엄 반영율 </summary>
+        public float shopRate;
+
+        /// <summary> 상점 판매가 </summary>
+        public long sellPrice { get { return (long)(table.Price * marketRate); } }
+        /// <summary> 상점 구매가 </summary>
+        public long buyPrice { get { return (long)((table.Price * marketRate) * shopRate); } }
 
         public ItemDataTable_Client table;
-
-        public void Set(int _count)
-        {
-            count = _count;
-        }
     }
 
-    public class ItemInfo
+    public class InvenItemInfo
     {
         public long uid;
         public int count;
@@ -36,7 +38,7 @@ namespace ClassDef
         
         public ItemDataTable_Client table;
 
-        public void Add(int _count, float _price)
+        public void Add(int _count, long _price)
         {
             double totalPrice = ((double)count * (double)price) + ((double)_count * (double)_price);
 

@@ -27,12 +27,32 @@ namespace SheetData
 		public string Name { get { return _Name; } set{_Name=value; } }
 
 		[SerializeField]
-		private int _OrignalBuyPrice;
-		public int OrignalBuyPrice { get { return _OrignalBuyPrice; } set{_OrignalBuyPrice=value; } }
+		private int _Price;
+		public int Price { get { return _Price; } set{_Price=value; } }
 
 		[SerializeField]
-		private int _OrignalSellPrice;
-		public int OrignalSellPrice { get { return _OrignalSellPrice; } set{_OrignalSellPrice=value; } }
+		private float _MinDiscountRate;
+		public float MinDiscountRate { get { return _MinDiscountRate; } set{_MinDiscountRate=value; } }
+
+		[SerializeField]
+		private float _MaxDiscountRate;
+		public float MaxDiscountRate { get { return _MaxDiscountRate; } set{_MaxDiscountRate=value; } }
+
+		[SerializeField]
+		private float _MinPremiumRate;
+		public float MinPremiumRate { get { return _MinPremiumRate; } set{_MinPremiumRate=value; } }
+
+		[SerializeField]
+		private float _MaxPremiumRate;
+		public float MaxPremiumRate { get { return _MaxPremiumRate; } set{_MaxPremiumRate=value; } }
+
+		[SerializeField]
+		private int _MinProduction;
+		public int MinProduction { get { return _MinProduction; } set{_MinProduction=value; } }
+
+		[SerializeField]
+		private int _MaxProduction;
+		public int MaxProduction { get { return _MaxProduction; } set{_MaxProduction=value; } }
 
 		[SerializeField]
 		private bool _City1Sell;
@@ -136,8 +156,13 @@ namespace SheetData
 		{
 			TryParse(sheet[row][column++], out _UID);
 			TryParse(sheet[row][column++], out _Name);
-			TryParse(sheet[row][column++], out _OrignalBuyPrice);
-			TryParse(sheet[row][column++], out _OrignalSellPrice);
+			TryParse(sheet[row][column++], out _Price);
+			TryParse(sheet[row][column++], out _MinDiscountRate);
+			TryParse(sheet[row][column++], out _MaxDiscountRate);
+			TryParse(sheet[row][column++], out _MinPremiumRate);
+			TryParse(sheet[row][column++], out _MaxPremiumRate);
+			TryParse(sheet[row][column++], out _MinProduction);
+			TryParse(sheet[row][column++], out _MaxProduction);
 			TryParse(sheet[row][column++], out _City1Sell);
 			TryParse(sheet[row][column++], out _City2Sell);
 			TryParse(sheet[row][column++], out _City3Sell);

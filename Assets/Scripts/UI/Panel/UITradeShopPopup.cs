@@ -55,7 +55,7 @@ public class UITradeShopPopup : UIBase
         foreach(var item in mItemDataList.sellList){
             mItemIconList[fillCount].gameObject.SetActive(true);
             mItemIconList[fillCount].SetSprite(Mng.canvas.GetSprite(item.table.AtlasName, item.table.SpriteName));
-            mItemIconList[fillCount].SetPrice(Mng.data.GetShopRealSellPrice(item.table));
+            mItemIconList[fillCount].SetPrice(item.sellPrice);
             fillCount++;
         }        
 
@@ -70,6 +70,6 @@ public class UITradeShopPopup : UIBase
         var item = mItemDataList.sellList[_index];
         kSelectItemImage.sprite = Mng.canvas.GetSprite(item.table.AtlasName, item.table.SpriteName);
         kSelectItemName.text = item.table.Name;
-        kSelectItemPrice.text = Mng.data.GetShopRealSellPrice(item.table).ToString();
+        kSelectItemPrice.text = item.sellPrice.ToString();
     }
 }

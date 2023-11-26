@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class PortalTransition : MonoBehaviour
 {
     [Header("Æ÷Å» Á¤º¸")]
     public PortalScripTable kPortal;
-
+    public string kPortalMap;
+    public string kPortalPath;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
+        kPortalMap = kPortal.loadMap.gameObject.name;
+        kPortalPath = kPortal.portalName;
+#endif
 
     }
 

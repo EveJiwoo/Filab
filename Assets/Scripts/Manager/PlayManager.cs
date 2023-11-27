@@ -17,22 +17,10 @@ public class PlayManager : MonoBehaviour
 {
     static public PlayManager Instance = null;
 
-    [Header("최초의 게임 시작 시간 : 년도")]
-    public int kStartYear;
-    [Header("최초의 게임 시작 시간 : 월")]
-    public int kStartMonth;
-    [Header("최초의 게임 시작 시간 : 일")]
-    public int kStartDay;
-    [Header("최초의 게임 시작 시간 : 시")]
-    public int kStartHour;
-    [Header("최초의 게임 시작 시간 : 분")]
-    public int kStartMin;
+    
 
     [Header("게임 시간 가속값")]
-    public float kTimeSpeed = 5000f;
-
-    DateTime mCurDateTime;
-    public DateTime curDateTime {  get { return mCurDateTime; } }
+    public float kTimeSpeed = 5000f;    
 
     int mCurYear = 0;
     int mCurMonth = 0;
@@ -56,21 +44,12 @@ public class PlayManager : MonoBehaviour
         //최초 맵 로드
         LoadMap(map, map.kResetPosition.position);
         Mng.play.player.isPortalTransit = false;
-        Mng.sound.PlayBgm(map.kPlayBGM);
-
-        //저장된 시간 복구
-        var time = PlayerPrefs.GetString(ConstDef.GAME_DATE_TIME);
-        if (time == "")
-            mCurDateTime = new DateTime(kStartYear, kStartMonth, kStartDay, kStartHour, kStartMin, 0);
-        else
-            mCurDateTime = DateTime.Parse(time);
+        Mng.sound.PlayBgm(map.kPlayBGM);       
 
         //시간 갱신
-        TimeUpdate(mCurDateTime);
+        TimeUpdate(Mng.data.curDateTime);
 
-        isTimer = true;
-        
-        Mng.data.invenItemInfoList = ES3.Load("MyInventory", Application.dataPath + "/MyInventory.dat", new List<InvenItemInfo>());
+        isTimer = true;        
     }
 
     void Start()
@@ -94,8 +73,8 @@ public class PlayManager : MonoBehaviour
     private void Update()
     {
         if( isTimer == true ){
-            mCurDateTime = mCurDateTime.AddSeconds(Time.deltaTime * kTimeSpeed);
-            TimeUpdate(mCurDateTime);
+            Mng.data.curDateTime = Mng.data.curDateTime.AddSeconds(Time.deltaTime * kTimeSpeed);
+            TimeUpdate(Mng.data.curDateTime);
         }
     }
 
@@ -103,20 +82,12 @@ public class PlayManager : MonoBehaviour
     {
         Mng.canvas.kTownMenu.SetDateTime(_time);
 
-        if( mCurMonth != mCurDateTime.Month){
-            mCurMonth = mCurDateTime.Month;
+        if( mCurMonth != Mng.data.curDateTime.Month){
+            mCurMonth = Mng.data.curDateTime.Month;
             float rate = Mng.table.GetBaseInterestRate(_time);
             Mng.canvas.kTownMenu.TempRate(rate);
         }
-    }
-
-    private void OnApplicationQuit()
-    {
-        //현재까지의 시간 저장
-        PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, mCurDateTime.ToString());
-        
-        ES3.Save("MyInventory", Mng.data.invenItemInfoList, Application.dataPath + "/MyInventory.dat");
-    }
+    }    
 
     [Button("날짜 초기화")]
     void ResetDateTime()

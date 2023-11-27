@@ -30,14 +30,17 @@ public class EventReact : MonoBehaviour
 
         switch(kType)
         {
-            case EventReactType.CityBankDepositPopup:
+            case EventReactType.BankDepositPopup:
                 Mng.canvas.kCityBankPopup.gameObject.SetActive(true);
                 break;
-            case EventReactType.CityBankCDAccountPopup:
+            case EventReactType.BankCDAccountPopup:
                 Mng.canvas.kCityBankCDAccountPopup.gameObject.SetActive(true);
                 break;
-            case EventReactType.CityBankLoanPopup:
+            case EventReactType.BankLoanPopup:
                 Mng.canvas.kCityBankLoanPopup.gameObject.SetActive(true);
+                break;
+            case EventReactType.ShopPopup:
+                Mng.canvas.kTradeShopPopup.gameObject.SetActive(true);
                 break;
         }
     }

@@ -15,12 +15,21 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     static public DataManager Instance = null;
+    
+    [Header("최초의 게임 시작 시간 : 년도")]
+    public int kStartYear;
+    [Header("최초의 게임 시작 시간 : 월")]
+    public int kStartMonth;
+    [Header("최초의 게임 시작 시간 : 일")]
+    public int kStartDay;
+    [Header("최초의 게임 시작 시간 : 시")]
+    public int kStartHour;
+    [Header("최초의 게임 시작 시간 : 분")]
+    public int kStartMin;
 
-    List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
-    public List<InvenItemInfo> invenItemInfoList {
-        get { return mInvenItemInfoList; }
-        set { mInvenItemInfoList = value; }
-    }
+    public DateTime curDateTime { get; set; }
+
+    public MyInfo myInfo { get; set; }
 
     Dictionary<CityType, ShopInfo> mCityShopList = new Dictionary<CityType, ShopInfo>();
 
@@ -28,6 +37,21 @@ public class DataManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        
+        myInfo = ES3.Load("MyInfo", Application.dataPath + "/MyInfo.dat", new MyInfo());
+
+        TimeUpdate();
+        CityShopUpdate();
+    }
+
+    public void TimeUpdate()
+    {
+        //저장된 시간 복구
+        var time = PlayerPrefs.GetString(ConstDef.GAME_DATE_TIME);
+        if (time == "")
+            curDateTime = new DateTime(kStartYear, kStartMonth, kStartDay, kStartHour, kStartMin, 0);
+        else
+            curDateTime = DateTime.Parse(time);
     }
 
     public void CityShopUpdate()
@@ -67,7 +91,7 @@ public class DataManager : MonoBehaviour
         info.uid = _data.UID;        
         mCityShopList[_city].sellList.Add(info);
 
-        ShopPriceAndCountUpdate(_city, info, Mng.play.curDateTime);        
+        ShopPriceAndCountUpdate(_city, info, curDateTime);
     }
 
     float GetShopRate(CityType _city, ItemDataTable_Client _data)
@@ -117,12 +141,12 @@ public class DataManager : MonoBehaviour
 
     public void AddInventory(long _uid, int _count, long _price)
     {
-        var item = mInvenItemInfoList.Find(_p => _p.uid == _uid);
+        var item = myInfo.invenItemInfoList.Find(_p => _p.uid == _uid);
 
         if (item == null) {
             InvenItemInfo newItem = new InvenItemInfo();
             newItem.uid = _uid;
-            mInvenItemInfoList.Add(newItem);
+            myInfo.invenItemInfoList.Add(newItem);
 
             item = newItem;
         }
@@ -132,7 +156,7 @@ public class DataManager : MonoBehaviour
 
     public void RemoveInventory(long _uid, int _count, float _price)
     {
-        var item = mInvenItemInfoList.Find(_p => _p.uid == _uid);
+        var item = myInfo.invenItemInfoList.Find(_p => _p.uid == _uid);
 
         if (item == null) {
             Debug.LogError($"인벤토리에는 {_uid} UID 아이템이 존재하지 않습니다.");
@@ -161,7 +185,7 @@ public class DataManager : MonoBehaviour
         {
             foreach (var item in shop.Value.sellList)
             {
-                ShopPriceAndCountUpdate(shop.Key, item, Mng.play.curDateTime);
+                ShopPriceAndCountUpdate(shop.Key, item, curDateTime);
             }
         }
     }
@@ -178,5 +202,13 @@ public class DataManager : MonoBehaviour
             _item.count = UnityEngine.Random.Range(_item.table.MinProduction, _item.table.MaxProduction + 1);
         else
             _item.count = 0;
+    }
+
+    private void OnApplicationQuit()
+    {
+        //현재까지의 시간 저장
+        PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, curDateTime.ToString());
+
+        ES3.Save("MyInfo", Mng.data.myInfo, Application.dataPath + "/MyInfo.dat");
     }
 }

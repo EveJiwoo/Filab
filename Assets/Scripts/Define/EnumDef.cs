@@ -21,9 +21,10 @@ namespace EnumDef
     public enum EventReactType
     {
         None,
-        CityBankDepositPopup,
-        CityBankCDAccountPopup,
-        CityBankLoanPopup,
+        BankDepositPopup,
+        BankCDAccountPopup,
+        BankLoanPopup,
+        ShopPopup,
     }
 
     public enum CityType

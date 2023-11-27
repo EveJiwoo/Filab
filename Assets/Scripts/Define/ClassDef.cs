@@ -51,4 +51,16 @@ namespace ClassDef
             count -= _count;
         }
     }
+
+    public class MyInfo
+    {
+        public long gold { get; set; }
+
+        List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
+        public List<InvenItemInfo> invenItemInfoList
+        {
+            get { return mInvenItemInfoList; }
+            set { mInvenItemInfoList = value; }
+        }
+    }
 }

@@ -25,11 +25,11 @@ public class UIInventory : UIBase
     {
         for (int i = 0; i < ConstDef.MAX_ITEM_TYPE_COUNT; i++)
         {
-            if( i < Mng.data.invenItemInfoList.Count)
+            if( i < Mng.data.myInfo.invenItemInfoList.Count)
             {
                 mItemIconList[i].gameObject.SetActive(true);
 
-                var itemInfo = Mng.data.invenItemInfoList[i];
+                var itemInfo = Mng.data.myInfo.invenItemInfoList[i];
 
                 var table = Mng.table.FindItemDataTable_Client(itemInfo.uid);
                 mItemIconList[i].SetSprite(Mng.canvas.GetSprite(table.AtlasName, table.SpriteName));

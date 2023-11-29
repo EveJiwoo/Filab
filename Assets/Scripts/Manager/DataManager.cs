@@ -39,6 +39,8 @@ public class DataManager : MonoBehaviour
         Instance = this;
         
         myInfo = ES3.Load("MyInfo", Application.dataPath + "/MyInfo.dat", new MyInfo());
+        
+        myInfo.gold = 99999999;
 
         TimeUpdate();
         CityShopUpdate();
@@ -139,32 +141,7 @@ public class DataManager : MonoBehaviour
         return mCityShopList[_type];
     }
 
-    public void AddInventory(long _uid, int _count, long _price)
-    {
-        var item = myInfo.invenItemInfoList.Find(_p => _p.uid == _uid);
-
-        if (item == null) {
-            InvenItemInfo newItem = new InvenItemInfo();
-            newItem.uid = _uid;
-            myInfo.invenItemInfoList.Add(newItem);
-
-            item = newItem;
-        }
-
-        item.Add(_count, _price);
-    }
-
-    public void RemoveInventory(long _uid, int _count, float _price)
-    {
-        var item = myInfo.invenItemInfoList.Find(_p => _p.uid == _uid);
-
-        if (item == null) {
-            Debug.LogError($"인벤토리에는 {_uid} UID 아이템이 존재하지 않습니다.");
-            return;
-        }
-
-        item.Remove(_count);
-    }
+    
 
     /// <summary> 이번달 대출 금리 </summary>
     public float GetLoanRate(DateTime _dt)

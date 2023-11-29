@@ -3,6 +3,7 @@ using EnumDef;
 using SheetData;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace ClassDef
 {
@@ -22,10 +23,10 @@ namespace ClassDef
         /// <summary> 상점에 존재하면 할인, 존재하지 않으면 프리미엄 반영율 </summary>
         public float shopRate;
 
-        /// <summary> 상점 판매가 </summary>
-        public long sellPrice { get { return (long)(table.Price * marketRate); } }
-        /// <summary> 상점 구매가 </summary>
-        public long buyPrice { get { return (long)((table.Price * marketRate) * shopRate); } }
+        /// <summary> 상점 판매가 (유저 구입가) </summary>
+        public long userBuyPrice { get { return (long)(table.Price * marketRate); } }
+        /// <summary> 상점 구매가 (유저 판매가) </summary>
+        public long userSellPrice { get { return (long)((table.Price * marketRate) * shopRate); } }
 
         public ItemDataTable_Client table;
     }
@@ -57,10 +58,44 @@ namespace ClassDef
         public long gold { get; set; }
 
         List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
+
         public List<InvenItemInfo> invenItemInfoList
         {
             get { return mInvenItemInfoList; }
             set { mInvenItemInfoList = value; }
+        }
+
+        public void AddInventory(ItemDataTable_Client _table, int _count, long _price)
+        {
+            var item = mInvenItemInfoList.Find(_p => _p.uid == _table.UID);
+
+            if (item == null)
+            {
+                InvenItemInfo newItem = new InvenItemInfo();
+                newItem.uid = _table.UID;
+                newItem.table = _table;
+                mInvenItemInfoList.Add(newItem);
+
+                item = newItem;
+            }
+
+            item.Add(_count, _price);
+        }
+
+        public void RemoveInventory(ItemDataTable_Client _table, int _count, float _price)
+        {
+            var item = mInvenItemInfoList.Find(_p => _p.uid == _table.UID);
+
+            if (item == null)
+            {
+                Debug.LogError($"인벤토리에는 {_table.UID} UID 아이템이 존재하지 않습니다.");
+                return;
+            }
+
+            item.Remove(_count);
+
+            if (item.count == 0)
+                mInvenItemInfoList.Remove(item);
         }
     }
 }

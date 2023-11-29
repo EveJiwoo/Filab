@@ -21,7 +21,6 @@ public class MainCanvas : MonoBehaviour
     [HideInInspector]
     public UITradeShopPopup kTradeShopPopup;
 
-
     Dictionary<string, SpriteAtlas> mSpriteAtlasList = new Dictionary<string, SpriteAtlas>();
 
     private void Awake()

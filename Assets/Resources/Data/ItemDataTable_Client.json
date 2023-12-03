@@ -29,8 +29,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6324",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1703_a",
     "Description": ""
   },
   {
@@ -63,8 +63,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6325",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1722_a",
     "Description": ""
   },
   {
@@ -97,8 +97,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6326",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1724_a",
     "Description": ""
   },
   {
@@ -131,8 +131,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6327",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1727_a",
     "Description": ""
   },
   {
@@ -165,8 +165,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6328",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1728_a",
     "Description": ""
   },
   {
@@ -199,8 +199,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6329",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1729_a",
     "Description": ""
   },
   {
@@ -233,8 +233,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6330",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1741_a",
     "Description": ""
   },
   {
@@ -267,8 +267,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6331",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1782_a",
     "Description": ""
   },
   {
@@ -301,8 +301,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6332",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1787_a",
     "Description": ""
   },
   {
@@ -335,8 +335,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6333",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1774_a",
     "Description": ""
   },
   {
@@ -369,8 +369,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6334",
+    "AtlasName": "PiratesItemAtlas",
+    "SpriteName": "1785_a",
     "Description": ""
   },
   {
@@ -403,8 +403,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6335",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "945",
     "Description": ""
   },
   {
@@ -437,8 +437,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6336",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "210",
     "Description": ""
   },
   {
@@ -471,8 +471,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6337",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "217",
     "Description": ""
   },
   {
@@ -505,8 +505,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6338",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "220",
     "Description": ""
   },
   {
@@ -539,8 +539,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6339",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "256",
     "Description": ""
   },
   {
@@ -573,8 +573,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6340",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "393",
     "Description": ""
   },
   {
@@ -607,8 +607,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6341",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "320",
     "Description": ""
   },
   {
@@ -641,8 +641,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6342",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "349",
     "Description": ""
   },
   {
@@ -675,8 +675,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6343",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "359",
     "Description": ""
   },
   {
@@ -709,8 +709,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6344",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "216",
     "Description": ""
   },
   {
@@ -743,8 +743,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6345",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "587",
     "Description": ""
   },
   {
@@ -777,8 +777,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6346",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "347",
     "Description": ""
   },
   {
@@ -811,8 +811,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6347",
+    "AtlasName": "BuildingAndCraftAtlas",
+    "SpriteName": "414",
     "Description": ""
   },
   {
@@ -846,7 +846,7 @@
     "City19Sell": true,
     "City20Sell": false,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6348",
+    "SpriteName": "6370",
     "Description": ""
   },
   {
@@ -880,7 +880,7 @@
     "City19Sell": false,
     "City20Sell": true,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6349",
+    "SpriteName": "6331",
     "Description": ""
   },
   {
@@ -914,7 +914,7 @@
     "City19Sell": true,
     "City20Sell": false,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6350",
+    "SpriteName": "6328",
     "Description": ""
   },
   {
@@ -948,7 +948,7 @@
     "City19Sell": false,
     "City20Sell": true,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6351",
+    "SpriteName": "6506",
     "Description": ""
   },
   {
@@ -982,7 +982,7 @@
     "City19Sell": true,
     "City20Sell": false,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6352",
+    "SpriteName": "6505",
     "Description": ""
   },
   {
@@ -1016,7 +1016,7 @@
     "City19Sell": false,
     "City20Sell": true,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6353",
+    "SpriteName": "6485",
     "Description": ""
   },
   {
@@ -1050,7 +1050,7 @@
     "City19Sell": true,
     "City20Sell": false,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6354",
+    "SpriteName": "6364",
     "Description": ""
   },
   {
@@ -1084,7 +1084,7 @@
     "City19Sell": false,
     "City20Sell": true,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6355",
+    "SpriteName": "6424",
     "Description": ""
   },
   {
@@ -1118,7 +1118,7 @@
     "City19Sell": true,
     "City20Sell": false,
     "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6356",
+    "SpriteName": "6469",
     "Description": ""
   },
   {
@@ -1151,8 +1151,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6357",
+    "AtlasName": "SteampunkLootAtlas",
+    "SpriteName": "9373",
     "Description": ""
   },
   {
@@ -1185,8 +1185,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6358",
+    "AtlasName": "SteampunkLootAtlas",
+    "SpriteName": "9356",
     "Description": ""
   },
   {
@@ -1219,8 +1219,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6359",
+    "AtlasName": "SteampunkLootAtlas",
+    "SpriteName": "9339",
     "Description": ""
   },
   {
@@ -1253,8 +1253,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6360",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7749",
     "Description": ""
   },
   {
@@ -1287,8 +1287,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6361",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7737",
     "Description": ""
   },
   {
@@ -1321,8 +1321,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6362",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7720",
     "Description": ""
   },
   {
@@ -1355,8 +1355,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6363",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7726",
     "Description": ""
   },
   {
@@ -1389,8 +1389,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6364",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7876",
     "Description": ""
   },
   {
@@ -1423,8 +1423,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6365",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7834",
     "Description": ""
   },
   {
@@ -1457,8 +1457,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6366",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7825",
     "Description": ""
   },
   {
@@ -1491,8 +1491,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6367",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7819",
     "Description": ""
   },
   {
@@ -1525,8 +1525,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6368",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7759",
     "Description": ""
   },
   {
@@ -1559,8 +1559,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6369",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7820",
     "Description": ""
   },
   {
@@ -1593,8 +1593,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6370",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7879",
     "Description": ""
   },
   {
@@ -1627,8 +1627,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6371",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7844",
     "Description": ""
   },
   {
@@ -1661,8 +1661,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6372",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7714",
     "Description": ""
   },
   {
@@ -1695,8 +1695,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6373",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7812",
     "Description": ""
   },
   {
@@ -1729,8 +1729,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6374",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7784",
     "Description": ""
   },
   {
@@ -1763,8 +1763,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6375",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7746",
     "Description": ""
   },
   {
@@ -1797,8 +1797,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6376",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7758",
     "Description": ""
   },
   {
@@ -1831,8 +1831,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6377",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7809",
     "Description": ""
   },
   {
@@ -1865,8 +1865,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6378",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7730",
     "Description": ""
   },
   {
@@ -1899,8 +1899,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6379",
+    "AtlasName": "FishingItemAtlas",
+    "SpriteName": "7748",
     "Description": ""
   },
   {
@@ -1933,8 +1933,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6380",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3363",
     "Description": ""
   },
   {
@@ -1967,8 +1967,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6381",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3491",
     "Description": ""
   },
   {
@@ -2001,8 +2001,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6382",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3417",
     "Description": ""
   },
   {
@@ -2035,8 +2035,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6383",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3353",
     "Description": ""
   },
   {
@@ -2069,8 +2069,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6384",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3542",
     "Description": ""
   },
   {
@@ -2103,8 +2103,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6385",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3859",
     "Description": ""
   },
   {
@@ -2137,8 +2137,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6386",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3399",
     "Description": ""
   },
   {
@@ -2171,8 +2171,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6387",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3481",
     "Description": ""
   },
   {
@@ -2205,8 +2205,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6388",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3563",
     "Description": ""
   },
   {
@@ -2239,8 +2239,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6389",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3604",
     "Description": ""
   },
   {
@@ -2273,8 +2273,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6390",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3449",
     "Description": ""
   },
   {
@@ -2307,8 +2307,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6391",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3693",
     "Description": ""
   },
   {
@@ -2341,8 +2341,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6392",
+    "AtlasName": "AlchemyHerbsAtlas",
+    "SpriteName": "3350",
     "Description": ""
   },
   {
@@ -2375,8 +2375,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6393",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "6120",
     "Description": ""
   },
   {
@@ -2409,8 +2409,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6394",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "6107",
     "Description": ""
   },
   {
@@ -2443,8 +2443,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6395",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "6092",
     "Description": ""
   },
   {
@@ -2477,8 +2477,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6396",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "6031",
     "Description": ""
   },
   {
@@ -2511,8 +2511,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6397",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "6027",
     "Description": ""
   },
   {
@@ -2545,8 +2545,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6398",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5954",
     "Description": ""
   },
   {
@@ -2579,8 +2579,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6399",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5952",
     "Description": ""
   },
   {
@@ -2613,8 +2613,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6400",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5980",
     "Description": ""
   },
   {
@@ -2647,8 +2647,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6401",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5975",
     "Description": ""
   },
   {
@@ -2681,8 +2681,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6402",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5977",
     "Description": ""
   },
   {
@@ -2715,8 +2715,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6403",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5974",
     "Description": ""
   },
   {
@@ -2749,8 +2749,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6404",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5900",
     "Description": ""
   },
   {
@@ -2783,8 +2783,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6405",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5986",
     "Description": ""
   },
   {
@@ -2817,8 +2817,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6406",
+    "AtlasName": "HuntingTrophyAtlas",
+    "SpriteName": "5987",
     "Description": ""
   },
   {
@@ -2851,8 +2851,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6407",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "710",
     "Description": ""
   },
   {
@@ -2885,8 +2885,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6408",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "713",
     "Description": ""
   },
   {
@@ -2919,8 +2919,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6409",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "812",
     "Description": ""
   },
   {
@@ -2953,8 +2953,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6410",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "716",
     "Description": ""
   },
   {
@@ -2987,8 +2987,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6411",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "932",
     "Description": ""
   },
   {
@@ -3021,8 +3021,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6412",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "714",
     "Description": ""
   },
   {
@@ -3055,8 +3055,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6413",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "966",
     "Description": ""
   },
   {
@@ -3089,8 +3089,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6414",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "995",
     "Description": ""
   },
   {
@@ -3123,8 +3123,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6415",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "886",
     "Description": ""
   },
   {
@@ -3157,8 +3157,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6416",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "756",
     "Description": ""
   },
   {
@@ -3191,8 +3191,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6417",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "993",
     "Description": ""
   },
   {
@@ -3225,8 +3225,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6418",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "902",
     "Description": ""
   },
   {
@@ -3259,8 +3259,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6419",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "905",
     "Description": ""
   },
   {
@@ -3293,8 +3293,8 @@
     "City18Sell": false,
     "City19Sell": true,
     "City20Sell": false,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6420",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "754",
     "Description": ""
   },
   {
@@ -3327,8 +3327,8 @@
     "City18Sell": true,
     "City19Sell": false,
     "City20Sell": true,
-    "AtlasName": "BlackSmithItemAtlas",
-    "SpriteName": "6421",
+    "AtlasName": "TrailoringItemAtlas",
+    "SpriteName": "701",
     "Description": ""
   },
   {

@@ -29,7 +29,12 @@ public class UIItemIcon : MonoBehaviour
         kPriceText.text = "";
         kCountText.text = "";
 
-        kPriceText.text = _price.ToString() + " G";
+        //가격이 없으면 감춤
+        if (_price == 0)
+            kPriceText.text = "";
+        else
+            kPriceText.text = _price.ToString() + " G";
+
         kCountText.text = _count.ToString();
     }
 

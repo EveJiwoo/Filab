@@ -10,7 +10,7 @@ namespace ClassDef
     public class ShopInfo  
     {
         public DateTime nextChangePriceDay;
-        public List<ShopItemInfo> sellList = new List<ShopItemInfo>();
+        public List<ShopItemInfo> userBuyList = new List<ShopItemInfo>();
     }
 
     public class ShopItemInfo
@@ -57,6 +57,8 @@ namespace ClassDef
     {
         public long gold { get; set; }
 
+        public CityType local = CityType.City1;
+
         List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
 
         public List<InvenItemInfo> invenItemInfoList
@@ -82,7 +84,7 @@ namespace ClassDef
             item.Add(_count, _price);
         }
 
-        public void RemoveInventory(ItemDataTable_Client _table, int _count, float _price)
+        public void RemoveInventory(ItemDataTable_Client _table, int _count)
         {
             var item = mInvenItemInfoList.Find(_p => _p.uid == _table.UID);
 

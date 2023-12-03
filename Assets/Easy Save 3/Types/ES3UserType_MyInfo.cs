@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("mInvenItemInfoList", "gold", "invenItemInfoList")]
+	[ES3PropertiesAttribute("local", "mInvenItemInfoList", "gold", "invenItemInfoList")]
 	public class ES3UserType_MyInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -16,6 +16,7 @@ namespace ES3Types
 		{
 			var instance = (ClassDef.MyInfo)obj;
 			
+			writer.WriteProperty("local", instance.local, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(EnumDef.CityType)));
 			writer.WritePrivateField("mInvenItemInfoList", instance);
 			writer.WriteProperty("gold", instance.gold, ES3Type_long.Instance);
 			writer.WriteProperty("invenItemInfoList", instance.invenItemInfoList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.InvenItemInfo>)));
@@ -29,6 +30,9 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
+					case "local":
+						instance.local = reader.Read<EnumDef.CityType>();
+						break;
 					case "mInvenItemInfoList":
 					instance = (ClassDef.MyInfo)reader.SetPrivateField("mInvenItemInfoList", reader.Read<System.Collections.Generic.List<ClassDef.InvenItemInfo>>(), instance);
 					break;

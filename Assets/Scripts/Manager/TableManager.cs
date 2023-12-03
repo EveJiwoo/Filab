@@ -82,7 +82,7 @@ public partial class TableManager : MonoBehaviour
 		return default;
 	}
 
-	public ItemDataTable_Client FindItemDataTable_Client(long _uid)
+	public ItemDataTable_Client FindItemDataTable(long _uid)
 	{
 		ItemDataTable_Client data = mItemDataTableList.Find(d => d.UID == _uid);
 		if (data != default) return data;

@@ -1,8 +1,0 @@
-{
-	"MyInventory" : {
-		"__type" : "System.Collections.Generic.List`1[[ClassDef.InvenItemInfo, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
-		"value" : [
-			
-		]
-	}
-}

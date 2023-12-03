@@ -20,7 +20,7 @@ public class UIInventory : UIBase
     {
         
     }
-
+    //인벤토리에 가격 제거
     protected override void onEnable()
     {
         for (int i = 0; i < ConstDef.MAX_ITEM_TYPE_COUNT; i++)
@@ -32,10 +32,10 @@ public class UIInventory : UIBase
                 var itemInfo = Mng.data.myInfo.invenItemInfoList[i];
                 
                 if (itemInfo.table == null)
-                    itemInfo.table = Mng.table.FindItemDataTable_Client(itemInfo.uid);
+                    itemInfo.table = Mng.table.FindItemDataTable(itemInfo.uid);
 
                 var sprite = Mng.canvas.GetSprite(itemInfo.table.AtlasName, itemInfo.table.SpriteName);
-                mItemIconList[i].Set(itemInfo.table.UID, sprite, itemInfo.price, itemInfo.count);
+                mItemIconList[i].Set(itemInfo.table.UID, sprite, 0, itemInfo.count);
             }
             else
             {

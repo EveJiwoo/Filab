@@ -6,11 +6,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//1. 상점에서 아이템을 산다.
-//2. 상점에서 아이템을 산 후 내 인벤토리에 저장한다.
-//3. 내 인벤토리를 복원한다.
+//1. 상점에서 아이템을 산다.(완)
+//2. 상점에서 아이템을 산 후 내 인벤토리에 저장한다.(완)
+//3. 내 인벤토리를 복원한다.(완)
 //4. 내 인벤토리에서 상점에 물건을 판다.
 //5. 상점의 물건이 상점에 들를 때 적절하게 변동 수치(물가, 생산량)를 모두 반영한다.
+//6. 마을 20개 추가
 
 public class DataManager : MonoBehaviour
 {
@@ -39,7 +40,9 @@ public class DataManager : MonoBehaviour
         Instance = this;
         
         myInfo = ES3.Load("MyInfo", Application.dataPath + "/MyInfo.dat", new MyInfo());
-        
+        foreach (var item in myInfo.invenItemInfoList)
+            item.table = Mng.table.FindItemDataTable(item.uid);
+
         myInfo.gold = 99999999;
 
         TimeUpdate();
@@ -91,7 +94,7 @@ public class DataManager : MonoBehaviour
         ShopItemInfo info = new ShopItemInfo();
         info.table = _data;
         info.uid = _data.UID;        
-        mCityShopList[_city].sellList.Add(info);
+        mCityShopList[_city].userBuyList.Add(info);
 
         ShopPriceAndCountUpdate(_city, info, curDateTime);
     }
@@ -136,7 +139,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public ShopInfo GetSellItemList(CityType _type)
+    public ShopInfo GetShopInfo(CityType _type)
     {
         return mCityShopList[_type];
     }        
@@ -158,7 +161,7 @@ public class DataManager : MonoBehaviour
     {
         foreach (var shop in mCityShopList)
         {
-            foreach (var item in shop.Value.sellList)
+            foreach (var item in shop.Value.userBuyList)
             {
                 ShopPriceAndCountUpdate(shop.Key, item, curDateTime);
             }
@@ -170,7 +173,7 @@ public class DataManager : MonoBehaviour
         //시장 물가 변동 적용
         _item.marketRate = Mng.table.GetItemPriceRate(_today.Year, _today.Month);
         //상점 가격 변동 적용
-        _item.shopRate = GetShopRate(_city, _item.table);
+        _item.shopRate = GetShopRate(_city, _item.table) * 0.01f;
 
         //상점 생산 갯수 적용 : 팔고 있을 경우 생산, 아니면 없음
         if (IsSellItem(_city, _item.table) == true)            

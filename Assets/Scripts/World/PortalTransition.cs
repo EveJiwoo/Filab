@@ -35,6 +35,9 @@ public class PortalTransition : MonoBehaviour
 
         Map map = Instantiate<Map>(kPortal.loadMap);
         Transform portalTf = map.transform.Find(kPortal.portalName);
+        
+        Mng.data.myInfo.local = map.kCityType;
+
         Mng.play.LoadMap(map, portalTf.position);
 
         Mng.sound.PlayBgm(map.kPlayBGM);

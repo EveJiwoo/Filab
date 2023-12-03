@@ -11,6 +11,7 @@ namespace ClassDef
     {
         public DateTime nextChangePriceDay;
         public List<ShopItemInfo> userBuyList = new List<ShopItemInfo>();
+        public List<ShopItemInfo> shopBuyList = new List<ShopItemInfo>();
     }
 
     public class ShopItemInfo
@@ -35,16 +36,19 @@ namespace ClassDef
     {
         public long uid;
         public int count;
-        public long price;
-        
+        //평균 구매가
+        public long avrPrice;
+        //(상점)판매가
+        public long sellPrice;
+
         public ItemDataTable_Client table;
 
         public void Add(int _count, long _price)
         {
-            double totalPrice = ((double)count * (double)price) + ((double)_count * (double)_price);
+            double totalPrice = ((double)count * (double)avrPrice) + ((double)_count * (double)_price);
 
             count = count + _count;
-            price = (long)(totalPrice / (double)count);
+            avrPrice = (long)(totalPrice / (double)count);
         }
 
         public void Remove(int _count)

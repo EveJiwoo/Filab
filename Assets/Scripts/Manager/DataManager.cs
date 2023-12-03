@@ -63,30 +63,24 @@ public class DataManager : MonoBehaviour
     {
         foreach (var data in Mng.table.itemDataTableList)
         {
-            if (data.City1Sell == true) SetCityItemSellList(CityType.City1, data);
-            if (data.City2Sell == true) SetCityItemSellList(CityType.City2, data);
-            if (data.City3Sell == true) SetCityItemSellList(CityType.City3, data);
-            if (data.City4Sell == true) SetCityItemSellList(CityType.City4, data);
-            if (data.City5Sell == true) SetCityItemSellList(CityType.City5, data);
-            if (data.City6Sell == true) SetCityItemSellList(CityType.City6, data);
-            if (data.City7Sell == true) SetCityItemSellList(CityType.City7, data);
-            if (data.City8Sell == true) SetCityItemSellList(CityType.City8, data);
-            if (data.City9Sell == true) SetCityItemSellList(CityType.City9, data);
-            if (data.City10Sell == true) SetCityItemSellList(CityType.City10, data);
-            if (data.City11Sell == true) SetCityItemSellList(CityType.City11, data);
-            if (data.City12Sell == true) SetCityItemSellList(CityType.City12, data);
-            if (data.City13Sell == true) SetCityItemSellList(CityType.City13, data);
-            if (data.City14Sell == true) SetCityItemSellList(CityType.City14, data);
-            if (data.City15Sell == true) SetCityItemSellList(CityType.City15, data);
-            if (data.City16Sell == true) SetCityItemSellList(CityType.City16, data);
-            if (data.City17Sell == true) SetCityItemSellList(CityType.City17, data);
-            if (data.City18Sell == true) SetCityItemSellList(CityType.City18, data);
-            if (data.City19Sell == true) SetCityItemSellList(CityType.City19, data);
-            if (data.City20Sell == true) SetCityItemSellList(CityType.City20, data);
+            bool[] shopGoods = new bool[20] { 
+                data.City1Sell, data.City2Sell, data.City3Sell, data.City4Sell, data.City5Sell, data.City6Sell, data.City7Sell, data.City8Sell, data.City9Sell, data.City10Sell,
+                data.City11Sell,data.City12Sell,data.City13Sell,data.City14Sell,data.City15Sell,data.City16Sell,data.City17Sell,data.City18Sell,data.City9Sell, data.City20Sell};
+
+            for(int i = 0; i < shopGoods.Length; i++)
+            {
+                var isGoods = shopGoods[i];
+
+                if (isGoods == true)
+                    SetCityShopGoodsList((CityType)i, data);
+                else
+                    SetCityShopNotGoddsList((CityType)i, data);
+            }
         }
     }
 
-    void SetCityItemSellList(CityType _city, ItemDataTable_Client _data)
+    /// <summary> 유저에게 팔 아이템 목록 </summary>
+    void SetCityShopGoodsList(CityType _city, ItemDataTable_Client _data)
     {
         if (mCityShopList.ContainsKey(_city) == false)
             mCityShopList[_city] = new ShopInfo();
@@ -95,6 +89,20 @@ public class DataManager : MonoBehaviour
         info.table = _data;
         info.uid = _data.UID;        
         mCityShopList[_city].userBuyList.Add(info);
+
+        ShopPriceAndCountUpdate(_city, info, curDateTime);
+    }
+
+    /// <summary> 유저에게 살 아이템 목록 </summary>
+    void SetCityShopNotGoddsList(CityType _city, ItemDataTable_Client _data)
+    {
+        if (mCityShopList.ContainsKey(_city) == false)
+            mCityShopList[_city] = new ShopInfo();
+
+        ShopItemInfo info = new ShopItemInfo();
+        info.table = _data;
+        info.uid = _data.UID;
+        mCityShopList[_city].shopBuyList.Add(info);
 
         ShopPriceAndCountUpdate(_city, info, curDateTime);
     }

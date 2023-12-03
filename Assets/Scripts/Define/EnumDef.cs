@@ -29,6 +29,8 @@ namespace EnumDef
 
     public enum CityType
     {
+        None = -1,
+
         City1,
         City2,
         City3,

@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4095829325474438458}
   - component: {fileID: 7988746285208535861}
   m_Layer: 0
-  m_Name: Shop
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2098,7 +2098,7 @@ GameObject:
   - component: {fileID: 2620971226957782587}
   - component: {fileID: 7446226318200423846}
   m_Layer: 0
-  m_Name: CityShop
+  m_Name: CityShop1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2155,6 +2155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kResetPosition: {fileID: 242069677142800932}
   kPlayBGM: {fileID: 8300000, guid: d9544df379cbbaf46ad61885fd078234, type: 3}
+  kCityType: 0
 --- !u!1 &2620971227247007651
 GameObject:
   m_ObjectHideFlags: 0

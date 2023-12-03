@@ -327,6 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kPortal: {fileID: 11400000, guid: 4e9e01d52022e554893245fc8fb1a1b1, type: 2}
+  kPortalMap: City1
+  kPortalPath: Portal/CityBank
 --- !u!61 &7988746285208535861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2299,6 +2301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kResetPosition: {fileID: 242069677142800932}
   kPlayBGM: {fileID: 8300000, guid: d9544df379cbbaf46ad61885fd078234, type: 3}
+  kCityType: 0
 --- !u!1 &2620971227247007651
 GameObject:
   m_ObjectHideFlags: 0

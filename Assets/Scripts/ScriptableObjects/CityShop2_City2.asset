@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b33ddb4339349619dce28a93c3e91c, type: 3}
-  m_Name: City1_CityShop
+  m_Name: CityShop2_City2
   m_EditorClassIdentifier: 
-  loadMap: {fileID: 7446226318200423846, guid: 07bdb9896d71056458484109f832f693, type: 3}
-  portalName: Portal/Shop
+  loadMap: {fileID: 8899977485524085680, guid: a7e3ae09d46503e438f175d86d869a08, type: 3}
+  portalName: Portal/CityShop

@@ -2,44 +2,108 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : 0,
+			"local" : 1,
 			"mInvenItemInfoList" : [
 				{
 					"uid" : 200000000013,
-					"count" : 1,
-					"price" : 269
+					"count" : 80,
+					"price" : 308
 				},{
 					"uid" : 200000000007,
 					"count" : 4,
 					"price" : 213
 				},{
 					"uid" : 200000000023,
-					"count" : 6,
-					"price" : 306
+					"count" : 39,
+					"price" : 361
 				},{
 					"uid" : 200000000001,
 					"count" : 1,
 					"price" : 234
+				},{
+					"uid" : 200000000021,
+					"count" : 1,
+					"price" : 331
+				},{
+					"uid" : 200000000025,
+					"count" : 6,
+					"price" : 343
+				},{
+					"uid" : 200000000041,
+					"count" : 12,
+					"price" : 387
+				},{
+					"uid" : 200000000015,
+					"count" : 39,
+					"price" : 316
+				},{
+					"uid" : 200000000097,
+					"count" : 37,
+					"price" : 544
+				},{
+					"uid" : 200000000009,
+					"count" : 3,
+					"price" : 308
+				},{
+					"uid" : 200000000010,
+					"count" : 22,
+					"price" : 328
+				},{
+					"uid" : 200000000022,
+					"count" : 59,
+					"price" : 364
 				}
 			],
-			"gold" : 100001202,
+			"gold" : 100053742,
 			"invenItemInfoList" : [
 				{
 					"uid" : 200000000013,
-					"count" : 1,
-					"price" : 269
+					"count" : 80,
+					"price" : 308
 				},{
 					"uid" : 200000000007,
 					"count" : 4,
 					"price" : 213
 				},{
 					"uid" : 200000000023,
-					"count" : 6,
-					"price" : 306
+					"count" : 39,
+					"price" : 361
 				},{
 					"uid" : 200000000001,
 					"count" : 1,
 					"price" : 234
+				},{
+					"uid" : 200000000021,
+					"count" : 1,
+					"price" : 331
+				},{
+					"uid" : 200000000025,
+					"count" : 6,
+					"price" : 343
+				},{
+					"uid" : 200000000041,
+					"count" : 12,
+					"price" : 387
+				},{
+					"uid" : 200000000015,
+					"count" : 39,
+					"price" : 316
+				},{
+					"uid" : 200000000097,
+					"count" : 37,
+					"price" : 544
+				},{
+					"uid" : 200000000009,
+					"count" : 3,
+					"price" : 308
+				},{
+					"uid" : 200000000010,
+					"count" : 22,
+					"price" : 328
+				},{
+					"uid" : 200000000022,
+					"count" : 59,
+					"price" : 364
 				}
 			]
 		}

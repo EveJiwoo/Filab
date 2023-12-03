@@ -18,7 +18,7 @@ namespace ES3Types
 			
 			writer.WriteProperty("uid", instance.uid, ES3Type_long.Instance);
 			writer.WriteProperty("count", instance.count, ES3Type_int.Instance);
-			writer.WriteProperty("price", instance.price, ES3Type_long.Instance);
+			writer.WriteProperty("price", instance.avrPrice, ES3Type_long.Instance);
 		}
 
 		protected override void ReadObject<T>(ES3Reader reader, object obj)
@@ -36,7 +36,7 @@ namespace ES3Types
 						instance.count = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					case "price":
-						instance.price = reader.Read<System.Int64>(ES3Type_long.Instance);
+						instance.avrPrice = reader.Read<System.Int64>(ES3Type_long.Instance);
 						break;
 					default:
 						reader.Skip();

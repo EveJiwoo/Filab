@@ -139,9 +139,7 @@ public class DataManager : MonoBehaviour
     public ShopInfo GetSellItemList(CityType _type)
     {
         return mCityShopList[_type];
-    }
-
-    
+    }        
 
     /// <summary> 이번달 대출 금리 </summary>
     public float GetLoanRate(DateTime _dt)

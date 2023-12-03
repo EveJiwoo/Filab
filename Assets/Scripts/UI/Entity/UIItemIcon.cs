@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 public class UIItemIcon : MonoBehaviour
 {
-    public Action<int> onClick;
+    public Action<long> onClick;
+    
+    public long mUid;
 
     public Image kSprite;
     public TMP_Text kCountText;
@@ -19,25 +21,20 @@ public class UIItemIcon : MonoBehaviour
         //kPriceText.text = "";
     }
 
-    public void SetSprite(Sprite _sprite)
+    public void Set(long _uid, Sprite _sprite, long _price, int _count)
     {
+        mUid = _uid;
+
         kSprite.sprite = _sprite;
         kPriceText.text = "";
         kCountText.text = "";
-    }
 
-    public void SetPrice(long _price)
-    {
         kPriceText.text = _price.ToString() + " G";
-    }
-
-    public void SetCount(int _count)
-    {
         kCountText.text = _count.ToString();
     }
 
     public void OnIconButtonClick()
     {
-        onClick?.Invoke(transform.GetSiblingIndex());
+        onClick?.Invoke(mUid);
     }
 }

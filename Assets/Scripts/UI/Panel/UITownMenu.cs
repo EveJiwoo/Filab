@@ -37,4 +37,9 @@ public class UITownMenu : MonoBehaviour
     {
         kRateText.text = $"{_rate * 100}%";
     }
+
+    public void OnInventoryButtonClick()
+    {
+        Mng.canvas.kInventory.gameObject.SetActive(true);
+    }
 }

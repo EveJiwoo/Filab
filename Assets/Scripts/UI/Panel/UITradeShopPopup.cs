@@ -27,7 +27,7 @@ public class UITradeShopPopup : UIBase
     [Header("내가 가진 골드")]
     public TMP_Text kMyGold;
 
-    int mSelectIndex = ConstDef.NONE;
+    long mSelectUID = ConstDef.NONE;
 
     // Start is called before the first frame update
     void Awake()
@@ -45,11 +45,9 @@ public class UITradeShopPopup : UIBase
     {
         kScrollRect.verticalNormalizedPosition = 1f;
 
-        kSelectItemImage.sprite = null;
-        kSelectItemName.text = "";
-        kSelectItemPrice.text = "";
+        mSelectUID = ConstDef.NONE;
 
-        mSelectIndex = ConstDef.NONE;
+        SelectItemIconUpdate(mSelectUID);
     }
 
     // Update is called once per frame
@@ -63,31 +61,45 @@ public class UITradeShopPopup : UIBase
         kMyGold.text = Mng.data.myInfo.gold.ToColumnString();
     }
 
-    void SelectItemIconUpdate(int _index)
+    void SelectItemIconUpdate(long _uid)
     {
-        var item = mItemDataList.sellList[_index];
-        kSelectItemImage.sprite = Mng.canvas.GetSprite(item.table.AtlasName, item.table.SpriteName);
-        kSelectItemName.text = item.table.Name;
-        kSelectItemPrice.text = item.userBuyPrice.ToString();
-        kSelectItemCount.text = item.count.ToString();
+        if(_uid == ConstDef.NONE)
+        {
+            kSelectItemImage.sprite = null;
+            kSelectItemName.text = "";
+            kSelectItemPrice.text = "";
+            kSelectItemCount.text = "";
+        }
+        else
+        {
+            var item = mItemDataList.sellList.Find(_p => _p.uid == _uid);
+            kSelectItemImage.sprite = Mng.canvas.GetSprite(item.table.AtlasName, item.table.SpriteName);
+            kSelectItemName.text = item.table.Name;
+            kSelectItemPrice.text = item.userBuyPrice.ToString();
+            kSelectItemCount.text = item.count.ToString();
+        }
     }
 
     int ItemIconUpdate()
     {
-        int iconCount = 0;
+        for (int i = 0; i < ConstDef.MAX_ITEM_TYPE_COUNT; i++)
+            mItemIconList[i].gameObject.SetActive(false);
+
+        int iconIndex = 0;
         foreach (var data in mItemDataList.sellList)
         {
             if (data.count == 0)
-                continue;
+                continue;    
 
-            mItemIconList[iconCount].gameObject.SetActive(true);
-            mItemIconList[iconCount].SetSprite(Mng.canvas.GetSprite(data.table.AtlasName, data.table.SpriteName));
-            mItemIconList[iconCount].SetPrice(data.userBuyPrice);
-            mItemIconList[iconCount].SetCount(data.count);
-            iconCount++;
+            mItemIconList[iconIndex].gameObject.SetActive(true);
+            var sprite = Mng.canvas.GetSprite(data.table.AtlasName, data.table.SpriteName);
+
+            var icon = mItemIconList[iconIndex];
+            icon.Set(data.uid, sprite, data.userBuyPrice, data.count);
+            iconIndex++;
         }
 
-        return iconCount;
+        return iconIndex;
     }
 
     public void SetCitySellItem(CityType _type)
@@ -100,16 +112,16 @@ public class UITradeShopPopup : UIBase
             mItemIconList[i].gameObject.SetActive(false);
     }
     
-    void OnItemIconClick(int _index)
+    void OnItemIconClick(long _uid)
     {
-        mSelectIndex = _index;
+        mSelectUID = _uid;
 
-        SelectItemIconUpdate(mSelectIndex);
+        SelectItemIconUpdate(mSelectUID);
     }
 
     public void OnBuyItemButtonClick()
     {
-        if( mSelectIndex == ConstDef.NONE )
+        if( mSelectUID == ConstDef.NONE )
         {
             Debug.Log("구입할 아이템을 선택해 주세요.");
             return;
@@ -117,8 +129,8 @@ public class UITradeShopPopup : UIBase
 
         int tempBuyCount = 1;
 
-        var item = mItemDataList.sellList[mSelectIndex];
-        if( Mng.data.myInfo.gold < item.userBuyPrice * tempBuyCount)
+        var item = mItemDataList.sellList.Find(_p => _p.uid == mSelectUID);
+        if ( Mng.data.myInfo.gold < item.userBuyPrice * tempBuyCount)
         {
             Debug.Log("소지금이 부족 합니다.");
             return;
@@ -134,12 +146,15 @@ public class UITradeShopPopup : UIBase
         Mng.data.myInfo.gold -= item.userBuyPrice * tempBuyCount;
         
         item.count -= tempBuyCount;
+        
+        if (item.count <= 0)
+            mSelectUID = ConstDef.NONE;
 
         Mng.data.myInfo.AddInventory(item.table, tempBuyCount, item.userBuyPrice);
 
-        SelectItemIconUpdate(mSelectIndex);
         ItemIconUpdate();
-        MyGoldUpdate();
+        MyGoldUpdate();        
+        SelectItemIconUpdate(mSelectUID);
     }
 
     public void OnCloseButtonClick()

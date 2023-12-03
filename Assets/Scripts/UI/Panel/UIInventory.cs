@@ -30,15 +30,22 @@ public class UIInventory : UIBase
                 mItemIconList[i].gameObject.SetActive(true);
 
                 var itemInfo = Mng.data.myInfo.invenItemInfoList[i];
+                
+                if (itemInfo.table == null)
+                    itemInfo.table = Mng.table.FindItemDataTable_Client(itemInfo.uid);
 
-                var table = Mng.table.FindItemDataTable_Client(itemInfo.uid);
-                mItemIconList[i].SetSprite(Mng.canvas.GetSprite(table.AtlasName, table.SpriteName));
-                mItemIconList[i].SetCount(itemInfo.count);
+                var sprite = Mng.canvas.GetSprite(itemInfo.table.AtlasName, itemInfo.table.SpriteName);
+                mItemIconList[i].Set(itemInfo.table.UID, sprite, itemInfo.price, itemInfo.count);
             }
             else
             {
                 mItemIconList[i].gameObject.SetActive(false);
             }            
         }
+    }
+
+    public void OnCloseButtonClick()
+    {
+        gameObject.SetActive(false);
     }
 }

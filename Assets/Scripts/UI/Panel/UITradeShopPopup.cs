@@ -95,6 +95,7 @@ public class UITradeShopPopup : UIBase
 
     protected override void onEnable()
     {
+        mType = Type.None;
         OnUserBuyItemTapButtonClick();
     }
 

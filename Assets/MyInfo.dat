@@ -2,7 +2,7 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : 1,
+			"local" : 0,
 			"mInvenItemInfoList" : [
 				{
 					"uid" : 200000000013,
@@ -18,8 +18,8 @@
 					"price" : 361
 				},{
 					"uid" : 200000000001,
-					"count" : 1,
-					"price" : 234
+					"count" : 72,
+					"price" : 308
 				},{
 					"uid" : 200000000021,
 					"count" : 1,
@@ -54,7 +54,7 @@
 					"price" : 364
 				}
 			],
-			"gold" : 100053742,
+			"gold" : 99977989,
 			"invenItemInfoList" : [
 				{
 					"uid" : 200000000013,
@@ -70,8 +70,8 @@
 					"price" : 361
 				},{
 					"uid" : 200000000001,
-					"count" : 1,
-					"price" : 234
+					"count" : 72,
+					"price" : 308
 				},{
 					"uid" : 200000000021,
 					"count" : 1,

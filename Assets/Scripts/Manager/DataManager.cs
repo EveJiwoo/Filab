@@ -9,7 +9,7 @@ using UnityEngine;
 //1. 상점에서 아이템을 산다.(완)
 //2. 상점에서 아이템을 산 후 내 인벤토리에 저장한다.(완)
 //3. 내 인벤토리를 복원한다.(완)
-//4. 내 인벤토리에서 상점에 물건을 판다.
+//4. 내 인벤토리에서 상점에 물건을 판다.(완)
 //5. 상점의 물건이 상점에 들를 때 적절하게 변동 수치(물가, 생산량)를 모두 반영한다.
 //6. 마을 20개 추가
 
@@ -57,6 +57,18 @@ public class DataManager : MonoBehaviour
             curDateTime = new DateTime(kStartYear, kStartMonth, kStartDay, kStartHour, kStartMin, 0);
         else
             curDateTime = DateTime.Parse(time);
+
+        mCurMonth = curDateTime.Month;
+    }
+
+    int mCurMonth;
+    private void Update()
+    {
+        if (curDateTime.Month != mCurMonth)
+        {
+            mCurMonth = curDateTime.Month;
+            AllShopItemUpdate();
+        }
     }
 
     public void CityShopUpdate()
@@ -170,12 +182,14 @@ public class DataManager : MonoBehaviour
         foreach (var shop in mCityShopList)
         {
             foreach (var item in shop.Value.userBuyList)
-            {
                 ShopPriceAndCountUpdate(shop.Key, item, curDateTime);
-            }
+
+            foreach (var item in shop.Value.shopBuyList)
+                ShopPriceAndCountUpdate(shop.Key, item, curDateTime);
         }
     }
 
+    /// <summary> 상점 가격 재설정 </summary>
     public void ShopPriceAndCountUpdate(CityType _city, ShopItemInfo _item, DateTime _today)
     {
         //시장 물가 변동 적용

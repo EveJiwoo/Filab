@@ -1,32 +1,48 @@
 using ClassDef;
 using EnumDef;
 using SheetData;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//1. »óÁ¡¿¡¼­ ¾ÆÀÌÅÛÀ» »ê´Ù.(¿Ï)
-//2. »óÁ¡¿¡¼­ ¾ÆÀÌÅÛÀ» »ê ÈÄ ³» ÀÎº¥Åä¸®¿¡ ÀúÀåÇÑ´Ù.(¿Ï)
-//3. ³» ÀÎº¥Åä¸®¸¦ º¹¿øÇÑ´Ù.(¿Ï)
-//4. ³» ÀÎº¥Åä¸®¿¡¼­ »óÁ¡¿¡ ¹°°ÇÀ» ÆÇ´Ù.(¿Ï)
-//5. »óÁ¡ÀÇ ¹°°ÇÀÌ »óÁ¡¿¡ µé¸¦ ¶§ ÀûÀıÇÏ°Ô º¯µ¿ ¼öÄ¡(¹°°¡, »ı»ê·®)¸¦ ¸ğµÎ ¹İ¿µÇÑ´Ù.
-//6. ¸¶À» 20°³ Ãß°¡
+//1. ìƒì ì—ì„œ ì•„ì´í…œì„ ì‚°ë‹¤.(ì™„)
+//2. ìƒì ì—ì„œ ì•„ì´í…œì„ ì‚° í›„ ë‚´ ì¸ë²¤í† ë¦¬ì— ì €ì¥í•œë‹¤.(ì™„)
+//3. ë‚´ ì¸ë²¤í† ë¦¬ë¥¼ ë³µì›í•œë‹¤.(ì™„)
+//4. ë‚´ ì¸ë²¤í† ë¦¬ì—ì„œ ìƒì ì— ë¬¼ê±´ì„ íŒë‹¤.(ì™„)
+//5. ìƒì ì˜ ë¬¼ê±´ì´ ìƒì ì— ë“¤ë¥¼ ë•Œ ì ì ˆí•˜ê²Œ ë³€ë™ ìˆ˜ì¹˜(ë¬¼ê°€, ìƒì‚°ëŸ‰)ë¥¼ ëª¨ë‘ ë°˜ì˜í•œë‹¤.
+//6. ë§ˆì„ 20ê°œ ì¶”ê°€
 
 public class DataManager : MonoBehaviour
 {
     static public DataManager Instance = null;
     
-    [Header("ÃÖÃÊÀÇ °ÔÀÓ ½ÃÀÛ ½Ã°£ : ³âµµ")]
+    [Header("ìµœì´ˆì˜ ê²Œì„ ì‹œì‘ ì‹œê°„ : ë…„ë„")]
     public int kStartYear;
-    [Header("ÃÖÃÊÀÇ °ÔÀÓ ½ÃÀÛ ½Ã°£ : ¿ù")]
+    [Header("ìµœì´ˆì˜ ê²Œì„ ì‹œì‘ ì‹œê°„ : ì›”")]
     public int kStartMonth;
-    [Header("ÃÖÃÊÀÇ °ÔÀÓ ½ÃÀÛ ½Ã°£ : ÀÏ")]
+    [Header("ìµœì´ˆì˜ ê²Œì„ ì‹œì‘ ì‹œê°„ : ì¼")]
     public int kStartDay;
-    [Header("ÃÖÃÊÀÇ °ÔÀÓ ½ÃÀÛ ½Ã°£ : ½Ã")]
+    [Header("ìµœì´ˆì˜ ê²Œì„ ì‹œì‘ ì‹œê°„ : ì‹œ")]
     public int kStartHour;
-    [Header("ÃÖÃÊÀÇ °ÔÀÓ ½ÃÀÛ ½Ã°£ : ºĞ")]
+    [Header("ìµœì´ˆì˜ ê²Œì„ ì‹œì‘ ì‹œê°„ : ë¶„")]
     public int kStartMin;
+
+    [PropertySpace]
+    [Button("ì‹œì‘ë‚ ì§œ ì´ˆê¸°í™”")]
+    void ResetGameDateTime()
+    {
+        PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, "");
+    }
+
+    [PropertySpace]
+    [Button("ë°ì´í„° ì´ˆê¸°í™”")]
+    void ResetInventory()
+    {
+        PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
+        ES3.DeleteFile(Application.dataPath + "/MyInventory.dat");
+    }
 
     public DateTime curDateTime { get; set; }
 
@@ -51,7 +67,7 @@ public class DataManager : MonoBehaviour
 
     public void TimeUpdate()
     {
-        //ÀúÀåµÈ ½Ã°£ º¹±¸
+        //ì €ì¥ëœ ì‹œê°„ ë³µêµ¬
         var time = PlayerPrefs.GetString(ConstDef.GAME_DATE_TIME);
         if (time == "")
             curDateTime = new DateTime(kStartYear, kStartMonth, kStartDay, kStartHour, kStartMin, 0);
@@ -91,7 +107,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    /// <summary> À¯Àú¿¡°Ô ÆÈ ¾ÆÀÌÅÛ ¸ñ·Ï </summary>
+    /// <summary> ìœ ì €ì—ê²Œ íŒ” ì•„ì´í…œ ëª©ë¡ </summary>
     void SetCityShopGoodsList(CityType _city, ItemDataTable_Client _data)
     {
         if (mCityShopList.ContainsKey(_city) == false)
@@ -105,7 +121,7 @@ public class DataManager : MonoBehaviour
         ShopPriceAndCountUpdate(_city, info, curDateTime);
     }
 
-    /// <summary> À¯Àú¿¡°Ô »ì ¾ÆÀÌÅÛ ¸ñ·Ï </summary>
+    /// <summary> ìœ ì €ì—ê²Œ ì‚´ ì•„ì´í…œ ëª©ë¡ </summary>
     void SetCityShopNotGoddsList(CityType _city, ItemDataTable_Client _data)
     {
         if (mCityShopList.ContainsKey(_city) == false)
@@ -164,19 +180,19 @@ public class DataManager : MonoBehaviour
         return mCityShopList[_type];
     }        
 
-    /// <summary> ÀÌ¹ø´Ş ´ëÃâ ±İ¸® </summary>
+    /// <summary> ì´ë²ˆë‹¬ ëŒ€ì¶œ ê¸ˆë¦¬ </summary>
     public float GetLoanRate(DateTime _dt)
     {
         return Mng.table.GetBaseInterestRate(_dt) + Mng.table.GetLoanInterestRate(_dt);
     }
 
-    /// <summary> ÀÌ¹ø´Ş ¿¹±İ ±İ¸® </summary>
+    /// <summary> ì´ë²ˆë‹¬ ì˜ˆê¸ˆ ê¸ˆë¦¬ </summary>
     public float GetDepositRate(DateTime _dt)
     {
         return Mng.table.GetBaseInterestRate(_dt) + Mng.table.GetDepositInterestRate(_dt);
     }
 
-    /// <summary> ¸ğµç »óÁ¡ °¡°İ, »ı»ê ¾÷µ¥ÀÌÆ® </summary>
+    /// <summary> ëª¨ë“  ìƒì  ê°€ê²©, ìƒì‚° ì—…ë°ì´íŠ¸ </summary>
     public void AllShopItemUpdate()
     {
         foreach (var shop in mCityShopList)
@@ -189,15 +205,15 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    /// <summary> »óÁ¡ °¡°İ Àç¼³Á¤ </summary>
+    /// <summary> ìƒì  ê°€ê²© ì¬ì„¤ì • </summary>
     public void ShopPriceAndCountUpdate(CityType _city, ShopItemInfo _item, DateTime _today)
     {
-        //½ÃÀå ¹°°¡ º¯µ¿ Àû¿ë
+        //ì‹œì¥ ë¬¼ê°€ ë³€ë™ ì ìš©
         _item.marketRate = Mng.table.GetItemPriceRate(_today.Year, _today.Month);
-        //»óÁ¡ °¡°İ º¯µ¿ Àû¿ë
+        //ìƒì  ê°€ê²© ë³€ë™ ì ìš©
         _item.shopRate = GetShopRate(_city, _item.table) * 0.01f;
 
-        //»óÁ¡ »ı»ê °¹¼ö Àû¿ë : ÆÈ°í ÀÖÀ» °æ¿ì »ı»ê, ¾Æ´Ï¸é ¾øÀ½
+        //ìƒì  ìƒì‚° ê°¯ìˆ˜ ì ìš© : íŒ”ê³  ìˆì„ ê²½ìš° ìƒì‚°, ì•„ë‹ˆë©´ ì—†ìŒ
         if (IsSellItem(_city, _item.table) == true)            
             _item.count = UnityEngine.Random.Range(_item.table.MinProduction, _item.table.MaxProduction + 1);
         else
@@ -206,7 +222,7 @@ public class DataManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        //ÇöÀç±îÁöÀÇ ½Ã°£ ÀúÀå
+        //í˜„ì¬ê¹Œì§€ì˜ ì‹œê°„ ì €ì¥
         PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, curDateTime.ToString());
 
         ES3.Save("MyInfo", Mng.data.myInfo, Application.dataPath + "/MyInfo.dat");

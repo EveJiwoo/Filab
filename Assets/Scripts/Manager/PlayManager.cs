@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,18 +87,5 @@ public class PlayManager : MonoBehaviour
             float rate = Mng.table.GetBaseInterestRate(_time);
             Mng.canvas.kTownMenu.TempRate(rate);
         }
-    }    
-
-    [Button("날짜 초기화")]
-    void ResetDateTime()
-    {
-        PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
-    }
-
-    [Button("데이터 초기화")]
-    void ResetInventory()
-    {
-        PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
-        ES3.DeleteFile(Application.dataPath + "/MyInventory.dat");
     }
 }

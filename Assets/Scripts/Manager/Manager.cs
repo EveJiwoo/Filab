@@ -7,23 +7,16 @@ public class Manager : MonoBehaviour
 {
     static public Manager Instance;
 
-    //[Header("Ç® ¸Å´ÏÀú")]
+    //[Header("í’€ ë§¤ë‹ˆì €")]
     //public PoolManager kPoolManager;
-    [Header("Å×ÀÌºí ¸Å´ÏÀú")]
+    [Header("í…Œì´ë¸” ë§¤ë‹ˆì €")]
     public TableManager kTableManager;
-    [Header("µ¥ÀÌÅÍ ¸Å´ÏÀú")]
+    [Header("ë°ì´í„° ë§¤ë‹ˆì €")]
     public DataManager kDataManager;    
-    [Header("ÇÃ·¹ÀÌ ¸Å´ÏÀú")]
+    [Header("í”Œë ˆì´ ë§¤ë‹ˆì €")]
     public PlayManager kPlayManager;
-    [Header("»ç¿îµå ¸Å´ÏÀú")]
-    public SoundManager kSoundManager;
-
-    [PropertySpace]
-    [Button("½ÃÀÛ³¯Â¥ ÃÊ±âÈ­")]
-    void ResetGameDateTime()
-    {
-        PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, "");
-    }
+    [Header("ì‚¬ìš´ë“œ ë§¤ë‹ˆì €")]
+    public SoundManager kSoundManager;    
 
     private void Awake()
     {
@@ -34,7 +27,7 @@ public class Manager : MonoBehaviour
     IEnumerator Start()
     {
         ///////////////////////////////////////////////////////////////////////////////////////
-        //¸Å´ÏÀú ÃÊ±âÈ­
+        //ë§¤ë‹ˆì € ì´ˆê¸°í™”
 
         GameObject go = Instantiate(kTableManager.gameObject);
         go.transform.parent = transform;
@@ -72,7 +65,7 @@ public class Manager : MonoBehaviour
             yield return null;
 
         ///////////////////////////////////////////////////////////////////////////////////////
-        //°ÔÀÓ ½ÃÀÛ
+        //ê²Œì„ ì‹œì‘
 
     }
 }

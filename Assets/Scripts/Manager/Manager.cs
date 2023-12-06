@@ -16,7 +16,9 @@ public class Manager : MonoBehaviour
     [Header("플레이 매니저")]
     public PlayManager kPlayManager;
     [Header("사운드 매니저")]
-    public SoundManager kSoundManager;    
+    public SoundManager kSoundManager;
+    [Header("캔버스 매니저")]
+    public MainCanvas kCanvasManager;
 
     private void Awake()
     {
@@ -57,6 +59,9 @@ public class Manager : MonoBehaviour
         while (PoolManager.Instance == null)
             yield return null;
 */
+
+        kCanvasManager.gameObject.SetActive(true);
+  
         go = Instantiate(kPlayManager.gameObject);
         go.transform.parent = transform;
         go.name = "PlayManager";

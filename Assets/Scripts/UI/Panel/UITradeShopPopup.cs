@@ -19,54 +19,54 @@ public class UITradeShopPopup : UIBase
     public GameObject kItemListGo;
 
     UIItemIcon[] mItemIconList;
-    //À¯Àú°¡ ±¸ÀÔÇÒ ¾ÆÀÌÅÛ µ¥ÀÌÅÍ ¸ñ·Ï
+    //ìœ ì €ê°€ êµ¬ì…í•  ì•„ì´í…œ ë°ì´í„° ëª©ë¡
     List<ShopItemInfo> mUserBuyItemDataList;
-    //À¯Àú°¡ ÆÈ ¾ÆÀÌÅÛ µ¥ÀÌÅÍ ¸ñ·Ï(ÀÎº¥Åä¸®)
+    //ìœ ì €ê°€ íŒ” ì•„ì´í…œ ë°ì´í„° ëª©ë¡(ì¸ë²¤í† ë¦¬)
     List<InvenItemInfo> mUserSellItemDataList;
 
-    [Header("¾ÆÀÌÅÛ ¸®½ºÆ® ½ºÅ©·Ñ")]
+    [Header("ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸ ìŠ¤í¬ë¡¤")]
     public ScrollRect kScrollRect;
-    [Header("¼±ÅÃµÈ ¾ÆÀÌÅÛ ÀÌ¹ÌÁö")]
+    [Header("ì„ íƒëœ ì•„ì´í…œ ì´ë¯¸ì§€")]
     public Image kSelectItemImage;
-    [Header("¼±ÅÃµÈ ¾ÆÀÌÅÛ ÀÌ¸§")]
+    [Header("ì„ íƒëœ ì•„ì´í…œ ì´ë¦„")]
     public TMP_Text kSelectItemName;
-    [Header("¼±ÅÃµÈ ¾ÆÀÌÅÛ °¡°İ")]
+    [Header("ì„ íƒëœ ì•„ì´í…œ ê°€ê²©")]
     public TMP_Text kSelectItemPrice;
-    [Header("¼±ÅÃµÈ ¾ÆÀÌÅÛ °¹¼ö")]
+    [Header("ì„ íƒëœ ì•„ì´í…œ ê°¯ìˆ˜")]
     public TMP_Text kSelectItemCount;
 
-    [Header("³»°¡ °¡Áø °ñµå")]
+    [Header("ë‚´ê°€ ê°€ì§„ ê³¨ë“œ")]
     public TMP_Text kMyGold;
 
-    [Header("À¯Àú ¾ÆÀÌÅÛ ±¸ÀÔ ¹öÆ°")]
+    [Header("ìœ ì € ì•„ì´í…œ êµ¬ì… ë²„íŠ¼")]
     public GameObject kBuyButtonGo;
-    [Header("À¯Àú ¾ÆÀÌÅÛ ÆÇ¸Å ¹öÆ°")]
+    [Header("ìœ ì € ì•„ì´í…œ íŒë§¤ ë²„íŠ¼")]
     public GameObject kSellButtonGo;
 
-    [Header("±¸ÀÔ - À¯Àú ¾ÆÀÌÅÛ ±¸ÀÔ ÆäÀÌÁö")]
+    [Header("êµ¬ì… - ìœ ì € ì•„ì´í…œ êµ¬ì… í˜ì´ì§€")]
     public GameObject kBuyPageGo;
-    [Header("±¸ÀÔ - À¯Àú ¾ÆÀÌÅÛ ±¸ÀÔ °¡°İ")]
+    [Header("êµ¬ì… - ìœ ì € ì•„ì´í…œ êµ¬ì… ê°€ê²©")]
     public TMP_Text kBuyItemPrice;
-    [Header("±¸ÀÔ - À¯Àú ¾ÆÀÌÅÛ ±¸ÀÔ °¹¼ö")]
+    [Header("êµ¬ì… - ìœ ì € ì•„ì´í…œ êµ¬ì… ê°¯ìˆ˜")]
     public TMP_InputField kBuyNumberInput;
-    [Header("±¸ÀÔ - À¯Àú ¾ÆÀÌÅÛ ±¸ÀÔ ÃÑ °¡°İ")]
+    [Header("êµ¬ì… - ìœ ì € ì•„ì´í…œ êµ¬ì… ì´ ê°€ê²©")]
     public TMP_Text kBuyItemTotalPrice;
 
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ ÆÇ¸Å ÆäÀÌÁö")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ íŒë§¤ í˜ì´ì§€")]
     public GameObject kSellPageGo;
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ Æò±Õ ±¸ÀÔ °¡°İ")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ í‰ê·  êµ¬ì… ê°€ê²©")]
     public TMP_Text kAvrPurchasePrice;
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ ÆÇ¸Å°¡")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ íŒë§¤ê°€")]
     public TMP_Text kSellPrice;
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ ÆÇ¸Å °¹¼ö")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ íŒë§¤ ê°¯ìˆ˜")]
     public TMP_InputField kSellNumberInput;
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ °³´ç ¼ÕÀÍ°¡")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ ê°œë‹¹ ì†ìµê°€")]
     public TMP_Text kProfitLossPrice;
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ ÃÑ ¼ÕÀÍ°¡")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ ì´ ì†ìµê°€")]
     public TMP_Text kProfitLossTotalPrice;
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ °³´ç ¼öÀÍ·ü")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ ê°œë‹¹ ìˆ˜ìµë¥ ")]
     public TMP_Text kSellItemYield;
-    [Header("ÆÇ¸Å - À¯Àú ¾ÆÀÌÅÛ ÃÑ ÆÇ¸Å°¡")]
+    [Header("íŒë§¤ - ìœ ì € ì•„ì´í…œ ì´ íŒë§¤ê°€")]
     public TMP_Text kSellItemTotalPrice;
 
     long mSelectUID = ConstDef.NONE;
@@ -220,14 +220,14 @@ public class UITradeShopPopup : UIBase
                         mItemIconList[iconIndex].gameObject.SetActive(true);
                         var sprite = Mng.canvas.GetSprite(data.table.AtlasName, data.table.SpriteName);
 
-                        //*À¯Àú ÆÇ¸Å°¡ °áÁ¤
+                        //*ìœ ì € íŒë§¤ê°€ ê²°ì •
                         var shopInfo = Mng.data.GetShopInfo(Mng.data.myInfo.local);
                         var userBuyItemDataList = shopInfo.userBuyList;
                         var shopBuyItemDataList = shopInfo.shopBuyList;
                         
-                        //»óÁ¡¿¡¼­ ÆÄ´Â ±¸ÀÔ ¸ñ·Ï
+                        //ìƒì ì—ì„œ íŒŒëŠ” êµ¬ì… ëª©ë¡
                         var item = userBuyItemDataList.Find(_p => _p.uid == data.uid);
-                        //»óÁ¡¿¡¼­ ÆÈÁö ¾Ê´Â ±¸ÀÔ ¸ñ·Ï
+                        //ìƒì ì—ì„œ íŒ”ì§€ ì•ŠëŠ” êµ¬ì… ëª©ë¡
                         if( item == null )
                             item = shopBuyItemDataList.Find(_p => _p.uid == data.uid);
 
@@ -261,12 +261,12 @@ public class UITradeShopPopup : UIBase
         SelectItemIconUpdate(mSelectUID);
     }
 
-    /// <summary> À¯Àú°¡ »óÁ¡¿¡¼­ ¾ÆÀÌÅÛÀ» ±¸ÀÔ </summary>
+    /// <summary> ìœ ì €ê°€ ìƒì ì—ì„œ ì•„ì´í…œì„ êµ¬ì… </summary>
     public void OnUserBuyItemButtonClick()
     {
         if( mSelectUID == ConstDef.NONE )
         {
-            Debug.Log("±¸ÀÔÇÒ ¾ÆÀÌÅÛÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+            Debug.Log("êµ¬ì…í•  ì•„ì´í…œì„ ì„ íƒí•´ ì£¼ì„¸ìš”.");
             return;
         }
 
@@ -275,19 +275,20 @@ public class UITradeShopPopup : UIBase
         var item = mUserBuyItemDataList.Find(_p => _p.uid == mSelectUID);
         if ( Mng.data.myInfo.gold < item.userBuyPrice * buyCount)
         {
-            Debug.Log("¼ÒÁö±İÀÌ ºÎÁ· ÇÕ´Ï´Ù.");
+            Debug.Log("ì†Œì§€ê¸ˆì´ ë¶€ì¡± í•©ë‹ˆë‹¤.");
             return;
         }        
 
         if ( item.count <= 0 || item.count < buyCount)
         {
-            Debug.Log("»óÇ° °¹¼ö°¡ ºÎÁ· ÇÕ´Ï´Ù.");
+            Debug.Log("ìƒí’ˆ ê°¯ìˆ˜ê°€ ë¶€ì¡± í•©ë‹ˆë‹¤.");
             return;
         }
 
-        //±¸ÀÔ
+        //êµ¬ì…
         Mng.data.myInfo.gold -= item.userBuyPrice * buyCount;
-        
+        Mng.canvas.kTownMenu.MyGoldUpdate();
+
         item.count -= buyCount;
         
         if (item.count <= 0)
@@ -300,11 +301,11 @@ public class UITradeShopPopup : UIBase
         SelectItemIconUpdate(mSelectUID);
     }
 
-    /// <summary> À¯Àú°¡ »óÁ¡¿¡ ¾ÆÀÌÅÛÀ» ÆÇ¸Å</summary>
+    /// <summary> ìœ ì €ê°€ ìƒì ì— ì•„ì´í…œì„ íŒë§¤</summary>
     public void OnUserSellItemButtonClick()
     {
         if (mSelectUID == ConstDef.NONE){
-            Debug.Log("±¸ÀÔÇÒ ¾ÆÀÌÅÛÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+            Debug.Log("êµ¬ì…í•  ì•„ì´í…œì„ ì„ íƒí•´ ì£¼ì„¸ìš”.");
             return;
         }
 
@@ -312,8 +313,9 @@ public class UITradeShopPopup : UIBase
 
         var item = mUserSellItemDataList.Find(_p => _p.uid == mSelectUID);                
 
-        //ÆÇ¸Å
+        //íŒë§¤
         Mng.data.myInfo.gold += item.sellPrice * sellCount;
+        Mng.canvas.kTownMenu.MyGoldUpdate();
 
         if (item.count <= sellCount)
             mSelectUID = ConstDef.NONE;
@@ -331,7 +333,7 @@ public class UITradeShopPopup : UIBase
     }
     
     ////////////////////////////////////////////////////////////////////////////////////
-    //À¯Àú ±¸¸Å È°µ¿
+    //ìœ ì € êµ¬ë§¤ í™œë™
     public void OnMinusBuyItemCountButtonClick()
     {
         if (mSelectShopItemInfo == null)
@@ -398,7 +400,7 @@ public class UITradeShopPopup : UIBase
     }
 
     ////////////////////////////////////////////////////////////////////////////////////
-    //À¯Àú ÆÇ¸Å È°µ¿
+    //ìœ ì € íŒë§¤ í™œë™
     public void OnMinusSellItemCountButtonClick()
     {
         if (mSelectInvenItemInfo == null)

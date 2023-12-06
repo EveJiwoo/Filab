@@ -6,24 +6,32 @@ using UnityEngine;
 
 public class UITownMenu : MonoBehaviour
 {
-    [Header("³â/¿ù/ÀÏ Ç¥±â")]
+    [Header("ë‚´ ê³¨ë“œ í‘œê¸°")]
+    public TMP_Text kMyGoldText;
+
+    [Header("ë…„/ì›”/ì¼ í‘œê¸°")]
     public TMP_Text kYMDText;
-    [Header("½Ã:ºĞ Ç¥±â")]
+    [Header("ì‹œ:ë¶„ í‘œê¸°")]
     public TMP_Text kHMText;
 
-    [Header("Å×½ºÆ® ±İ¸® Ç¥±â")]
+    [Header("í…ŒìŠ¤íŠ¸ ê¸ˆë¦¬ í‘œê¸°")]
     public TMP_Text kRateText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        MyGoldUpdate();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void MyGoldUpdate()
+    {
+        kMyGoldText.text = Mng.data.myInfo.gold.ToColumnString();
     }
 
     public void SetDateTime(DateTime _time)

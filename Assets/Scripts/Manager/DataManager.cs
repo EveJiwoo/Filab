@@ -220,6 +220,23 @@ public class DataManager : MonoBehaviour
             _item.count = 0;
     }
 
+    /// <summary> 기준 금리, 예금, 대출 금리 반영 </summary>
+    public void BankDepositAndDLoanUpdate(DateTime _today)
+    {
+        /*if( myInfo.bank.deposit > 0 )
+        {
+            Mng.table.GetDepositInterestRate(myInfo.bank.depositTime); // << 자유 예금 아닌가??
+        }*/
+    }
+
+
+    public void SetDesipot(long _gold)
+    {
+        myInfo.gold -= _gold;
+        myInfo.bank.depositGold = _gold;
+        //myInfo.bank.depositTime = curDateTime;
+    }
+
     private void OnApplicationQuit()
     {
         //현재까지의 시간 저장

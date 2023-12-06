@@ -961,6 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2537e0ed714e4cc4891e776d3d3d6d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kMyGoldText: {fileID: 1879300390}
   kYMDText: {fileID: 1989054919}
   kHMText: {fileID: 465362493}
   kRateText: {fileID: 1229590492}
@@ -1273,7 +1274,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 62274954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1033989594}
+        m_TargetAssemblyTypeName: UICityBankDepositPopup, Assembly-CSharp
+        m_MethodName: OnWithdrawButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &62274954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5095,6 +5108,7 @@ MonoBehaviour:
   kDataManager: {fileID: 4799700818176025857, guid: df93a8c4556795c40a39e6f9f93ca2c4, type: 3}
   kPlayManager: {fileID: 1641725681817339019, guid: a4589841c259bb643b3b8d9320223bdd, type: 3}
   kSoundManager: {fileID: 4119748270509793842, guid: 4e9fb6a60976d82498af3f5d10d56e1e, type: 3}
+  kCanvasManager: {fileID: 1439585577}
 --- !u!4 &339986133
 Transform:
   m_ObjectHideFlags: 0
@@ -11292,10 +11306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome to Kabes Bank. You current have XX gold in your account.
-
-    How
-    can I help you?'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17527,8 +17538,11 @@ MonoBehaviour:
   kIsPopupType: 1
   kFrontMenuGo: {fileID: 1832176082}
   kDepositMenuGo: {fileID: 652517793}
+  kDepositTextInput: {fileID: 784858700}
   kWithdrawMenuGo: {fileID: 6061561}
+  kWithdrawTextInput: {fileID: 1494648250}
   kMyGoldTextInput: {fileID: 484378455}
+  kSpeechMessage: {fileID: 691579923}
 --- !u!1001 &1035253050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25508,7 +25522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1439585573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26813,7 +26827,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1033989594}
+        m_TargetAssemblyTypeName: UICityBankDepositPopup, Assembly-CSharp
+        m_MethodName: OnEditWithdrawAmountInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -32611,7 +32637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1832176083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33115,8 +33141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 24}
-  m_SizeDelta: {x: 200, y: 33.3}
+  m_AnchoredPosition: {x: 42, y: 24}
+  m_SizeDelta: {x: 222.68, y: 33.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879300390
 MonoBehaviour:
@@ -33165,8 +33191,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -33510,7 +33536,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1889675585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1033989594}
+        m_TargetAssemblyTypeName: UICityBankDepositPopup, Assembly-CSharp
+        m_MethodName: OnDepositButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1889675585
 MonoBehaviour:
   m_ObjectHideFlags: 0

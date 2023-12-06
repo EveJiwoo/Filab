@@ -1,4 +1,4 @@
-﻿
+
 using EnumDef;
 using SheetData;
 using System;
@@ -57,12 +57,28 @@ namespace ClassDef
         }
     }
 
+    public class BankInfo
+    {
+        //은행 자유 예금
+        public long depositGold = 0;        
+    }
+     
     public class MyInfo
     {
-        public long gold { get; set; }
-
         public CityType local = CityType.City1;
 
+        //소지금 정보
+        public long gold { get; set; }
+
+        //은행 정보
+        BankInfo mBank = new BankInfo();
+        public BankInfo bank
+        {
+            get { return mBank; }
+            set { mBank = value; }
+        }
+        
+        //아이템 정보
         List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
 
         public List<InvenItemInfo> invenItemInfoList

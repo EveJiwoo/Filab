@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("local", "mInvenItemInfoList", "gold", "invenItemInfoList")]
+	[ES3PropertiesAttribute("local", "mBank", "mInvenItemInfoList", "gold", "bank", "invenItemInfoList")]
 	public class ES3UserType_MyInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -17,8 +17,10 @@ namespace ES3Types
 			var instance = (ClassDef.MyInfo)obj;
 			
 			writer.WriteProperty("local", instance.local, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(EnumDef.CityType)));
+			writer.WritePrivateField("mBank", instance);
 			writer.WritePrivateField("mInvenItemInfoList", instance);
 			writer.WriteProperty("gold", instance.gold, ES3Type_long.Instance);
+			writer.WriteProperty("bank", instance.bank, ES3UserType_BankInfo.Instance);
 			writer.WriteProperty("invenItemInfoList", instance.invenItemInfoList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.InvenItemInfo>)));
 		}
 
@@ -33,11 +35,17 @@ namespace ES3Types
 					case "local":
 						instance.local = reader.Read<EnumDef.CityType>();
 						break;
+					case "mBank":
+					instance = (ClassDef.MyInfo)reader.SetPrivateField("mBank", reader.Read<ClassDef.BankInfo>(), instance);
+					break;
 					case "mInvenItemInfoList":
 					instance = (ClassDef.MyInfo)reader.SetPrivateField("mInvenItemInfoList", reader.Read<System.Collections.Generic.List<ClassDef.InvenItemInfo>>(), instance);
 					break;
 					case "gold":
 						instance.gold = reader.Read<System.Int64>(ES3Type_long.Instance);
+						break;
+					case "bank":
+						instance.bank = reader.Read<ClassDef.BankInfo>(ES3UserType_BankInfo.Instance);
 						break;
 					case "invenItemInfoList":
 						instance.invenItemInfoList = reader.Read<System.Collections.Generic.List<ClassDef.InvenItemInfo>>();

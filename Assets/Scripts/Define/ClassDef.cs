@@ -57,10 +57,30 @@ namespace ClassDef
         }
     }
 
+    //정기 예금 정보
+    public class CDProduct
+    {
+        //정기 예금액
+        public long depositeGold = 0;
+        //정기 예금 기간(년)
+        public int term = 1;
+        //정기 예금 만기일
+        DateTime maturityDate;
+    }
+
+    public class LoanCondition
+    {
+
+    }
+
+    //은행 가입 상품
     public class BankInfo
     {
         //은행 자유 예금
-        public long depositGold = 0;        
+        public long depositGold = 0;
+
+        //은행 정기 예금 목록
+        public List<CDProduct> cdProductList = new List<CDProduct>();
     }
      
     public class MyInfo

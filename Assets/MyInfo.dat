@@ -2,27 +2,20 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : 1,
-			"mBank" : {
-				"depositGold" : 0
-			},
+			"local" : 0,
+			"mCdProductList" : [
+				
+			],
 			"mInvenItemInfoList" : [
-				{
-					"uid" : 200000000007,
-					"count" : 85,
-					"price" : 107
-				}
+				
 			],
 			"gold" : 99999999,
-			"bank" : {
-				"depositGold" : 0
-			},
+			"freeDepositGold" : 0,
+			"cdProductList" : [
+				
+			],
 			"invenItemInfoList" : [
-				{
-					"uid" : 200000000007,
-					"count" : 85,
-					"price" : 107
-				}
+				
 			]
 		}
 	}

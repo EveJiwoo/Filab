@@ -57,15 +57,22 @@ namespace ClassDef
         }
     }
 
+    public class BankInfo
+    {
+        public List<CDProductInfo> cdList = new List<CDProductInfo>();
+    }
+
     //정기 예금 정보
-    public class CDProduct
+    public class CDProductInfo
     {
         //정기 예금액
         public long depositeGold = 0;
         //정기 예금 기간(년)
+        public float interestRate = 0f;
+        //정기 예금 기간(년)
         public int term = 1;
         //정기 예금 만기일
-        DateTime maturityDate;
+        public DateTime maturityDate;
     }
 
     public class LoanCondition
@@ -73,16 +80,7 @@ namespace ClassDef
 
     }
 
-    //은행 가입 상품
-    public class BankInfo
-    {
-        //은행 자유 예금
-        public long depositGold = 0;
 
-        //은행 정기 예금 목록
-        public List<CDProduct> cdProductList = new List<CDProduct>();
-    }
-     
     public class MyInfo
     {
         public CityType local = CityType.City1;
@@ -90,19 +88,20 @@ namespace ClassDef
         //소지금 정보
         public long gold { get; set; }
 
-        //은행 정보
-        BankInfo mBank = new BankInfo();
-        public BankInfo bank
-        {
-            get { return mBank; }
-            set { mBank = value; }
+        //자유 예금 정보
+        public long freeDepositGold { get; set; }
+
+        //정기 예금 정보
+        List<CDProductInfo> mCdProductList = new List<CDProductInfo>();
+        public List<CDProductInfo> cdProductList {
+            get { return mCdProductList; }
+            set { mCdProductList = value; }
         }
-        
+
         //아이템 정보
         List<InvenItemInfo> mInvenItemInfoList = new List<InvenItemInfo>();
 
-        public List<InvenItemInfo> invenItemInfoList
-        {
+        public List<InvenItemInfo> invenItemInfoList{
             get { return mInvenItemInfoList; }
             set { mInvenItemInfoList = value; }
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("depositGold")]
+	[ES3PropertiesAttribute("cdList")]
 	public class ES3UserType_BankInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -16,7 +16,7 @@ namespace ES3Types
 		{
 			var instance = (ClassDef.BankInfo)obj;
 			
-			writer.WriteProperty("depositGold", instance.depositGold, ES3Type_long.Instance);
+			writer.WritePrivateField("cdList", instance);
 		}
 
 		protected override void ReadObject<T>(ES3Reader reader, object obj)
@@ -27,9 +27,9 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
-					case "depositGold":
-						instance.depositGold = reader.Read<System.Int64>(ES3Type_long.Instance);
-						break;
+					case "cdList":
+					instance = (ClassDef.BankInfo)reader.SetPrivateField("cdList", reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>(), instance);
+					break;
 					default:
 						reader.Skip();
 						break;

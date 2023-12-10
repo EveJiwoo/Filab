@@ -59,7 +59,6 @@ public class Manager : MonoBehaviour
         while (PoolManager.Instance == null)
             yield return null;
 */
-
         kCanvasManager.gameObject.SetActive(true);
   
         go = Instantiate(kPlayManager.gameObject);

@@ -42,7 +42,7 @@ public class UICityBankDepositPopup : UIBase
         kWithdrawMenuGo.SetActive(false);
 
         kSpeechMessage.text =
-            $"Welcome to Kabes Bank.\nYou current have {Mng.data.myInfo.bank.depositGold.ToColumnString()} gold in your account.\nHow can I help you ?";
+            $"Welcome to Kabes Bank.\nYou current have {Mng.data.myInfo.freeDepositGold.ToColumnString()} gold in your account.\nHow can I help you ?";
     }
 
     public void OnDepositMenuButtonClick()
@@ -85,7 +85,7 @@ public class UICityBankDepositPopup : UIBase
         long depositGold = long.Parse(kDepositTextInput.text);        
 
         Mng.data.myInfo.gold -= depositGold;
-        Mng.data.myInfo.bank.depositGold += depositGold;
+        Mng.data.myInfo.freeDepositGold += depositGold;
         Mng.canvas.kTownMenu.MyGoldUpdate();
 
         onEnable();
@@ -102,7 +102,7 @@ public class UICityBankDepositPopup : UIBase
         kFrontMenuGo.SetActive(false);
         kWithdrawMenuGo.SetActive(true);
 
-        kMyGoldTextInput.text = Mng.data.myInfo.bank.depositGold.ToColumnString() + " G";
+        kMyGoldTextInput.text = Mng.data.myInfo.freeDepositGold.ToColumnString() + " G";
         kWithdrawTextInput.text = "0";
     }
 
@@ -116,9 +116,9 @@ public class UICityBankDepositPopup : UIBase
             return false;
         }
 
-        if (withdrawInput > Mng.data.myInfo.bank.depositGold)
+        if (withdrawInput > Mng.data.myInfo.freeDepositGold)
         {
-            kWithdrawTextInput.text = Mng.data.myInfo.bank.depositGold.ToString();
+            kWithdrawTextInput.text = Mng.data.myInfo.freeDepositGold.ToString();
             return false;
         }
 
@@ -137,7 +137,7 @@ public class UICityBankDepositPopup : UIBase
 
         long withdrawInput = long.Parse(kWithdrawTextInput.text);
 
-        Mng.data.myInfo.bank.depositGold -= withdrawInput;
+        Mng.data.myInfo.freeDepositGold -= withdrawInput;
         Mng.data.myInfo.gold += withdrawInput;
         Mng.canvas.kTownMenu.MyGoldUpdate();
 

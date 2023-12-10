@@ -44,11 +44,16 @@ public class DataManager : MonoBehaviour
         ES3.DeleteFile(Application.dataPath + "/MyInventory.dat");
     }
 
+    int mCurMonth;
+
     public DateTime curDateTime { get; set; }
 
     public MyInfo myInfo { get; set; }
 
-    Dictionary<CityType, ShopInfo> mCityShopList = new Dictionary<CityType, ShopInfo>();
+    //도시별 상점 아이템 판매 구매 정보
+    Dictionary<CityType, ShopInfo> mCityShopInfoList = new Dictionary<CityType, ShopInfo>();
+    //도시별 은행 정기 예금 상품 정보
+    Dictionary<CityType, BankInfo> mCityBankInfoList = new Dictionary<CityType, BankInfo>();
 
     // Start is called before the first frame update
     void Awake()
@@ -63,6 +68,7 @@ public class DataManager : MonoBehaviour
 
         TimeUpdate();
         CityShopUpdate();
+        CityBankCDProductUpdate();
     }
 
     public void TimeUpdate()
@@ -76,16 +82,19 @@ public class DataManager : MonoBehaviour
 
         mCurMonth = curDateTime.Month;
     }
-
-    int mCurMonth;
+    
     private void Update()
     {
         if (curDateTime.Month != mCurMonth)
         {
             mCurMonth = curDateTime.Month;
             AllShopItemUpdate();
+            CityBankCDProductUpdate();
         }
     }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //상점 상품 정보
 
     public void CityShopUpdate()
     {
@@ -110,13 +119,13 @@ public class DataManager : MonoBehaviour
     /// <summary> 유저에게 팔 아이템 목록 </summary>
     void SetCityShopGoodsList(CityType _city, ItemDataTable_Client _data)
     {
-        if (mCityShopList.ContainsKey(_city) == false)
-            mCityShopList[_city] = new ShopInfo();
+        if (mCityShopInfoList.ContainsKey(_city) == false)
+            mCityShopInfoList[_city] = new ShopInfo();
 
         ShopItemInfo info = new ShopItemInfo();
         info.table = _data;
         info.uid = _data.UID;        
-        mCityShopList[_city].userBuyList.Add(info);
+        mCityShopInfoList[_city].userBuyList.Add(info);
 
         ShopPriceAndCountUpdate(_city, info, curDateTime);
     }
@@ -124,13 +133,13 @@ public class DataManager : MonoBehaviour
     /// <summary> 유저에게 살 아이템 목록 </summary>
     void SetCityShopNotGoddsList(CityType _city, ItemDataTable_Client _data)
     {
-        if (mCityShopList.ContainsKey(_city) == false)
-            mCityShopList[_city] = new ShopInfo();
+        if (mCityShopInfoList.ContainsKey(_city) == false)
+            mCityShopInfoList[_city] = new ShopInfo();
 
         ShopItemInfo info = new ShopItemInfo();
         info.table = _data;
         info.uid = _data.UID;
-        mCityShopList[_city].shopBuyList.Add(info);
+        mCityShopInfoList[_city].shopBuyList.Add(info);
 
         ShopPriceAndCountUpdate(_city, info, curDateTime);
     }
@@ -177,25 +186,14 @@ public class DataManager : MonoBehaviour
 
     public ShopInfo GetShopInfo(CityType _type)
     {
-        return mCityShopList[_type];
+        return mCityShopInfoList[_type];
     }        
-
-    /// <summary> 이번달 대출 금리 </summary>
-    public float GetLoanRate(DateTime _dt)
-    {
-        return Mng.table.GetBaseInterestRate(_dt) + Mng.table.GetLoanInterestRate(_dt);
-    }
-
-    /// <summary> 이번달 예금 금리 </summary>
-    public float GetDepositRate(DateTime _dt)
-    {
-        return Mng.table.GetBaseInterestRate(_dt) + Mng.table.GetDepositInterestRate(_dt);
-    }
+       
 
     /// <summary> 모든 상점 가격, 생산 업데이트 </summary>
     public void AllShopItemUpdate()
     {
-        foreach (var shop in mCityShopList)
+        foreach (var shop in mCityShopInfoList)
         {
             foreach (var item in shop.Value.userBuyList)
                 ShopPriceAndCountUpdate(shop.Key, item, curDateTime);
@@ -220,20 +218,76 @@ public class DataManager : MonoBehaviour
             _item.count = 0;
     }
 
-    /// <summary> 기준 금리, 예금, 대출 금리 반영 </summary>
-    public void BankDepositAndDLoanUpdate(DateTime _today)
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //정기 예금 상품
+    
+    /// <summary> 새 예금 상품 생성</summary>
+    public void CityBankCDProductUpdate()
     {
-        /*if( myInfo.bank.deposit > 0 )
+        mCityBankInfoList.Clear();
+
+        for (int i = 0; i < (int)CityType.Max; i++)
         {
-            Mng.table.GetDepositInterestRate(myInfo.bank.depositTime); // << 자유 예금 아닌가??
-        }*/
+            var bankInfo = new BankInfo();
+
+            //최소 상품 갯수 1개 ~ 최대 상품 갯수3개
+            int productionCount = UnityEngine.Random.Range(1, 4);
+
+            //1년 ~ 5년 상품 
+            List<int> termList = new List<int>() { 1, 2, 3, 4, 5};
+            
+            for(int n = 0; n < productionCount; n++)
+            {
+                CDProductInfo cd = new CDProductInfo();
+                
+                int selectIndex = UnityEngine.Random.Range(0, termList.Count);
+                //만기 기간
+                cd.term = termList[selectIndex];
+                float addInterstRate = 0f;
+                switch(cd.term)
+                {
+                    //1년 만기 정기 예금 추가 금리(1~2%)
+                    case 1: addInterstRate = UnityEngine.Random.Range(0.01f, 0.02f); break;
+                    //2년 만기 정기 예금 추가 금리(2~4%)
+                    case 2: addInterstRate = UnityEngine.Random.Range(0.02f, 0.04f); break;
+                    //3년 만기 정기 예금 추가 금리(3~5%)
+                    case 3: addInterstRate = UnityEngine.Random.Range(0.03f, 0.05f); break;
+                    //4년 만기 정기 예금 추가 금리(4~7%)
+                    case 4: addInterstRate = UnityEngine.Random.Range(0.04f, 0.07f); break;
+                    //5년 만기 정기 예금 추가 금리(5~10%)
+                    case 5: addInterstRate = UnityEngine.Random.Range(0.05f, 0.1f); break;
+                    default:{
+                            Debug.Log("해당하는 연차의 만기 정기 예금 추가 금리가 없습니다.");
+                            return;
+                        }
+                }
+
+                //예금 금리
+                cd.interestRate = Mng.table.GetBaseInterestRate(curDateTime)/*기준금리*/ + addInterstRate/*추가금리*/;
+                //만기 일자
+                cd.maturityDate = curDateTime.AddYears(cd.term);
+
+                termList.RemoveAt(selectIndex);
+                bankInfo.cdList.Add(cd);
+            }            
+
+            mCityBankInfoList[(CityType)i] = bankInfo;
+        }
     }
 
+    public BankInfo GetBankInfo(CityType _type)
+    {
+        return mCityBankInfoList[_type];
+    }
 
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //자유 예금 상품
+    
+    /// <summary> 자유 예금 추가 </summary>
     public void SetDesipot(long _gold)
     {
         myInfo.gold -= _gold;
-        myInfo.bank.depositGold = _gold;
+        myInfo.freeDepositGold = _gold;
         //myInfo.bank.depositTime = curDateTime;
     }
 

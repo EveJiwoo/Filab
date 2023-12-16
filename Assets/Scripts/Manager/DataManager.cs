@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 //1. 상점에서 아이템을 산다.(완)
@@ -273,6 +274,8 @@ public class DataManager : MonoBehaviour
 
             mCityBankInfoList[(CityType)i] = bankInfo;
         }
+
+        Debug.Log("정기 예금 상품이 모두 갱신되었습니다.");
     }
 
     public BankInfo GetBankInfo(CityType _type)
@@ -280,9 +283,17 @@ public class DataManager : MonoBehaviour
         return mCityBankInfoList[_type];
     }
 
+    /// <summary> 만기가 도래한 정기 예금 상품 목록 획득 </summary>    
+    public List<CDProductInfo> GetMyCdMaturityList()
+    {        
+        var list = myInfo.cdProductList.Where(_p => _p.maturityDate.CompareTo(curDateTime) == -1).ToList();
+
+        return list;
+    }
+
     //////////////////////////////////////////////////////////////////////////////////////////
     //자유 예금 상품
-    
+
     /// <summary> 자유 예금 추가 </summary>
     public void SetDesipot(long _gold)
     {

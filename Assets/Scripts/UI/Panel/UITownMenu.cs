@@ -50,4 +50,9 @@ public class UITownMenu : MonoBehaviour
     {
         Mng.canvas.kInventory.gameObject.SetActive(true);
     }
+
+    public void OnFinancialsButtonClick()
+    {
+        Mng.canvas.kFinancialPopup.gameObject.SetActive(true);
+    }
 }

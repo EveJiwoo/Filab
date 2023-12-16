@@ -1,3 +1,4 @@
+using ClassDef;
 using EnumDef;
 using System.Collections;
 using System.Collections.Generic;
@@ -50,10 +51,40 @@ public class UICityBankCDAccountPopup : UIBase
         CDProductListUpdate();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Reset()
     {
-        
+        mSelectButtonIndex = ConstDef.NONE;
+        kDepositAmount.text = "0";
+        kDepositAmount.interactable = false;
+        kMonthlyInterestGold.text = "0 Gold";
+        kTotalInterestEarned.text = "0 Gold";
+        kMaturityDate.text = "";        
+    }
+
+    void CdMaturityCheck()
+    {
+        var list = Mng.data.GetMyCdMaturityList();
+        if (list.Count > 0)
+        {
+            var cd = list[0];
+            var maturityDate = $"{cd.maturityDate.Year}-{cd.maturityDate.Month}-{cd.maturityDate.Day}";
+            MessageBox.Open($"{maturityDate} : {cd.depositeGold.ToColumnString()} Gold => {((long)(cd.depositeGold * (1f + cd.interestRate * cd.term))).ToColumnString()} Gold",
+                //재귀용법
+                () =>{
+                    Mng.data.myInfo.gold += (long)(cd.depositeGold * (1f + cd.interestRate * cd.term));
+                    Mng.canvas.kTownMenu.MyGoldUpdate();
+
+                    Mng.data.myInfo.cdProductList.Remove(cd);
+                    CdMaturityCheck();
+                });
+        }
+    }
+
+    protected override void onEnable()
+    {
+        CdMaturityCheck();
+        Reset();
+        CDProductListUpdate();
     }
 
     public void OnOpenCDAccountButtonClick()
@@ -70,6 +101,8 @@ public class UICityBankCDAccountPopup : UIBase
 
     void CDProductListUpdate()
     {
+        Reset();
+
         kProductGo1.gameObject.SetActive(false);
         kProductGo2.gameObject.SetActive(false);
         kProductGo3.gameObject.SetActive(false);
@@ -107,7 +140,9 @@ public class UICityBankCDAccountPopup : UIBase
 
     public void OnSelectButtonClick(Button _button)
     {
-        if( _button == kProductSelectButton1 )
+        Reset();
+
+        if ( _button == kProductSelectButton1 )
         {
             mSelectButtonIndex = 0;            
         }
@@ -120,9 +155,7 @@ public class UICityBankCDAccountPopup : UIBase
             mSelectButtonIndex = 2;
         }
 
-        kDepositAmount.text = "0";
-        kMonthlyInterestGold.text = "0 Gold";
-        kTotalInterestEarned.text = "0 Gold";
+        kDepositAmount.interactable = true;
 
         var bankInfo = Mng.data.GetBankInfo(Mng.data.myInfo.local);
         
@@ -153,5 +186,29 @@ public class UICityBankCDAccountPopup : UIBase
             var maturityDate = Mng.data.curDateTime.AddYears(cd.term);
             kMaturityDate.text = $"{maturityDate.Year}.{maturityDate.Month}.{maturityDate.Day}";
         }
+    }
+
+    public void OnDepositButtonClick()
+    {
+        if(mSelectButtonIndex == ConstDef.NONE)
+        {
+            Debug.Log("선택된 정기 예금이 없습니다.");
+            return;
+        }
+
+        var bankInfo = Mng.data.GetBankInfo(Mng.data.myInfo.local);
+        var selectCD = bankInfo.cdList[mSelectButtonIndex];
+
+        var cd = new CDProductInfo();
+        long amountGold = long.Parse(kDepositAmount.text);
+        cd.depositeGold = amountGold;
+        cd.interestRate = selectCD.interestRate;
+        cd.term         = selectCD.term;
+        cd.maturityDate = selectCD.maturityDate;
+
+        Mng.data.myInfo.cdProductList.Add(cd);
+
+        bankInfo.cdList.RemoveAt(mSelectButtonIndex);
+        CDProductListUpdate();
     }
 }

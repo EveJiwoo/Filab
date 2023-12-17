@@ -129,7 +129,7 @@ public class UICityBankCDAccountPopup : UIBase
                     } break;
                 case 2:
                     {
-                        kProductGo1.SetActive(true);
+                        kProductGo3.SetActive(true);
                         kProductRate3.text = rate;
                         kProductTerm3.text = term;
                     } break;

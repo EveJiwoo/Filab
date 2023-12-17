@@ -53,8 +53,14 @@ public class DataManager : MonoBehaviour
 
     //도시별 상점 아이템 판매 구매 정보
     Dictionary<CityType, ShopInfo> mCityShopInfoList = new Dictionary<CityType, ShopInfo>();
-    //도시별 은행 정기 예금 상품 정보
+    //도시별 은행 정기 예금, 대출 상품 정보
     Dictionary<CityType, BankInfo> mCityBankInfoList = new Dictionary<CityType, BankInfo>();
+
+    int mMaxCdCount = 0;
+    int mMaxLoanCount = 0;
+
+    float mMinLoanInterestRate = 0f;
+    float mMaxLoanInterestRate = 0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -67,9 +73,14 @@ public class DataManager : MonoBehaviour
 
         myInfo.gold = 99999999;
 
+        mMaxCdCount = (int)Mng.table.GetGameDataTable("CDMaxCount").GameDataValue;
+        mMaxLoanCount = (int)Mng.table.GetGameDataTable("LoanMaxCount").GameDataValue;
+        mMinLoanInterestRate = Mng.table.GetGameDataTable("LoanMinInterestRate").GameDataValue;
+        mMaxLoanInterestRate = Mng.table.GetGameDataTable("LoanMaxInterestRate").GameDataValue;
+
         TimeUpdate();
         CityShopUpdate();
-        CityBankCDProductUpdate();
+        CityBankCdAndLoanUpdate();
     }
 
     public void TimeUpdate()
@@ -90,7 +101,7 @@ public class DataManager : MonoBehaviour
         {
             mCurMonth = curDateTime.Month;
             AllShopItemUpdate();
-            CityBankCDProductUpdate();
+            CityBankCdAndLoanUpdate();
         }
     }
 
@@ -220,16 +231,21 @@ public class DataManager : MonoBehaviour
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
-    //정기 예금 상품
+    //은행 상품(정기 예금, 대출)
     
     /// <summary> 새 예금 상품 생성</summary>
-    public void CityBankCDProductUpdate()
+    public void CityBankCdAndLoanUpdate()
     {
         mCityBankInfoList.Clear();
+
+        float baseInterestRate = Mng.table.GetBaseInterestRate(curDateTime);
 
         for (int i = 0; i < (int)CityType.Max; i++)
         {
             var bankInfo = new BankInfo();
+            
+            //////////////////////////////////////////////////////////
+            //정기 예금 상품 갱신
 
             //최소 상품 갯수 1개 ~ 최대 상품 갯수3개
             int productionCount = UnityEngine.Random.Range(1, 4);
@@ -264,13 +280,31 @@ public class DataManager : MonoBehaviour
                 }
 
                 //예금 금리
-                cd.interestRate = Mng.table.GetBaseInterestRate(curDateTime)/*기준금리*/ + addInterstRate/*추가금리*/;
+                cd.interestRate = baseInterestRate/*기준금리*/ + addInterstRate/*추가금리*/;
                 //만기 일자
                 cd.maturityDate = curDateTime.AddYears(cd.term);
 
                 termList.RemoveAt(selectIndex);
+
                 bankInfo.cdList.Add(cd);
-            }            
+            }
+
+            //////////////////////////////////////////////////////////
+            //대출 상품 갱신
+
+            LoanCondition loan = new LoanCondition();
+
+            //대출 금리
+            float addLoanInterstRate = UnityEngine.Random.Range(mMinLoanInterestRate, mMaxLoanInterestRate);
+            loan.interestRate = baseInterestRate/*기준금리*/ + addLoanInterstRate/*추가금리*/;
+
+            //1년 ~ 5년 상품
+            loan.term = UnityEngine.Random.Range(1, 6);
+
+            //만기 일자
+            loan.maturityDate = curDateTime.AddYears(loan.term);
+
+            bankInfo.loan = loan;
 
             mCityBankInfoList[(CityType)i] = bankInfo;
         }

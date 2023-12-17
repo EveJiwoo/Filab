@@ -2,28 +2,28 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : -1,
+			"local" : 0,
 			"mCdProductList" : [
 				{
 					"depositeGold" : 10000,
-					"interestRate" : 0.102311671,
-					"term" : 4,
-					"maturityDate" : {
-						"ticks" : 413000662969360000
-					}
-				},{
-					"depositeGold" : 1000000,
-					"interestRate" : 0.06785054,
+					"interestRate" : 0.066368036,
 					"term" : 1,
 					"maturityDate" : {
-						"ticks" : 412053718969360000
+						"ticks" : 419627583547130000
 					}
 				},{
-					"depositeGold" : 90000,
-					"interestRate" : 0.08248748,
-					"term" : 2,
+					"depositeGold" : 10000,
+					"interestRate" : 0.115865275,
+					"term" : 5,
 					"maturityDate" : {
-						"ticks" : 412369078969360000
+						"ticks" : 420889887547130000
+					}
+				},{
+					"depositeGold" : 10000,
+					"interestRate" : 0.0472353175,
+					"term" : 1,
+					"maturityDate" : {
+						"ticks" : 419758149729500000
 					}
 				}
 			],
@@ -38,29 +38,29 @@
 					"price" : 178
 				}
 			],
-			"gold" : 99999999,
+			"gold" : 101186788,
 			"freeDepositGold" : 487999,
 			"cdProductList" : [
 				{
 					"depositeGold" : 10000,
-					"interestRate" : 0.102311671,
-					"term" : 4,
-					"maturityDate" : {
-						"ticks" : 413000662969360000
-					}
-				},{
-					"depositeGold" : 1000000,
-					"interestRate" : 0.06785054,
+					"interestRate" : 0.066368036,
 					"term" : 1,
 					"maturityDate" : {
-						"ticks" : 412053718969360000
+						"ticks" : 419627583547130000
 					}
 				},{
-					"depositeGold" : 90000,
-					"interestRate" : 0.08248748,
-					"term" : 2,
+					"depositeGold" : 10000,
+					"interestRate" : 0.115865275,
+					"term" : 5,
 					"maturityDate" : {
-						"ticks" : 412369078969360000
+						"ticks" : 420889887547130000
+					}
+				},{
+					"depositeGold" : 10000,
+					"interestRate" : 0.0472353175,
+					"term" : 1,
+					"maturityDate" : {
+						"ticks" : 419758149729500000
 					}
 				}
 			],

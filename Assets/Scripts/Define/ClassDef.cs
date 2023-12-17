@@ -60,6 +60,7 @@ namespace ClassDef
     public class BankInfo
     {
         public List<CDProductInfo> cdList = new List<CDProductInfo>();
+        public LoanCondition loan;
     }
 
     //정기 예금 정보
@@ -67,7 +68,7 @@ namespace ClassDef
     {
         //정기 예금액
         public long depositeGold = 0;
-        //정기 예금 기간(년)
+        //정기 예금 금리(년)
         public float interestRate = 0f;
         //정기 예금 기간(년)
         public int term = 1;
@@ -77,7 +78,14 @@ namespace ClassDef
 
     public class LoanCondition
     {
-
+        //대출 금액
+        public long loanGold = 0;
+        //대출 금리(년)
+        public float interestRate = 0f;
+        //대출 기간(년)
+        public int term = 1;
+        //대출 만기일
+        public DateTime maturityDate;
     }
 
 

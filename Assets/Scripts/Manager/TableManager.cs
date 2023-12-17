@@ -47,9 +47,7 @@ public partial class TableManager : MonoBehaviour
 	public void Init()
 	{		
 		mGameDataList = _ee.GetListJson<GameDataTable_Client>();
-
-		mInterestRateBaseList = _ee.GetListJson<InterestRateBaseTable_Client>();
-		
+		mInterestRateBaseList = _ee.GetListJson<InterestRateBaseTable_Client>();		
 		mItemDataTableList = _ee.GetListJson<ItemDataTable_Client>();
 		mItemPriceRateTableList = _ee.GetListJson<ItemPriceRateTable_Client>();
 	}    
@@ -63,8 +61,9 @@ public partial class TableManager : MonoBehaviour
 #endif
 	    return default;
     }
+    
 
-	public InterestRateBaseTable_Client FindBaseInterestRateTable(long _uid)
+    public InterestRateBaseTable_Client FindBaseInterestRateTable(long _uid)
 	{
 		InterestRateBaseTable_Client data = mInterestRateBaseList.Find(d => d.UID == _uid);
 		if (data != default) return data;
@@ -84,7 +83,17 @@ public partial class TableManager : MonoBehaviour
 		return default;
 	}
 
-	public float GetBaseInterestRate(DateTime _dt)
+    public GameDataTable_Client GetGameDataTable(string _id)
+    {
+        GameDataTable_Client data = mGameDataList.Find(d => d.GameDataID == _id);
+        if (data != default) return data;
+#if LOG
+	    Log.Error($"UID [{_uid}] 와 맞는 데이터가 없습니다");
+#endif
+        return default;
+    }
+
+    public float GetBaseInterestRate(DateTime _dt)
 	{
 		InterestRateBaseTable_Client data = mInterestRateBaseList.Find(d => d.Year == _dt.Year);
 		if (data != default) {

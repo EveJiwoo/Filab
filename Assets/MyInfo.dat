@@ -2,20 +2,78 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : 0,
+			"local" : -1,
 			"mCdProductList" : [
-				
+				{
+					"depositeGold" : 10000,
+					"interestRate" : 0.102311671,
+					"term" : 4,
+					"maturityDate" : {
+						"ticks" : 413000662969360000
+					}
+				},{
+					"depositeGold" : 1000000,
+					"interestRate" : 0.06785054,
+					"term" : 1,
+					"maturityDate" : {
+						"ticks" : 412053718969360000
+					}
+				},{
+					"depositeGold" : 90000,
+					"interestRate" : 0.08248748,
+					"term" : 2,
+					"maturityDate" : {
+						"ticks" : 412369078969360000
+					}
+				}
 			],
 			"mInvenItemInfoList" : [
-				
+				{
+					"uid" : 200000000001,
+					"count" : 40,
+					"price" : 175
+				},{
+					"uid" : 200000000003,
+					"count" : 7,
+					"price" : 178
+				}
 			],
-			"gold" : 100014038,
-			"freeDepositGold" : 0,
+			"gold" : 99999999,
+			"freeDepositGold" : 487999,
 			"cdProductList" : [
-				
+				{
+					"depositeGold" : 10000,
+					"interestRate" : 0.102311671,
+					"term" : 4,
+					"maturityDate" : {
+						"ticks" : 413000662969360000
+					}
+				},{
+					"depositeGold" : 1000000,
+					"interestRate" : 0.06785054,
+					"term" : 1,
+					"maturityDate" : {
+						"ticks" : 412053718969360000
+					}
+				},{
+					"depositeGold" : 90000,
+					"interestRate" : 0.08248748,
+					"term" : 2,
+					"maturityDate" : {
+						"ticks" : 412369078969360000
+					}
+				}
 			],
 			"invenItemInfoList" : [
-				
+				{
+					"uid" : 200000000001,
+					"count" : 40,
+					"price" : 175
+				},{
+					"uid" : 200000000003,
+					"count" : 7,
+					"price" : 178
+				}
 			]
 		}
 	}

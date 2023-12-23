@@ -95,7 +95,7 @@ public class DataManager : MonoBehaviour
         mCurMonth = curDateTime.Month;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         if (curDateTime.Month != mCurMonth)
         {
@@ -103,6 +103,8 @@ public class DataManager : MonoBehaviour
             AllShopItemUpdate();
             CityBankCdAndLoanUpdate();
         }
+
+        MyLoanUpdate();
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -312,6 +314,7 @@ public class DataManager : MonoBehaviour
         Debug.Log("정기 예금 상품이 모두 갱신되었습니다.");
     }
 
+    /// <summary> 각 은행들의 상품(정기예금, 대출상품) 정보</summary>
     public BankInfo GetBankInfo(CityType _type)
     {
         return mCityBankInfoList[_type];
@@ -323,6 +326,49 @@ public class DataManager : MonoBehaviour
         var list = myInfo.cdProductList.Where(_p => _p.maturityDate.CompareTo(curDateTime) == -1).ToList();
 
         return list;
+    }
+
+    /// <summary> 대출 이자 및 원금 상환 </summary>
+    public void MyLoanUpdate()
+    {
+        var payLoanList = myInfo.loanCondtionList.Where(_p => _p.nextPaymentDate <= curDateTime).ToList();
+        if (payLoanList.Count == 0)
+            return;
+
+        long totalPayGold = 0;
+        foreach(var payLoan in payLoanList )
+        {
+            //이자 상환
+            long interestPayGold = (long)((float)payLoan.loanGold * (payLoan.interestRate / 12f));
+            payLoan.interestPayGold += interestPayGold;
+            //원금 상환
+            long principalPayGold = (long)((float)payLoan.loanGold / (12f * payLoan.term));
+            payLoan.principalPayGold += principalPayGold;
+            
+            totalPayGold += interestPayGold + principalPayGold;
+
+            payLoan.payCount++;
+
+            //대출 만기 종료
+            if (payLoan.maturityDate <= curDateTime)
+            {
+                //*대출 목록에서 삭제                
+                myInfo.loanCondtionList.Remove(payLoan);
+            }
+            else
+            //다음 상환날 업데이트
+            {
+                payLoan.NextPayDateUpdate();
+            }
+        }
+
+        if (totalPayGold > 0){
+            MessageBox.Open($"{totalPayGold} Gold will be redeemed.", 
+                () => {
+                    myInfo.gold -= totalPayGold;
+                    Mng.canvas.kTownMenu.MyGoldUpdate();
+                });
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////

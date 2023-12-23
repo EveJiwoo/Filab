@@ -78,14 +78,57 @@ namespace ClassDef
 
     public class LoanCondition
     {
+        //대출 은행
+        public CityType city = CityType.None;
         //대출 금액
         public long loanGold = 0;
+
+        //원금 상환액
+        public long principalPayGold;
+        //이자 상환액
+        public long interestPayGold;
+
         //대출 금리(년)
         public float interestRate = 0f;
+        //갱신된 원금 대비 이자
+        public long curInterestGold;
+
         //대출 기간(년)
         public int term = 1;
         //대출 만기일
         public DateTime maturityDate;
+        //대출 계약일
+        public DateTime contractDate;
+        //다음 상환일
+        public DateTime nextPaymentDate = default;
+        
+        //상환 횟수
+        private int mPayCount = 0;
+        public int payCount{
+            set{
+                mPayCount = value;
+
+                if (mPayCount % 12 == 0){
+                    int year = (int)(mPayCount / 12);
+                    curInterestGold = (long)((float)(loanGold - principalPayGold) * interestRate);
+                }
+            }
+
+            get { return mPayCount; }
+        }
+
+        //만기 기준 예상 남은 상환금
+        public long curPrincipal{
+            get{
+                long totalLoanGold = ((long)(loanGold * (1f + interestRate * term)));
+                return (totalLoanGold - principalPayGold + interestPayGold);
+            }
+        }
+
+        public void NextPayDateUpdate()
+        {
+            nextPaymentDate = contractDate.AddMonths(payCount + 1);
+        }
     }
 
 
@@ -104,6 +147,14 @@ namespace ClassDef
         public List<CDProductInfo> cdProductList {
             get { return mCdProductList; }
             set { mCdProductList = value; }
+        }
+
+        //대출 상품 정보
+        List<LoanCondition> mLoanConditionList = new List<LoanCondition>();
+        public List<LoanCondition> loanCondtionList
+        {
+            get { return mLoanConditionList; }
+            set { mLoanConditionList = value; }
         }
 
         //아이템 정보

@@ -73,3 +73,5 @@ public class Manager : MonoBehaviour
 
     }
 }
+
+//게임 종료 후 정기 예금 돌려 받나?

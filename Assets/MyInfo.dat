@@ -27,6 +27,26 @@
 					}
 				}
 			],
+			"mLoanConditionList" : [
+				{
+					"city" : 0,
+					"loanGold" : 10000,
+					"interestPayGold" : 284,
+					"interestRate" : 0.171152592,
+					"curInterestGold" : 0,
+					"term" : 1,
+					"maturityDate" : {
+						"ticks" : 410968617995350000
+					},
+					"contractDate" : {
+						"ticks" : 410626473995350000
+					},
+					"nextPaymentDate" : {
+						"ticks" : 410705961995350000
+					},
+					"payCount" : 2
+				}
+			],
 			"mInvenItemInfoList" : [
 				{
 					"uid" : 200000000001,
@@ -38,7 +58,7 @@
 					"price" : 178
 				}
 			],
-			"gold" : 100018999,
+			"gold" : 99999857,
 			"freeDepositGold" : 487999,
 			"cdProductList" : [
 				{
@@ -62,6 +82,26 @@
 					"maturityDate" : {
 						"ticks" : 419758149729500000
 					}
+				}
+			],
+			"loanCondtionList" : [
+				{
+					"city" : 0,
+					"loanGold" : 10000,
+					"interestPayGold" : 284,
+					"interestRate" : 0.171152592,
+					"curInterestGold" : 0,
+					"term" : 1,
+					"maturityDate" : {
+						"ticks" : 410968617995350000
+					},
+					"contractDate" : {
+						"ticks" : 410626473995350000
+					},
+					"nextPaymentDate" : {
+						"ticks" : 410705961995350000
+					},
+					"payCount" : 2
 				}
 			],
 			"invenItemInfoList" : [

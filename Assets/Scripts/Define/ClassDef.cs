@@ -103,7 +103,7 @@ namespace ClassDef
         public DateTime nextPaymentDate = default;
         
         //상환 횟수
-        public int payCount = 0;        
+        public int interestayCount = 0;        
 
         //만기 기준 예상 남은 상환금
         public long curPrincipal{
@@ -115,7 +115,7 @@ namespace ClassDef
 
         public void NextPayDateUpdate()
         {
-            nextPaymentDate = contractDate.AddMonths(payCount + 1);
+            nextPaymentDate = contractDate.AddMonths(interestayCount + 1);
         }
     }
 

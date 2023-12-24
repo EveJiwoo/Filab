@@ -1,7 +1,4 @@
 using ClassDef;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -35,26 +32,13 @@ public class UICityBankLoanPopup : UIBase
     public TMP_Text kCurrentPrincipalTxt;
     //오른쪽 메뉴
     public TMP_Text kLoanDateTxt;
-    public TMP_Text kTotalPrincipalPaymentTxt;
-    public TMP_Text kTotalInterestPaymentTxt;
-    public TMP_Text kTotalPaidTxt;
+    public TMP_Text kNumberInterestPaymentsTxt;
+    public TMP_Text kTotalInterestPaymentTxt;    
     public Button kMakePaymnetButton;
 
     LoanCondition mBankLoan;
     LoanCondition mMyLoan;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //마을별로 대출이 실행이 안됨... ㅜㅜ
-        //시티2 뱅크 나올때 마을1이 됨 ㅠ.ㅠ
-    }
-
+    
     protected override void onEnable()
     {
         ResetMenu();
@@ -115,9 +99,9 @@ public class UICityBankLoanPopup : UIBase
         kCurrentPrincipalTxt.text = $"{(mMyLoan.curPrincipal).ToColumnString()} Gold";
     
         kLoanDateTxt.text = $"{mMyLoan.maturityDate.Year}/{mMyLoan.maturityDate.Month}/{mMyLoan.maturityDate.Day}";
-        /*kTotalPrincipalPaymentTxt.text = $"{mMyLoan.principalPayGold.ToColumnString()} Gold";*/
+        kNumberInterestPaymentsTxt.text = $"{mMyLoan.interestayCount}/{mMyLoan.term * 12}";
         kTotalInterestPaymentTxt.text = $"{mMyLoan.interestPayGold.ToColumnString()} Gold"; ;
-        kTotalPaidTxt.text = $"{(/*mMyLoan.principalPayGold + */mMyLoan.interestPayGold).ToColumnString()} Gold";
+        //kTotalPaidTxt.text = $"{(/*mMyLoan.principalPayGold + */mMyLoan.interestPayGold).ToColumnString()} Gold";
     }
 
     public void OnLoanAmoutSlider()

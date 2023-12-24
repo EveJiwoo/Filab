@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("local", "mCdProductList", "mInvenItemInfoList", "gold", "freeDepositGold", "cdProductList", "invenItemInfoList")]
+	[ES3PropertiesAttribute("local", "mCdProductList", "mLoanConditionList", "mInvenItemInfoList", "gold", "freeDepositGold", "cdProductList", "loanCondtionList", "invenItemInfoList")]
 	public class ES3UserType_MyInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -18,10 +18,12 @@ namespace ES3Types
 			
 			writer.WriteProperty("local", instance.local, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(EnumDef.CityType)));
 			writer.WritePrivateField("mCdProductList", instance);
+			writer.WritePrivateField("mLoanConditionList", instance);
 			writer.WritePrivateField("mInvenItemInfoList", instance);
 			writer.WriteProperty("gold", instance.gold, ES3Type_long.Instance);
 			writer.WriteProperty("freeDepositGold", instance.freeDepositGold, ES3Type_long.Instance);
 			writer.WriteProperty("cdProductList", instance.cdProductList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.CDProductInfo>)));
+			writer.WriteProperty("loanCondtionList", instance.loanCondtionList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.LoanCondition>)));
 			writer.WriteProperty("invenItemInfoList", instance.invenItemInfoList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.InvenItemInfo>)));
 		}
 
@@ -39,6 +41,9 @@ namespace ES3Types
 					case "mCdProductList":
 					instance = (ClassDef.MyInfo)reader.SetPrivateField("mCdProductList", reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>(), instance);
 					break;
+					case "mLoanConditionList":
+					instance = (ClassDef.MyInfo)reader.SetPrivateField("mLoanConditionList", reader.Read<System.Collections.Generic.List<ClassDef.LoanCondition>>(), instance);
+					break;
 					case "mInvenItemInfoList":
 					instance = (ClassDef.MyInfo)reader.SetPrivateField("mInvenItemInfoList", reader.Read<System.Collections.Generic.List<ClassDef.InvenItemInfo>>(), instance);
 					break;
@@ -50,6 +55,9 @@ namespace ES3Types
 						break;
 					case "cdProductList":
 						instance.cdProductList = reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>();
+						break;
+					case "loanCondtionList":
+						instance.loanCondtionList = reader.Read<System.Collections.Generic.List<ClassDef.LoanCondition>>();
 						break;
 					case "invenItemInfoList":
 						instance.invenItemInfoList = reader.Read<System.Collections.Generic.List<ClassDef.InvenItemInfo>>();

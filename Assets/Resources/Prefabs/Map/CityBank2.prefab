@@ -3558,7 +3558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kResetPosition: {fileID: 9058630017411634416}
   kPlayBGM: {fileID: 8300000, guid: d9544df379cbbaf46ad61885fd078234, type: 3}
-  kCityType: 0
+  kCityType: 1
 --- !u!1 &6536190250105731447
 GameObject:
   m_ObjectHideFlags: 0

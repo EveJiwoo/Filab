@@ -3,7 +3,6 @@ using EnumDef;
 using SheetData;
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -346,7 +345,7 @@ public class DataManager : MonoBehaviour
             //totalPayGold += interestPayGold + principalPayGold;            
             totalPayGold += interestPayGold;
 
-            payLoan.payCount++;
+            payLoan.interestayCount++;
 
             //대출 만기 종료
             if (payLoan.maturityDate <= curDateTime)

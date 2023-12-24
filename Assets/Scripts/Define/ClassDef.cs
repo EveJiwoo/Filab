@@ -84,7 +84,7 @@ namespace ClassDef
         public long loanGold = 0;
 
         //원금 상환액
-        public long principalPayGold;
+        //public long principalPayGold;
         //이자 상환액
         public long interestPayGold;
 
@@ -103,25 +103,13 @@ namespace ClassDef
         public DateTime nextPaymentDate = default;
         
         //상환 횟수
-        private int mPayCount = 0;
-        public int payCount{
-            set{
-                mPayCount = value;
-
-                if (mPayCount % 12 == 0){
-                    int year = (int)(mPayCount / 12);
-                    curInterestGold = (long)((float)(loanGold - principalPayGold) * interestRate);
-                }
-            }
-
-            get { return mPayCount; }
-        }
+        public int payCount = 0;        
 
         //만기 기준 예상 남은 상환금
         public long curPrincipal{
             get{
                 long totalLoanGold = ((long)(loanGold * (1f + interestRate * term)));
-                return (totalLoanGold - principalPayGold + interestPayGold);
+                return (totalLoanGold - interestPayGold);
             }
         }
 

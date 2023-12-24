@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b33ddb4339349619dce28a93c3e91c, type: 3}
-  m_Name: CityBank_City1
+  m_Name: City2_CityBank2
   m_EditorClassIdentifier: 
-  loadMap: {fileID: 1790884059, guid: f35940879d48c354db7ed837927f263a, type: 3}
-  portalName: Portal/CityBank
+  loadMap: {fileID: 1854628130468129650, guid: e4a92c49aa5ff3d4aa657e0e47716bad, type: 3}
+  portalName: Portal/City2

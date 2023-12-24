@@ -56,11 +56,11 @@ public class DataManager : MonoBehaviour
     //도시별 은행 정기 예금, 대출 상품 정보
     Dictionary<CityType, BankInfo> mCityBankInfoList = new Dictionary<CityType, BankInfo>();
 
-    int mMaxCdCount = 0;
-    int mMaxLoanCount = 0;
+    public int maxCdCount = 0;
+    public int maxLoanCount = 0;
 
-    float mMinLoanInterestRate = 0f;
-    float mMaxLoanInterestRate = 0f;
+    public float minLoanInterestRate = 0f;
+    public float maxLoanInterestRate = 0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -73,10 +73,10 @@ public class DataManager : MonoBehaviour
 
         myInfo.gold = 99999999;
 
-        mMaxCdCount = (int)Mng.table.GetGameDataTable("CDMaxCount").GameDataValue;
-        mMaxLoanCount = (int)Mng.table.GetGameDataTable("LoanMaxCount").GameDataValue;
-        mMinLoanInterestRate = Mng.table.GetGameDataTable("LoanMinInterestRate").GameDataValue;
-        mMaxLoanInterestRate = Mng.table.GetGameDataTable("LoanMaxInterestRate").GameDataValue;
+        maxCdCount = (int)Mng.table.GetGameDataTable("CDMaxCount").GameDataValue;
+        maxLoanCount = (int)Mng.table.GetGameDataTable("LoanMaxCount").GameDataValue;
+        minLoanInterestRate = Mng.table.GetGameDataTable("LoanMinInterestRate").GameDataRatio;
+        maxLoanInterestRate = Mng.table.GetGameDataTable("LoanMaxInterestRate").GameDataRatio;
 
         TimeUpdate();
         CityShopUpdate();
@@ -248,7 +248,6 @@ public class DataManager : MonoBehaviour
             
             //////////////////////////////////////////////////////////
             //정기 예금 상품 갱신
-
             //최소 상품 갯수 1개 ~ 최대 상품 갯수3개
             int productionCount = UnityEngine.Random.Range(1, 4);
 
@@ -293,11 +292,10 @@ public class DataManager : MonoBehaviour
 
             //////////////////////////////////////////////////////////
             //대출 상품 갱신
-
             LoanCondition loan = new LoanCondition();
 
             //대출 금리
-            float addLoanInterstRate = UnityEngine.Random.Range(mMinLoanInterestRate, mMaxLoanInterestRate);
+            float addLoanInterstRate = UnityEngine.Random.Range(minLoanInterestRate, maxLoanInterestRate);
             loan.interestRate = baseInterestRate/*기준금리*/ + addLoanInterstRate/*추가금리*/;
 
             //1년 ~ 5년 상품
@@ -342,16 +340,18 @@ public class DataManager : MonoBehaviour
             long interestPayGold = (long)((float)payLoan.loanGold * (payLoan.interestRate / 12f));
             payLoan.interestPayGold += interestPayGold;
             //원금 상환
-            long principalPayGold = (long)((float)payLoan.loanGold / (12f * payLoan.term));
-            payLoan.principalPayGold += principalPayGold;
-            
-            totalPayGold += interestPayGold + principalPayGold;
+            //long principalPayGold = (long)((float)payLoan.loanGold / (12f * payLoan.term));
+            //payLoan.principalPayGold += principalPayGold;
+
+            //totalPayGold += interestPayGold + principalPayGold;            
+            totalPayGold += interestPayGold;
 
             payLoan.payCount++;
 
             //대출 만기 종료
             if (payLoan.maturityDate <= curDateTime)
             {
+                totalPayGold += payLoan.loanGold;
                 //*대출 목록에서 삭제                
                 myInfo.loanCondtionList.Remove(payLoan);
             }

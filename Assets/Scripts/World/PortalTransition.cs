@@ -5,10 +5,8 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class PortalTransition : MonoBehaviour
 {
-    [Header("∆˜≈ª ¡§∫∏")]
+    [Header("Ìè¨ÌÉà Ï†ïÎ≥¥")]
     public PortalScripTable kPortal;
-    public string kPortalMap;
-    public string kPortalPath;
     
     // Start is called before the first frame update
     void Start()
@@ -18,11 +16,6 @@ public class PortalTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if UNITY_EDITOR
-        kPortalMap = kPortal.loadMap.gameObject.name;
-        kPortalPath = kPortal.portalName;
-#endif
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

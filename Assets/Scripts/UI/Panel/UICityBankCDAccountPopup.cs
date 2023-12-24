@@ -190,7 +190,13 @@ public class UICityBankCDAccountPopup : UIBase
 
     public void OnDepositButtonClick()
     {
-        if(mSelectButtonIndex == ConstDef.NONE)
+        if (Mng.data.myInfo.cdProductList.Count >= Mng.data.maxCdCount)
+        {
+            MessageBox.Open("You can no longer subscribe to a time deposit.", () => { });
+            return;
+        }
+        
+        if (mSelectButtonIndex == ConstDef.NONE)
         {
             Debug.Log("선택된 정기 예금이 없습니다.");
             return;

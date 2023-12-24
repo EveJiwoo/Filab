@@ -12,10 +12,4 @@ public class ConstDef
 
     //최대 정기 예금 상품 수(1,2,3,4,5년)
     public const int MAX_CD_PRODUCT_TYPE_COUNT = 5;
-
-    //최대 정기 예금 가입 가능 수
-    public const int MAX_CD_PRODUCT_SERVICE_COUNT = 5;
-
-    //최대 대출 상품 가입 가능 수
-    public const int MAX_LOAN_PRODUCT_SERVICE_COUNT = 5;
 }

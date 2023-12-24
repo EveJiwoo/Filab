@@ -51,8 +51,10 @@ public class UICityBankLoanPopup : UIBase
     // Update is called once per frame
     void Update()
     {
-        
+        //마을별로 대출이 실행이 안됨... ㅜㅜ
+        //시티2 뱅크 나올때 마을1이 됨 ㅠ.ㅠ
     }
+
     protected override void onEnable()
     {
         ResetMenu();
@@ -67,9 +69,8 @@ public class UICityBankLoanPopup : UIBase
 
     public void OnApplayForLoanButtonClick()
     {
-        if( Mng.data.myInfo.loanCondtionList.Count >= ConstDef.MAX_LOAN_PRODUCT_SERVICE_COUNT )
-        {
-            //메세지 처리
+        if( Mng.data.myInfo.loanCondtionList.Count >= Mng.data.maxLoanCount ){
+            MessageBox.Open("I can't get a loan anymore.", () => { } );
             return;
         }
 
@@ -114,9 +115,9 @@ public class UICityBankLoanPopup : UIBase
         kCurrentPrincipalTxt.text = $"{(mMyLoan.curPrincipal).ToColumnString()} Gold";
     
         kLoanDateTxt.text = $"{mMyLoan.maturityDate.Year}/{mMyLoan.maturityDate.Month}/{mMyLoan.maturityDate.Day}";
-        kTotalPrincipalPaymentTxt.text = $"{mMyLoan.principalPayGold.ToColumnString()} Gold";
+        /*kTotalPrincipalPaymentTxt.text = $"{mMyLoan.principalPayGold.ToColumnString()} Gold";*/
         kTotalInterestPaymentTxt.text = $"{mMyLoan.interestPayGold.ToColumnString()} Gold"; ;
-        kTotalPaidTxt.text = $"{(mMyLoan.principalPayGold + mMyLoan.interestPayGold).ToColumnString()} Gold";
+        kTotalPaidTxt.text = $"{(/*mMyLoan.principalPayGold + */mMyLoan.interestPayGold).ToColumnString()} Gold";
     }
 
     public void OnLoanAmoutSlider()
@@ -169,9 +170,12 @@ public class UICityBankLoanPopup : UIBase
         loan.contractDate = Mng.data.curDateTime;
         loan.NextPayDateUpdate();
 
-        Mng.data.myInfo.loanCondtionList.Add(loan);
-        
+        Mng.data.myInfo.loanCondtionList.Add(loan);        
+
         mMyLoan = loan;
+
+        Mng.data.myInfo.gold += loan.loanGold;
+        Mng.canvas.kTownMenu.MyGoldUpdate();
 
         ResetMenu();
     }
@@ -190,10 +194,10 @@ public class UICityBankLoanPopup : UIBase
 
     public void OnMakePaymentButtonClick()
     {
-        //남은 상환 원금 표시
-        MessageBox.Open($"The remaining loan is {(mMyLoan.loanGold - mMyLoan.principalPayGold).ToColumnString()} Gold.\nDo you want to repay them all?",
+        //상환 대출 원금 표시
+        MessageBox.Open($"The remaining loan is {(mMyLoan.loanGold/* - mMyLoan.principalPayGold*/).ToColumnString()} Gold.\nDo you want to repay them all?",
             () => {
-                Mng.data.myInfo.gold -= mMyLoan.loanGold - mMyLoan.principalPayGold;
+                Mng.data.myInfo.gold -= mMyLoan.loanGold/*- mMyLoan.principalPayGold*/;
                 Mng.canvas.kTownMenu.MyGoldUpdate();
                 Mng.data.myInfo.loanCondtionList.Remove(mMyLoan);
                 mMyLoan = default;

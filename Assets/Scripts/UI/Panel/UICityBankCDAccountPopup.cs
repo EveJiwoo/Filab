@@ -69,7 +69,7 @@ public class UICityBankCDAccountPopup : UIBase
                 //재귀용법
                 () =>{
                     Mng.data.myInfo.gold += (long)(cd.depositeGold * (1f + cd.interestRate * cd.term));
-                    Mng.canvas.kTownMenu.MyGoldUpdate();
+                    Mng.canvas.kTopMenu.MyGoldUpdate();
 
                     Mng.data.myInfo.cdProductList.Remove(cd);
                     CdMaturityCheck();

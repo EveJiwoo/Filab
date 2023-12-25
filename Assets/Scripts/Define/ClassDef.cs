@@ -103,7 +103,7 @@ namespace ClassDef
         public DateTime nextPaymentDate = default;
         
         //상환 횟수
-        public int interestayCount = 0;        
+        public int interestPayCount = 0;        
 
         //만기 기준 예상 남은 상환금
         public long curPrincipal{
@@ -115,7 +115,7 @@ namespace ClassDef
 
         public void NextPayDateUpdate()
         {
-            nextPaymentDate = contractDate.AddMonths(interestayCount + 1);
+            nextPaymentDate = contractDate.AddMonths(interestPayCount + 1);
         }
     }
 
@@ -124,11 +124,20 @@ namespace ClassDef
     {
         public CityType local = CityType.City1;
 
-        //소지금 정보
-        public long gold { get; set; }
+        /// <summary>소지금 정보</summary>
+        public long gold = 50000;
 
-        //자유 예금 정보
-        public long freeDepositGold { get; set; }
+        /// <summary>신용 점수 정보</summary>
+        public float occupation = 500;
+
+        /// <summary>자유 예금 금액</summary>
+        public long freeDepositGold = 0;
+
+        /// <summary>한달간의 아이템 구입 대금</summary>
+        public long monthPurchasePrice = 0;
+
+        /// <summary>대출 금리 할인율</summary>
+        public float extraInterestRate = 0f;
 
         //정기 예금 정보
         List<CDProductInfo> mCdProductList = new List<CDProductInfo>();

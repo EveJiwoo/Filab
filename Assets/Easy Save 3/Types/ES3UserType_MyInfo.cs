@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("local", "mCdProductList", "mLoanConditionList", "mInvenItemInfoList", "gold", "freeDepositGold", "cdProductList", "loanCondtionList", "invenItemInfoList")]
+	[ES3PropertiesAttribute("local", "gold", "occupation", "freeDepositGold", "monthPurchasePrice", "extraInterestRate", "mCdProductList", "mLoanConditionList", "mInvenItemInfoList", "cdProductList", "loanCondtionList", "invenItemInfoList")]
 	public class ES3UserType_MyInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -17,11 +17,14 @@ namespace ES3Types
 			var instance = (ClassDef.MyInfo)obj;
 			
 			writer.WriteProperty("local", instance.local, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(EnumDef.CityType)));
+			writer.WriteProperty("gold", instance.gold, ES3Type_long.Instance);
+			writer.WriteProperty("occupation", instance.occupation, ES3Type_float.Instance);
+			writer.WriteProperty("freeDepositGold", instance.freeDepositGold, ES3Type_long.Instance);
+			writer.WriteProperty("monthPurchasePrice", instance.monthPurchasePrice, ES3Type_long.Instance);
+			writer.WriteProperty("extraInterestRate", instance.extraInterestRate, ES3Type_float.Instance);
 			writer.WritePrivateField("mCdProductList", instance);
 			writer.WritePrivateField("mLoanConditionList", instance);
 			writer.WritePrivateField("mInvenItemInfoList", instance);
-			writer.WriteProperty("gold", instance.gold, ES3Type_long.Instance);
-			writer.WriteProperty("freeDepositGold", instance.freeDepositGold, ES3Type_long.Instance);
 			writer.WriteProperty("cdProductList", instance.cdProductList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.CDProductInfo>)));
 			writer.WriteProperty("loanCondtionList", instance.loanCondtionList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.LoanCondition>)));
 			writer.WriteProperty("invenItemInfoList", instance.invenItemInfoList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.InvenItemInfo>)));
@@ -38,6 +41,21 @@ namespace ES3Types
 					case "local":
 						instance.local = reader.Read<EnumDef.CityType>();
 						break;
+					case "gold":
+						instance.gold = reader.Read<System.Int64>(ES3Type_long.Instance);
+						break;
+					case "occupation":
+						instance.occupation = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
+					case "freeDepositGold":
+						instance.freeDepositGold = reader.Read<System.Int64>(ES3Type_long.Instance);
+						break;
+					case "monthPurchasePrice":
+						instance.monthPurchasePrice = reader.Read<System.Int64>(ES3Type_long.Instance);
+						break;
+					case "extraInterestRate":
+						instance.extraInterestRate = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
 					case "mCdProductList":
 					instance = (ClassDef.MyInfo)reader.SetPrivateField("mCdProductList", reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>(), instance);
 					break;
@@ -47,12 +65,6 @@ namespace ES3Types
 					case "mInvenItemInfoList":
 					instance = (ClassDef.MyInfo)reader.SetPrivateField("mInvenItemInfoList", reader.Read<System.Collections.Generic.List<ClassDef.InvenItemInfo>>(), instance);
 					break;
-					case "gold":
-						instance.gold = reader.Read<System.Int64>(ES3Type_long.Instance);
-						break;
-					case "freeDepositGold":
-						instance.freeDepositGold = reader.Read<System.Int64>(ES3Type_long.Instance);
-						break;
 					case "cdProductList":
 						instance.cdProductList = reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>();
 						break;

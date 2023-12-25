@@ -70,8 +70,6 @@ public class DataManager : MonoBehaviour
         foreach (var item in myInfo.invenItemInfoList)
             item.table = Mng.table.FindItemDataTable(item.uid);
 
-        myInfo.gold = 99999999;
-
         maxCdCount = (int)Mng.table.GetGameDataTable("CDMaxCount").GameDataValue;
         maxLoanCount = (int)Mng.table.GetGameDataTable("LoanMaxCount").GameDataValue;
         minLoanInterestRate = Mng.table.GetGameDataTable("LoanMinInterestRate").GameDataRatio;
@@ -80,6 +78,7 @@ public class DataManager : MonoBehaviour
         TimeUpdate();
         CityShopUpdate();
         CityBankCdAndLoanUpdate();
+        MyExtralInterestRateUpdate();
     }
 
     public void TimeUpdate()
@@ -101,6 +100,8 @@ public class DataManager : MonoBehaviour
             mCurMonth = curDateTime.Month;
             AllShopItemUpdate();
             CityBankCdAndLoanUpdate();
+            MyOccupationScoreUpdate();
+            MyExtralInterestRateUpdate();
         }
 
         MyLoanUpdate();
@@ -232,7 +233,7 @@ public class DataManager : MonoBehaviour
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
-    //은행 상품(정기 예금, 대출)
+    //은행 상품(정기 예금, 대출) 갱신
     
     /// <summary> 새 예금 상품 생성</summary>
     public void CityBankCdAndLoanUpdate()
@@ -325,6 +326,33 @@ public class DataManager : MonoBehaviour
         return list;
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //신용 점수 결산
+
+    /// <summary> 신용 점수 갱신 </summary>
+    void MyOccupationScoreUpdate()
+    {
+        //신용 점수 계산
+        var table = Mng.table.GetOccupationDataTable(myInfo.occupation);
+
+        double addOccupation = (myInfo.monthPurchasePrice / 50f) * table.CreditIncreaseVariable;
+        addOccupation = Mathf.Min((float)addOccupation, (float)table.MaxMonthlyCreditIncrease);
+        myInfo.occupation += (float)addOccupation;
+
+        myInfo.monthPurchasePrice = 0;
+    }
+
+    /// <summary> 신용 점수에 따른 대출 금리 할인율 반영 </summary>
+    void MyExtralInterestRateUpdate()
+    {
+        //신용 점수에 따른 대출 금리 할인율 계산
+        var table = Mng.table.GetOccupationDataTable(myInfo.occupation);
+        myInfo.extraInterestRate = UnityEngine.Random.Range(table.ExtraInterestMin * 0.01f, table.ExtraInterestMax * 0.01f);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //대출 상환
+
     /// <summary> 대출 이자 및 원금 상환 </summary>
     public void MyLoanUpdate()
     {
@@ -345,7 +373,7 @@ public class DataManager : MonoBehaviour
             //totalPayGold += interestPayGold + principalPayGold;            
             totalPayGold += interestPayGold;
 
-            payLoan.interestayCount++;
+            payLoan.interestPayCount++;
 
             //대출 만기 종료
             if (payLoan.maturityDate <= curDateTime)
@@ -365,7 +393,7 @@ public class DataManager : MonoBehaviour
             MessageBox.Open($"{totalPayGold} Gold will be redeemed.", 
                 () => {
                     myInfo.gold -= totalPayGold;
-                    Mng.canvas.kTownMenu.MyGoldUpdate();
+                    Mng.canvas.kTopMenu.MyGoldUpdate();
                 });
         }
     }

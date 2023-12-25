@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UITownMenu : MonoBehaviour
+public class UITopMenu : MonoBehaviour
 {
     [Header("내 골드 표기")]
     public TMP_Text kMyGoldText;
-
+    [Header("내 신용점수 표기")]
+    public TMP_Text kMyOccupationText;
+    
     [Header("년/월/일 표기")]
     public TMP_Text kYMDText;
     [Header("시:분 표기")]
@@ -16,11 +18,12 @@ public class UITownMenu : MonoBehaviour
 
     [Header("테스트 금리 표기")]
     public TMP_Text kRateText;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         MyGoldUpdate();
+        MyOccupationUpdate();
     }
 
     // Update is called once per frame
@@ -32,6 +35,11 @@ public class UITownMenu : MonoBehaviour
     public void MyGoldUpdate()
     {
         kMyGoldText.text = Mng.data.myInfo.gold.ToColumnString();
+    }
+
+    public void MyOccupationUpdate()
+    {
+        kMyOccupationText.text = Mng.data.myInfo.occupation.ToColumnString();
     }
 
     public void SetDateTime(DateTime _time)

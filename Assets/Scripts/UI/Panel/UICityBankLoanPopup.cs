@@ -64,10 +64,16 @@ public class UICityBankLoanPopup : UIBase
             kFrontMenuGo.SetActive(false);
             kLoanProductGo.SetActive(true);
 
-            kLoanAmountSlider.value = 0;
-            kTermSlider.value = 0;
+            //신용도에 따른 대출 만기, 대출금 한도
+            var table = Mng.table.GetOccupationDataTable(Mng.data.myInfo.occupation);
 
-            kInterestRateTxt.text = (mBankLoan.interestRate * 100f).ToFloatN2String() + " %";
+            kLoanAmountSlider.maxValue = table.LoanLimit / 1000f;            
+            kLoanAmountSlider.value = 0;
+            kTermSlider.maxValue = table.MaxDuration;
+            kTermSlider.value = 0;
+            
+            kInterestRateTxt.text = $"{((mBankLoan.interestRate - Mng.data.myInfo.extraInterestRate) * 100f).ToFloatN2String()} %" +
+                $"(-{(Mng.data.myInfo.extraInterestRate * 100f).ToFloatN2String()})";
 
             LoanProductInfoUpdate();
         }
@@ -78,7 +84,7 @@ public class UICityBankLoanPopup : UIBase
             kLoanConditionGo.SetActive(true);
 
             //상환 버튼 활성화/비활성화
-            if (mMyLoan.curPrincipal <= Mng.data.myInfo.gold)
+            if (mMyLoan.loanGold <= Mng.data.myInfo.gold)
                 kMakePaymnetButton.interactable = true;
             else
                 kMakePaymnetButton.interactable = false;
@@ -99,7 +105,7 @@ public class UICityBankLoanPopup : UIBase
         kCurrentPrincipalTxt.text = $"{(mMyLoan.curPrincipal).ToColumnString()} Gold";
     
         kLoanDateTxt.text = $"{mMyLoan.maturityDate.Year}/{mMyLoan.maturityDate.Month}/{mMyLoan.maturityDate.Day}";
-        kNumberInterestPaymentsTxt.text = $"{mMyLoan.interestayCount}/{mMyLoan.term * 12}";
+        kNumberInterestPaymentsTxt.text = $"{mMyLoan.interestPayCount}/{mMyLoan.term * 12}";
         kTotalInterestPaymentTxt.text = $"{mMyLoan.interestPayGold.ToColumnString()} Gold"; ;
         //kTotalPaidTxt.text = $"{(/*mMyLoan.principalPayGold + */mMyLoan.interestPayGold).ToColumnString()} Gold";
     }
@@ -147,8 +153,8 @@ public class UICityBankLoanPopup : UIBase
     {
         LoanCondition loan = new LoanCondition();
         loan.city = Mng.data.myInfo.local;
-        loan.loanGold = (int)kLoanAmountSlider.value * 1000;
-        loan.interestRate = mBankLoan.interestRate;
+        loan.loanGold = (int)kLoanAmountSlider.value * 1000;        
+        loan.interestRate = mBankLoan.interestRate - Mng.data.myInfo.extraInterestRate;
         loan.term = (int)kTermSlider.value;
         loan.maturityDate = Mng.data.curDateTime.AddYears(loan.term).AddMonths(1);
         loan.contractDate = Mng.data.curDateTime;
@@ -159,7 +165,7 @@ public class UICityBankLoanPopup : UIBase
         mMyLoan = loan;
 
         Mng.data.myInfo.gold += loan.loanGold;
-        Mng.canvas.kTownMenu.MyGoldUpdate();
+        Mng.canvas.kTopMenu.MyGoldUpdate();
 
         ResetMenu();
     }
@@ -182,7 +188,7 @@ public class UICityBankLoanPopup : UIBase
         MessageBox.Open($"The remaining loan is {(mMyLoan.loanGold/* - mMyLoan.principalPayGold*/).ToColumnString()} Gold.\nDo you want to repay them all?",
             () => {
                 Mng.data.myInfo.gold -= mMyLoan.loanGold/*- mMyLoan.principalPayGold*/;
-                Mng.canvas.kTownMenu.MyGoldUpdate();
+                Mng.canvas.kTopMenu.MyGoldUpdate();
                 Mng.data.myInfo.loanCondtionList.Remove(mMyLoan);
                 mMyLoan = default;
                 ResetMenu();

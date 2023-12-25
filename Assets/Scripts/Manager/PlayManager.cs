@@ -69,12 +69,12 @@ public class PlayManager : MonoBehaviour
 
     void TimeUpdate(DateTime _time)
     {
-        Mng.canvas.kTownMenu.SetDateTime(_time);
+        Mng.canvas.kTopMenu.SetDateTime(_time);
 
         if( mCurMonth != Mng.data.curDateTime.Month){
             mCurMonth = Mng.data.curDateTime.Month;
             float rate = Mng.table.GetBaseInterestRate(_time);
-            Mng.canvas.kTownMenu.TempRate(rate);
+            Mng.canvas.kTopMenu.TempRate(rate);
         }
     }
 }

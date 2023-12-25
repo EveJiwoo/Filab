@@ -10,7 +10,7 @@ public class MainCanvas : MonoBehaviour
     static public MainCanvas Instance;
     
     [HideInInspector]
-    public UITownMenu kTownMenu;
+    public UITopMenu kTopMenu;
 
     [HideInInspector]
     public UICityBankDepositPopup kCityBankPopup;
@@ -34,7 +34,7 @@ public class MainCanvas : MonoBehaviour
     {
         Instance = this;
 
-        kTownMenu = GetComponentInChildren<UITownMenu>(true);
+        kTopMenu = GetComponentInChildren<UITopMenu>(true);
         kCityBankPopup = GetComponentInChildren<UICityBankDepositPopup>(true);
         kCityBankCDAccountPopup = GetComponentInChildren<UICityBankCDAccountPopup>(true);
         kCityBankLoanPopup = GetComponentInChildren<UICityBankLoanPopup>(true);

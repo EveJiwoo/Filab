@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("city", "loanGold", "interestPayGold", "interestRate", "curInterestGold", "term", "maturityDate", "contractDate", "nextPaymentDate", "payCount")]
+	[ES3PropertiesAttribute("city", "loanGold", "interestPayGold", "interestRate", "curInterestGold", "term", "maturityDate", "contractDate", "nextPaymentDate", "interestPayCount")]
 	public class ES3UserType_LoanCondition : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -25,7 +25,7 @@ namespace ES3Types
 			writer.WriteProperty("maturityDate", instance.maturityDate, ES3Type_DateTime.Instance);
 			writer.WriteProperty("contractDate", instance.contractDate, ES3Type_DateTime.Instance);
 			writer.WriteProperty("nextPaymentDate", instance.nextPaymentDate, ES3Type_DateTime.Instance);
-			writer.WriteProperty("payCount", instance.interestayCount, ES3Type_int.Instance);
+			writer.WriteProperty("interestPayCount", instance.interestPayCount, ES3Type_int.Instance);
 		}
 
 		protected override void ReadObject<T>(ES3Reader reader, object obj)
@@ -37,7 +37,7 @@ namespace ES3Types
 				{
 					
 					case "city":
-						instance.city = reader.Read<EnumDef.CityType>(ES3Type_enum.Instance);
+						instance.city = reader.Read<EnumDef.CityType>();
 						break;
 					case "loanGold":
 						instance.loanGold = reader.Read<System.Int64>(ES3Type_long.Instance);
@@ -63,8 +63,8 @@ namespace ES3Types
 					case "nextPaymentDate":
 						instance.nextPaymentDate = reader.Read<System.DateTime>(ES3Type_DateTime.Instance);
 						break;
-					case "payCount":
-						instance.interestayCount = reader.Read<System.Int32>(ES3Type_int.Instance);
+					case "interestPayCount":
+						instance.interestPayCount = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					default:
 						reader.Skip();

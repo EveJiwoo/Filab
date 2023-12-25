@@ -86,7 +86,7 @@ public class UICityBankDepositPopup : UIBase
 
         Mng.data.myInfo.gold -= depositGold;
         Mng.data.myInfo.freeDepositGold += depositGold;
-        Mng.canvas.kTownMenu.MyGoldUpdate();
+        Mng.canvas.kTopMenu.MyGoldUpdate();
 
         onEnable();
     }
@@ -139,7 +139,7 @@ public class UICityBankDepositPopup : UIBase
 
         Mng.data.myInfo.freeDepositGold -= withdrawInput;
         Mng.data.myInfo.gold += withdrawInput;
-        Mng.canvas.kTownMenu.MyGoldUpdate();
+        Mng.canvas.kTopMenu.MyGoldUpdate();
 
         onEnable();
     }

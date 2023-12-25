@@ -59,7 +59,7 @@ public class Manager : MonoBehaviour
         while (PoolManager.Instance == null)
             yield return null;
 */
-        kCanvasManager.kTownMenu.gameObject.SetActive(true);
+        kCanvasManager.kTopMenu.gameObject.SetActive(true);
   
         go = Instantiate(kPlayManager.gameObject);
         go.transform.parent = transform;

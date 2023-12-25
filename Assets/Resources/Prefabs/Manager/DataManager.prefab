@@ -49,3 +49,7 @@ MonoBehaviour:
   kStartDay: 1
   kStartHour: 6
   kStartMin: 0
+  maxCdCount: 0
+  maxLoanCount: 0
+  minLoanInterestRate: 0
+  maxLoanInterestRate: 0

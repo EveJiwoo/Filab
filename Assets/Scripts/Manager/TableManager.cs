@@ -9,9 +9,9 @@ public partial class TableManager : MonoBehaviour
 	static private TableManager mInstance = null;
 
 	private EEDataManager _ee = new EEDataManager();
-	
-	
-	private List<GameDataTable_Client> mGameDataList;
+
+    /// <summary> 게임 설정 </summary>
+    private List<GameDataTable_Client> mGameDataList;
 	public List<GameDataTable_Client> gameDataList { get { return mGameDataList; } }
 
 	/// <summary> 기준 금리 </summary>
@@ -21,11 +21,16 @@ public partial class TableManager : MonoBehaviour
 	/// <summary> 아이템 판매 구매 정보 </summary>
 	private List<ItemDataTable_Client> mItemDataTableList;
 	public List<ItemDataTable_Client> itemDataTableList { get { return mItemDataTableList; } }
-	/// <summary> 아이템 물가 변동 정보 </summary>
+	
+    /// <summary> 아이템 물가 변동 정보 </summary>
 	private List<ItemPriceRateTable_Client> mItemPriceRateTableList;
 	public List<ItemPriceRateTable_Client> itemPriceRateTableList { get { return mItemPriceRateTableList; } }
 
-	static public TableManager Instance
+    /// <summary> 신용 점수 정보 </summary>
+    private List<OccupationDataTable_Client> mOccupationDataTableList;
+    public List<OccupationDataTable_Client> occupationDataTableList { get { return mOccupationDataTableList; } }
+
+    static public TableManager Instance
 	{
 		get
 		{
@@ -50,7 +55,8 @@ public partial class TableManager : MonoBehaviour
 		mInterestRateBaseList = _ee.GetListJson<InterestRateBaseTable_Client>();		
 		mItemDataTableList = _ee.GetListJson<ItemDataTable_Client>();
 		mItemPriceRateTableList = _ee.GetListJson<ItemPriceRateTable_Client>();
-	}    
+        mOccupationDataTableList = _ee.GetListJson<OccupationDataTable_Client>();
+    }    
 
     public GameDataTable_Client FindGameDataTable(long _uid)
     {
@@ -62,7 +68,6 @@ public partial class TableManager : MonoBehaviour
 	    return default;
     }
     
-
     public InterestRateBaseTable_Client FindBaseInterestRateTable(long _uid)
 	{
 		InterestRateBaseTable_Client data = mInterestRateBaseList.Find(d => d.UID == _uid);
@@ -143,5 +148,33 @@ public partial class TableManager : MonoBehaviour
 
 		return 0f;
 	}
+
+    public OccupationDataTable_Client FindOccupationDataTableList(long _uid)
+    {
+        OccupationDataTable_Client data = mOccupationDataTableList.Find(d => d.UID == _uid);
+        if (data != default) return data;
+#if LOG
+	    Log.Error($"UID [{_uid}] 와 맞는 데이터가 없습니다");
+#endif
+        return default;
+    }
+
+    public OccupationDataTable_Client GetOccupationDataTable(float _occupationScore)
+    {
+        OccupationDataTable_Client data = default;
+        foreach( var occupationData in mOccupationDataTableList)
+        {
+            if (occupationData.CreditScore < _occupationScore)
+                data = occupationData;
+            else
+                break;
+        }
+
+#if LOG
+        if( data == default)
+            Log.Error($"UID [{_uid}] 와 맞는 데이터가 없습니다");
+#endif
+        return data;
+    }
 }
 

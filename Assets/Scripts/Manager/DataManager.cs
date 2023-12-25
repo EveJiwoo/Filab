@@ -332,7 +332,7 @@ public class DataManager : MonoBehaviour
     /// <summary> 신용 점수 갱신 </summary>
     void MyOccupationScoreUpdate()
     {
-        //신용 점수 계산
+        //신용 점수 계산 : 증감 요소 계산
         var table = Mng.table.GetOccupationDataTable(myInfo.occupation);
 
         double addOccupation = (myInfo.monthPurchasePrice / 50f) * table.CreditIncreaseVariable;
@@ -340,6 +340,14 @@ public class DataManager : MonoBehaviour
         myInfo.occupation += (float)addOccupation;
 
         myInfo.monthPurchasePrice = 0;
+
+        //신용 점수 계산 : 차감 요소 계산
+        if( myInfo.gold < 0 )
+        {
+            var beforeMonthDate = curDateTime.AddMonths(-1);
+            int totalDasys = DateTime.DaysInMonth(beforeMonthDate.Year, beforeMonthDate.Month);
+            myInfo.occupation -= totalDasys;
+        }
     }
 
     /// <summary> 신용 점수에 따른 대출 금리 할인율 반영 </summary>

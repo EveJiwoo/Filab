@@ -15615,12 +15615,12 @@ GameObject:
   - component: {fileID: 1317482160}
   - component: {fileID: 1317482159}
   m_Layer: 0
-  m_Name: City5
+  m_Name: City5 (snow)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1317482159
 Grid:
   m_ObjectHideFlags: 0
@@ -63172,7 +63172,7 @@ GameObject:
   - component: {fileID: 1710947898}
   - component: {fileID: 1710947897}
   m_Layer: 0
-  m_Name: City6
+  m_Name: City6 (japanese styled)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -59,7 +59,7 @@ public class Manager : MonoBehaviour
         while (PoolManager.Instance == null)
             yield return null;
 */
-        kCanvasManager.kTopMenu.gameObject.SetActive(true);
+        kCanvasManager.gameObject.SetActive(true);
   
         go = Instantiate(kPlayManager.gameObject);
         go.transform.parent = transform;
@@ -73,5 +73,3 @@ public class Manager : MonoBehaviour
 
     }
 }
-
-//게임 종료 후 정기 예금 돌려 받나?

@@ -1,0 +1,22 @@
+{
+	"MyInfo" : {
+		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
+		"value" : {
+			"local" : 0,
+			"mCdProductList" : [
+				
+			],
+			"mInvenItemInfoList" : [
+				
+			],
+			"gold" : 99999999,
+			"freeDepositGold" : 0,
+			"cdProductList" : [
+				
+			],
+			"invenItemInfoList" : [
+				
+			]
+		}
+	}
+}

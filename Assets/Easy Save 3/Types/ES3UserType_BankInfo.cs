@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("cdList", "loan")]
+	[ES3PropertiesAttribute("cdList")]
 	public class ES3UserType_BankInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -16,8 +16,7 @@ namespace ES3Types
 		{
 			var instance = (ClassDef.BankInfo)obj;
 			
-			writer.WriteProperty("cdList", instance.cdList, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(System.Collections.Generic.List<ClassDef.CDProductInfo>)));
-			writer.WriteProperty("loan", instance.loan, ES3UserType_LoanCondition.Instance);
+			writer.WritePrivateField("cdList", instance);
 		}
 
 		protected override void ReadObject<T>(ES3Reader reader, object obj)
@@ -29,11 +28,8 @@ namespace ES3Types
 				{
 					
 					case "cdList":
-						instance.cdList = reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>();
-						break;
-					case "loan":
-						instance.loan = reader.Read<ClassDef.LoanCondition>(ES3UserType_LoanCondition.Instance);
-						break;
+					instance = (ClassDef.BankInfo)reader.SetPrivateField("cdList", reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>(), instance);
+					break;
 					default:
 						reader.Skip();
 						break;

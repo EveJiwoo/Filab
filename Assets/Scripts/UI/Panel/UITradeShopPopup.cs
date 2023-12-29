@@ -286,12 +286,8 @@ public class UITradeShopPopup : UIBase
         }
 
         //구입
-        long totalPurchasePrice = item.userBuyPrice * buyCount;
-        Mng.data.myInfo.gold -= totalPurchasePrice;
-        Mng.canvas.kTopMenu.MyGoldUpdate();
-
-        //한달간 판매 대금 기록        
-        Mng.data.myInfo.monthPurchasePrice += totalPurchasePrice;
+        Mng.data.myInfo.gold -= item.userBuyPrice * buyCount;
+        Mng.canvas.kTownMenu.MyGoldUpdate();
 
         item.count -= buyCount;
         
@@ -309,7 +305,7 @@ public class UITradeShopPopup : UIBase
     public void OnUserSellItemButtonClick()
     {
         if (mSelectUID == ConstDef.NONE){
-            Debug.Log("판매할 아이템을 선택해 주세요.");
+            Debug.Log("구입할 아이템을 선택해 주세요.");
             return;
         }
 
@@ -319,7 +315,7 @@ public class UITradeShopPopup : UIBase
 
         //판매
         Mng.data.myInfo.gold += item.sellPrice * sellCount;
-        Mng.canvas.kTopMenu.MyGoldUpdate();
+        Mng.canvas.kTownMenu.MyGoldUpdate();
 
         if (item.count <= sellCount)
             mSelectUID = ConstDef.NONE;

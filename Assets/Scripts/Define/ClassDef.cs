@@ -60,7 +60,6 @@ namespace ClassDef
     public class BankInfo
     {
         public List<CDProductInfo> cdList = new List<CDProductInfo>();
-        public LoanCondition loan;
     }
 
     //정기 예금 정보
@@ -68,7 +67,7 @@ namespace ClassDef
     {
         //정기 예금액
         public long depositeGold = 0;
-        //정기 예금 금리(년)
+        //정기 예금 기간(년)
         public float interestRate = 0f;
         //정기 예금 기간(년)
         public int term = 1;
@@ -78,45 +77,7 @@ namespace ClassDef
 
     public class LoanCondition
     {
-        //대출 은행
-        public CityType city = CityType.None;
-        //대출 금액
-        public long loanGold = 0;
 
-        //원금 상환액
-        //public long principalPayGold;
-        //이자 상환액
-        public long interestPayGold;
-
-        //대출 금리(년)
-        public float interestRate = 0f;
-        //갱신된 원금 대비 이자
-        public long curInterestGold;
-
-        //대출 기간(년)
-        public int term = 1;
-        //대출 만기일
-        public DateTime maturityDate;
-        //대출 계약일
-        public DateTime contractDate;
-        //다음 상환일
-        public DateTime nextPaymentDate = default;
-        
-        //상환 횟수
-        public int interestPayCount = 0;        
-
-        //만기 기준 예상 남은 상환금
-        public long curPrincipal{
-            get{
-                long totalLoanGold = ((long)(loanGold * (1f + interestRate * term)));
-                return (totalLoanGold - interestPayGold);
-            }
-        }
-
-        public void NextPayDateUpdate()
-        {
-            nextPaymentDate = contractDate.AddMonths(interestPayCount + 1);
-        }
     }
 
 
@@ -124,34 +85,17 @@ namespace ClassDef
     {
         public CityType local = CityType.City1;
 
-        /// <summary>소지금 정보</summary>
-        public long gold = 50000;
+        //소지금 정보
+        public long gold { get; set; }
 
-        /// <summary>신용 점수 정보</summary>
-        public float occupation = 500;
-
-        /// <summary>자유 예금 금액</summary>
-        public long freeDepositGold = 0;
-
-        /// <summary>한달간의 아이템 구입 대금</summary>
-        public long monthPurchasePrice = 0;
-
-        /// <summary>대출 금리 할인율</summary>
-        public float extraInterestRate = 0f;
+        //자유 예금 정보
+        public long freeDepositGold { get; set; }
 
         //정기 예금 정보
         List<CDProductInfo> mCdProductList = new List<CDProductInfo>();
         public List<CDProductInfo> cdProductList {
             get { return mCdProductList; }
             set { mCdProductList = value; }
-        }
-
-        //대출 상품 정보
-        List<LoanCondition> mLoanConditionList = new List<LoanCondition>();
-        public List<LoanCondition> loanCondtionList
-        {
-            get { return mLoanConditionList; }
-            set { mLoanConditionList = value; }
         }
 
         //아이템 정보

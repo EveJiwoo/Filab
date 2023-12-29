@@ -23,8 +23,7 @@ public class GameDateTime : MonoBehaviour
     public TMP_Text dateTimeText; // Reference to the TextMeshPro component
 
     private void Awake()
-    {   
-
+    {
         if (instance == null)
         {
             instance = this;

@@ -1,13 +1,15 @@
 using EnumDef;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    [Header("ë§µ ì´ˆê¸°í™” ì‹œì‘ì ")]
+    [Header("¸Ê ÃÊ±âÈ­ ½ÃÀÛÁ¡")]
     public Transform kResetPosition;
-    [Header("ë§µ í…Œë§ˆ ìŒì•… ì˜¤ë””ì˜¤í´ë¦½")]
+    [Header("¸Ê Å×¸¶ À½¾Ç ¿Àµğ¿ÀÅ¬¸³")]
     public AudioClip kPlayBGM;
-    [Header("ë§µ ì†Œì†")]
+    [Header("¸Ê ¼Ò¼Ó")]
     public CityType kCityType = CityType.None;
 
     // Start is called before the first frame update

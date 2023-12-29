@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
-    [Header("íŒì—… íƒ€ì…ì¸ê°€?")]
+    [Header("ÆË¾÷ Å¸ÀÔÀÎ°¡?")]
     public bool kIsPopupType = false;
 
-    static int mPopupPanelCount = 0;
     // Update is called once per frame
     void OnEnable()
     {
@@ -15,7 +14,6 @@ public class UIBase : MonoBehaviour
         {
             Mng.play.player.isCanMove = false;
             Mng.play.isTimer = false;
-            mPopupPanelCount++;
         }
 
         onEnable();
@@ -27,13 +25,8 @@ public class UIBase : MonoBehaviour
     {
         if (kIsPopupType == true)
         {
-            mPopupPanelCount--;
-
-            if(mPopupPanelCount <= 0)
-            {
-                Mng.play.player.isCanMove = true;
-                Mng.play.isTimer = true;
-            }            
+            Mng.play.player.isCanMove = true;
+            Mng.play.isTimer = true;
         }
 
         onDisable();

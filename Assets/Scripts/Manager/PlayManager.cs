@@ -1,5 +1,13 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using EnumDef;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using ClassDef;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -7,11 +15,14 @@ using UnityEditor;
 
 public class PlayManager : MonoBehaviour
 {
-    static public PlayManager Instance = null;    
+    static public PlayManager Instance = null;
+
+    
 
     [Header("게임 시간 가속값")]
     public float kTimeSpeed = 5000f;    
 
+    int mCurYear = 0;
     int mCurMonth = 0;
 
     Player mPlayer;
@@ -69,12 +80,12 @@ public class PlayManager : MonoBehaviour
 
     void TimeUpdate(DateTime _time)
     {
-        Mng.canvas.kTopMenu.SetDateTime(_time);
+        Mng.canvas.kTownMenu.SetDateTime(_time);
 
         if( mCurMonth != Mng.data.curDateTime.Month){
             mCurMonth = Mng.data.curDateTime.Month;
             float rate = Mng.table.GetBaseInterestRate(_time);
-            Mng.canvas.kTopMenu.TempRate(rate);
+            Mng.canvas.kTownMenu.TempRate(rate);
         }
     }
 }

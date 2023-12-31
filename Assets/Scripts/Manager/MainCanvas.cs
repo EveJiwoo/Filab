@@ -10,7 +10,7 @@ public class MainCanvas : MonoBehaviour
     static public MainCanvas Instance;
     
     [HideInInspector]
-    public UITownMenu kTownMenu;
+    public UITopMenu kTopMenu;
 
     [HideInInspector]
     public UICityBankDepositPopup kCityBankPopup;
@@ -22,6 +22,11 @@ public class MainCanvas : MonoBehaviour
     public UITradeShopPopup kTradeShopPopup;
     [HideInInspector]
     public UIInventory kInventory;
+    [HideInInspector]
+    public UIFinancialsPopup kFinancialPopup;
+
+    [HideInInspector]
+    public UIMessageBox kMessageBox;
 
     Dictionary<string, SpriteAtlas> mSpriteAtlasList = new Dictionary<string, SpriteAtlas>();
 
@@ -29,12 +34,14 @@ public class MainCanvas : MonoBehaviour
     {
         Instance = this;
 
-        kTownMenu = GetComponentInChildren<UITownMenu>(true);
+        kTopMenu = GetComponentInChildren<UITopMenu>(true);
         kCityBankPopup = GetComponentInChildren<UICityBankDepositPopup>(true);
         kCityBankCDAccountPopup = GetComponentInChildren<UICityBankCDAccountPopup>(true);
         kCityBankLoanPopup = GetComponentInChildren<UICityBankLoanPopup>(true);
         kTradeShopPopup = GetComponentInChildren<UITradeShopPopup>(true);
         kInventory = GetComponentInChildren<UIInventory>(true);
+        kFinancialPopup = GetComponentInChildren<UIFinancialsPopup>(true);
+        kMessageBox = GetComponentInChildren<UIMessageBox>(true);
     }
 
     public Sprite GetSprite(string _atlasName, string _spriteName)

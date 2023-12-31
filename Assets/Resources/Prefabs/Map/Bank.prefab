@@ -2243,11 +2243,7 @@ GameObject:
   - component: {fileID: 2620971226957782587}
   - component: {fileID: 7446226318200423846}
   m_Layer: 0
-<<<<<<<< HEAD:Assets/Resources/Prefabs/Map/CityBank.prefab
-  m_Name: CityBank
-========
   m_Name: Bank
->>>>>>>> d2697cca (도시 및 모든 맵 연결):Assets/Resources/Prefabs/Map/Bank.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

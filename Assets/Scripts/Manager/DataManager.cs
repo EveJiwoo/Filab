@@ -3,8 +3,8 @@ using EnumDef;
 using SheetData;
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 //1. 상점에서 아이템을 산다.(완)
@@ -52,8 +52,14 @@ public class DataManager : MonoBehaviour
 
     //도시별 상점 아이템 판매 구매 정보
     Dictionary<CityType, ShopInfo> mCityShopInfoList = new Dictionary<CityType, ShopInfo>();
-    //도시별 은행 정기 예금 상품 정보
+    //도시별 은행 정기 예금, 대출 상품 정보
     Dictionary<CityType, BankInfo> mCityBankInfoList = new Dictionary<CityType, BankInfo>();
+
+    public int maxCdCount = 0;
+    public int maxLoanCount = 0;
+
+    public float minLoanInterestRate = 0f;
+    public float maxLoanInterestRate = 0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -64,11 +70,15 @@ public class DataManager : MonoBehaviour
         foreach (var item in myInfo.invenItemInfoList)
             item.table = Mng.table.FindItemDataTable(item.uid);
 
-        myInfo.gold = 99999999;
+        maxCdCount = (int)Mng.table.GetGameDataTable("CDMaxCount").GameDataValue;
+        maxLoanCount = (int)Mng.table.GetGameDataTable("LoanMaxCount").GameDataValue;
+        minLoanInterestRate = Mng.table.GetGameDataTable("LoanMinInterestRate").GameDataRatio;
+        maxLoanInterestRate = Mng.table.GetGameDataTable("LoanMaxInterestRate").GameDataRatio;
 
         TimeUpdate();
         CityShopUpdate();
-        CityBankCDProductUpdate();
+        CityBankCdAndLoanUpdate();
+        MyExtralInterestRateUpdate();
     }
 
     public void TimeUpdate()
@@ -83,14 +93,18 @@ public class DataManager : MonoBehaviour
         mCurMonth = curDateTime.Month;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         if (curDateTime.Month != mCurMonth)
         {
             mCurMonth = curDateTime.Month;
             AllShopItemUpdate();
-            CityBankCDProductUpdate();
+            CityBankCdAndLoanUpdate();
+            MyOccupationScoreUpdate();
+            MyExtralInterestRateUpdate();
         }
+
+        MyLoanUpdate();
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -219,17 +233,21 @@ public class DataManager : MonoBehaviour
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
-    //정기 예금 상품
+    //은행 상품(정기 예금, 대출) 갱신
     
     /// <summary> 새 예금 상품 생성</summary>
-    public void CityBankCDProductUpdate()
+    public void CityBankCdAndLoanUpdate()
     {
         mCityBankInfoList.Clear();
+
+        float baseInterestRate = Mng.table.GetBaseInterestRate(curDateTime);
 
         for (int i = 0; i < (int)CityType.Max; i++)
         {
             var bankInfo = new BankInfo();
-
+            
+            //////////////////////////////////////////////////////////
+            //정기 예금 상품 갱신
             //최소 상품 갯수 1개 ~ 최대 상품 갯수3개
             int productionCount = UnityEngine.Random.Range(1, 4);
 
@@ -263,26 +281,134 @@ public class DataManager : MonoBehaviour
                 }
 
                 //예금 금리
-                cd.interestRate = Mng.table.GetBaseInterestRate(curDateTime)/*기준금리*/ + addInterstRate/*추가금리*/;
+                cd.interestRate = baseInterestRate/*기준금리*/ + addInterstRate/*추가금리*/;
                 //만기 일자
                 cd.maturityDate = curDateTime.AddYears(cd.term);
 
                 termList.RemoveAt(selectIndex);
+
                 bankInfo.cdList.Add(cd);
-            }            
+            }
+
+            //////////////////////////////////////////////////////////
+            //대출 상품 갱신
+            LoanCondition loan = new LoanCondition();
+
+            //대출 금리
+            float addLoanInterstRate = UnityEngine.Random.Range(minLoanInterestRate, maxLoanInterestRate);
+            loan.interestRate = baseInterestRate/*기준금리*/ + addLoanInterstRate/*추가금리*/;
+
+            //1년 ~ 5년 상품
+            loan.term = UnityEngine.Random.Range(1, 6);
+
+            //만기 일자
+            loan.maturityDate = curDateTime.AddYears(loan.term);
+
+            bankInfo.loan = loan;
 
             mCityBankInfoList[(CityType)i] = bankInfo;
         }
+
+        Debug.Log("정기 예금 상품이 모두 갱신되었습니다.");
     }
 
+    /// <summary> 각 은행들의 상품(정기예금, 대출상품) 정보</summary>
     public BankInfo GetBankInfo(CityType _type)
     {
         return mCityBankInfoList[_type];
     }
 
+    /// <summary> 만기가 도래한 정기 예금 상품 목록 획득 </summary>    
+    public List<CDProductInfo> GetMyCdMaturityList()
+    {        
+        var list = myInfo.cdProductList.Where(_p => _p.maturityDate.CompareTo(curDateTime) == -1).ToList();
+
+        return list;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //신용 점수 결산
+
+    /// <summary> 신용 점수 갱신 </summary>
+    void MyOccupationScoreUpdate()
+    {
+        //신용 점수 계산 : 증감 요소 계산
+        var table = Mng.table.GetOccupationDataTable(myInfo.occupation);
+
+        double addOccupation = (myInfo.monthPurchasePrice / 50f) * table.CreditIncreaseVariable;
+        addOccupation = Mathf.Min((float)addOccupation, (float)table.MaxMonthlyCreditIncrease);
+        myInfo.occupation += (float)addOccupation;
+
+        myInfo.monthPurchasePrice = 0;
+
+        //신용 점수 계산 : 차감 요소 계산
+        if( myInfo.gold < 0 )
+        {
+            var beforeMonthDate = curDateTime.AddMonths(-1);
+            int totalDasys = DateTime.DaysInMonth(beforeMonthDate.Year, beforeMonthDate.Month);
+            myInfo.occupation -= totalDasys;
+        }
+    }
+
+    /// <summary> 신용 점수에 따른 대출 금리 할인율 반영 </summary>
+    void MyExtralInterestRateUpdate()
+    {
+        //신용 점수에 따른 대출 금리 할인율 계산
+        var table = Mng.table.GetOccupationDataTable(myInfo.occupation);
+        myInfo.extraInterestRate = UnityEngine.Random.Range(table.ExtraInterestMin * 0.01f, table.ExtraInterestMax * 0.01f);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //대출 상환
+
+    /// <summary> 대출 이자 및 원금 상환 </summary>
+    public void MyLoanUpdate()
+    {
+        var payLoanList = myInfo.loanCondtionList.Where(_p => _p.nextPaymentDate <= curDateTime).ToList();
+        if (payLoanList.Count == 0)
+            return;
+
+        long totalPayGold = 0;
+        foreach(var payLoan in payLoanList )
+        {
+            //이자 상환
+            long interestPayGold = (long)((float)payLoan.loanGold * (payLoan.interestRate / 12f));
+            payLoan.interestPayGold += interestPayGold;
+            //원금 상환
+            //long principalPayGold = (long)((float)payLoan.loanGold / (12f * payLoan.term));
+            //payLoan.principalPayGold += principalPayGold;
+
+            //totalPayGold += interestPayGold + principalPayGold;            
+            totalPayGold += interestPayGold;
+
+            payLoan.interestPayCount++;
+
+            //대출 만기 종료
+            if (payLoan.maturityDate <= curDateTime)
+            {
+                totalPayGold += payLoan.loanGold;
+                //*대출 목록에서 삭제                
+                myInfo.loanCondtionList.Remove(payLoan);
+            }
+            else
+            //다음 상환날 업데이트
+            {
+                payLoan.NextPayDateUpdate();
+            }
+        }
+
+        if (totalPayGold > 0){
+            MessageBox.Open($"{totalPayGold} Gold will be redeemed.", 
+                () => {
+                    myInfo.gold -= totalPayGold;
+                    Mng.canvas.kTopMenu.MyGoldUpdate();
+                });
+        }
+    }
+
     //////////////////////////////////////////////////////////////////////////////////////////
     //자유 예금 상품
-    
+
     /// <summary> 자유 예금 추가 </summary>
     public void SetDesipot(long _gold)
     {

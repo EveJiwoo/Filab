@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/MyInfo.dat.meta
-guid: 1264be68ee22cb04d81cb9d5bf3533f3
-DefaultImporter:
-========
 guid: 83cb8f67cfba89746b525da1ecd5ce71
 PrefabImporter:
->>>>>>>> d2697cca (도시 및 모든 맵 연결):Assets/Resources/Prefabs/Map/City10.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -1,0 +1,134 @@
+[
+  {
+    "UID": 500000000001,
+    "OccupationType": "Beggar",
+    "CreditScore": 0.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 10000,
+    "ExtraInterestMin": 0.0,
+    "ExtraInterestMax": 0.0,
+    "MaxDuration": 1,
+    "CreditIncreaseVariable": 0.002
+  },
+  {
+    "UID": 500000000002,
+    "OccupationType": "Grocer",
+    "CreditScore": 500.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 30000,
+    "ExtraInterestMin": 1.0,
+    "ExtraInterestMax": 2.0,
+    "MaxDuration": 5,
+    "CreditIncreaseVariable": 0.002
+  },
+  {
+    "UID": 500000000003,
+    "OccupationType": "Trader",
+    "CreditScore": 600.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 60000,
+    "ExtraInterestMin": 1.0,
+    "ExtraInterestMax": 3.0,
+    "MaxDuration": 5,
+    "CreditIncreaseVariable": 0.002
+  },
+  {
+    "UID": 500000000004,
+    "OccupationType": "Wholesaler",
+    "CreditScore": 700.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 250000,
+    "ExtraInterestMin": 2.0,
+    "ExtraInterestMax": 3.0,
+    "MaxDuration": 10,
+    "CreditIncreaseVariable": 0.0005
+  },
+  {
+    "UID": 500000000005,
+    "OccupationType": "Merchant",
+    "CreditScore": 800.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 500000,
+    "ExtraInterestMin": 3.0,
+    "ExtraInterestMax": 5.0,
+    "MaxDuration": 10,
+    "CreditIncreaseVariable": 7E-05
+  },
+  {
+    "UID": 500000000006,
+    "OccupationType": "Viscount",
+    "CreditScore": 900.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 1200000,
+    "ExtraInterestMin": 4.0,
+    "ExtraInterestMax": 6.0,
+    "MaxDuration": 20,
+    "CreditIncreaseVariable": 4E-05
+  },
+  {
+    "UID": 500000000007,
+    "OccupationType": "Baron",
+    "CreditScore": 1000.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 1500000,
+    "ExtraInterestMin": 5.0,
+    "ExtraInterestMax": 7.0,
+    "MaxDuration": 20,
+    "CreditIncreaseVariable": 1E-05
+  },
+  {
+    "UID": 500000000008,
+    "OccupationType": "Marquis",
+    "CreditScore": 1100.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 3000000,
+    "ExtraInterestMin": 6.0,
+    "ExtraInterestMax": 7.0,
+    "MaxDuration": 20,
+    "CreditIncreaseVariable": 5E-06
+  },
+  {
+    "UID": 500000000009,
+    "OccupationType": "Count",
+    "CreditScore": 1200.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 6000000,
+    "ExtraInterestMin": 7.0,
+    "ExtraInterestMax": 8.0,
+    "MaxDuration": 20,
+    "CreditIncreaseVariable": 3E-06
+  },
+  {
+    "UID": 500000000010,
+    "OccupationType": "Duke",
+    "CreditScore": 1300.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 20000000,
+    "ExtraInterestMin": 8.0,
+    "ExtraInterestMax": 9.0,
+    "MaxDuration": 30,
+    "CreditIncreaseVariable": 4E-07
+  },
+  {
+    "UID": 500000000011,
+    "OccupationType": "Grand Duke",
+    "CreditScore": 1400.0,
+    "MaxMonthlyCreditIncrease": 10,
+    "LoanLimit": 20000000,
+    "ExtraInterestMin": 9.0,
+    "ExtraInterestMax": 10.0,
+    "MaxDuration": 50,
+    "CreditIncreaseVariable": 1E-07
+  },
+  {
+    "UID": 0,
+    "OccupationType": "",
+    "CreditScore": 0.0,
+    "MaxMonthlyCreditIncrease": 0,
+    "LoanLimit": 0,
+    "ExtraInterestMin": 0.0,
+    "ExtraInterestMax": 0.0,
+    "MaxDuration": 0,
+    "CreditIncreaseVariable": 0.0
+  }
+]

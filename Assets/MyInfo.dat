@@ -2,19 +2,19 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : 0,
+			"local" : -1,
+			"gold" : 50000,
+			"occupation" : 500,
+			"freeDepositGold" : 0,
+			"monthPurchasePrice" : 0,
+			"extraInterestRate" : 0,
 			"mCdProductList" : [
 				
 			],
+			"mLoanConditionList" : [
+				
+			],
 			"mInvenItemInfoList" : [
-				
-			],
-			"gold" : 99999999,
-			"freeDepositGold" : 0,
-			"cdProductList" : [
-				
-			],
-			"invenItemInfoList" : [
 				
 			]
 		}

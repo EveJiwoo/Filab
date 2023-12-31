@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1997564047}
   - component: {fileID: 1997564046}
   m_Layer: 0
-  m_Name: CityShop
+  m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,9 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d711a2efe6355498f20f948e8f2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kPortal: {fileID: 11400000, guid: c01d3181b7b397248809d7df1eb1504b, type: 2}
-  kPortalMap: CityShop2
-  kPortalPath: Portal/Door
+  kLoadMap: 11
+  kPoint: 2
 --- !u!61 &1997564046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,7 +118,7 @@ GameObject:
   - component: {fileID: 1142400510565610289}
   - component: {fileID: 4623313165761898271}
   m_Layer: 0
-  m_Name: World
+  m_Name: Seaport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,9 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d711a2efe6355498f20f948e8f2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kPortal: {fileID: 11400000, guid: 1bb529d7085dd6541b5143c2790a641c, type: 2}
-  kPortalMap: World
-  kPortalPath: Portal/City2
+  kLoadMap: 13
+  kPoint: 5
 --- !u!61 &4623313165761898271
 BoxCollider2D:
   m_ObjectHideFlags: 0

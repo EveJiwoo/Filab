@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 4095829325474438458}
   - component: {fileID: 7988746285208535861}
   m_Layer: 0
-  m_Name: City1
+  m_Name: City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,9 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d711a2efe6355498f20f948e8f2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kPortal: {fileID: 11400000, guid: 4e9e01d52022e554893245fc8fb1a1b1, type: 2}
-  kPortalMap: City1
-  kPortalPath: Portal/CityBank
+  kLoadMap: -1
+  kPoint: 1
 --- !u!61 &7988746285208535861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2244,7 +2243,11 @@ GameObject:
   - component: {fileID: 2620971226957782587}
   - component: {fileID: 7446226318200423846}
   m_Layer: 0
+<<<<<<<< HEAD:Assets/Resources/Prefabs/Map/CityBank.prefab
   m_Name: CityBank
+========
+  m_Name: Bank
+>>>>>>>> d2697cca (도시 및 모든 맵 연결):Assets/Resources/Prefabs/Map/Bank.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

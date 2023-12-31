@@ -58,8 +58,8 @@ public class DataManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Instance = this;
-        
+        Instance = this;        
+
         myInfo = ES3.Load("MyInfo", Application.dataPath + "/MyInfo.dat", new MyInfo());
         foreach (var item in myInfo.invenItemInfoList)
             item.table = Mng.table.FindItemDataTable(item.uid);

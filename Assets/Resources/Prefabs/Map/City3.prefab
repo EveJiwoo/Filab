@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4309938287311679453}
   - component: {fileID: 6184939458158408421}
   m_Layer: 0
-  m_Name: MyHome
+  m_Name: Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d711a2efe6355498f20f948e8f2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kPortal: {fileID: 11400000, guid: abf2d86e429e94b40bf774dfbfe4928b, type: 2}
+  kLoadMap: 12
+  kPoint: 3
 --- !u!61 &6184939458158408421
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84,7 +85,7 @@ GameObject:
   - component: {fileID: 3103633722590915595}
   - component: {fileID: 9117907713165916318}
   m_Layer: 0
-  m_Name: CityBank
+  m_Name: Bank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d711a2efe6355498f20f948e8f2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kPortal: {fileID: 11400000, guid: c15284db5cad5214394004a9badad189, type: 2}
+  kLoadMap: 10
+  kPoint: 1
 --- !u!61 &9117907713165916318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -274,6 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2726426025677118483}
   - component: {fileID: 3069669398047863122}
+  - component: {fileID: -5160631146013373049}
   m_Layer: 0
   m_Name: City3
   m_TagString: Untagged
@@ -312,6 +315,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &-5160631146013373049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2904146371025557620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f504f7ec3318444ab878450ee685736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kResetPosition: {fileID: 0}
+  kPlayBGM: {fileID: 8300000, guid: d9544df379cbbaf46ad61885fd078234, type: 3}
+  kCityType: 2
 --- !u!1 &4904313636931006367
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +342,7 @@ GameObject:
   - component: {fileID: 2479268471015452364}
   - component: {fileID: 7441053128349638259}
   m_Layer: 0
-  m_Name: World
+  m_Name: Seaport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d711a2efe6355498f20f948e8f2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kPortal: {fileID: 11400000, guid: bfdc8f3cb76d97240af5f691f832b30b, type: 2}
+  kLoadMap: 13
+  kPoint: 6
 --- !u!61 &7441053128349638259
 BoxCollider2D:
   m_ObjectHideFlags: 0

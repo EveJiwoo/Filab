@@ -28,7 +28,9 @@ public class PlayManager : MonoBehaviour
         Instance = this;
 
         mPlayer = GameObject.FindObjectOfType<Player>();
-        var map = GameObject.FindObjectOfType<Map>();        
+
+        var loadMapType = Mng.data.myInfo.local.ToLoadMap();
+        var map = loadMapType.LoadResource();
 
         //최초 맵 로드
         LoadMap(map, map.kResetPosition.position);

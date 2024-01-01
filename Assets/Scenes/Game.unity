@@ -42081,11 +42081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170616821593250879, guid: f35940879d48c354db7ed837927f263a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 170616821937717153, guid: f35940879d48c354db7ed837927f263a, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f35940879d48c354db7ed837927f263a, type: 3}

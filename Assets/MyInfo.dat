@@ -2,7 +2,7 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : -1,
+			"local" : 8,
 			"gold" : 50000,
 			"occupation" : 500,
 			"freeDepositGold" : 0,

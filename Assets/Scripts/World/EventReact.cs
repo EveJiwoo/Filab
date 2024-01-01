@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class EventReact : MonoBehaviour
 {
     public EventReactType kType = EventReactType.None;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        var col = GetComponentInChildren<BoxCollider2D>();
+        col.isTrigger = true;
     }
 
     // Update is called once per frameev

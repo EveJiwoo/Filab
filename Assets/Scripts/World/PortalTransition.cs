@@ -11,9 +11,8 @@ public class PortalTransition : MonoBehaviour
 
     private void Awake()
     {
-        var cols = GetComponentsInChildren<BoxCollider2D>();
-        foreach (var col in cols)
-            col.isTrigger = true;
+        var col = GetComponentInChildren<BoxCollider2D>();
+        col.isTrigger = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

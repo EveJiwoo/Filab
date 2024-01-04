@@ -2,42 +2,59 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : 1,
-			"gold" : 158,
+			"local" : 0,
+			"gold" : 58777,
 			"occupation" : 500,
-			"freeDepositGold" : 0,
-			"monthPurchasePrice" : 108784,
+			"freeDepositGold" : 1223,
+			"monthPurchasePrice" : 0,
 			"extraInterestRate" : 0,
 			"mCdProductList" : [
 				{
-					"depositeGold" : 5000,
-					"interestRate" : 0.08334076,
+					"city" : 0,
+					"depositeGold" : 1000,
+					"interestRate" : 0.09536098,
 					"term" : 4,
+					"openDate" : {
+						"ticks" : 410337444917760000
+					},
 					"maturityDate" : {
-						"ticks" : 417641194620000000
+						"ticks" : 411593965930000000
+					}
+				},{
+					"city" : 0,
+					"depositeGold" : 1000,
+					"interestRate" : 0.0804815143,
+					"term" : 3,
+					"openDate" : {
+						"ticks" : 410338435606900000
+					},
+					"maturityDate" : {
+						"ticks" : 411278605930000000
 					}
 				}
 			],
 			"mLoanConditionList" : [
-				
+				{
+					"city" : 0,
+					"loanGold" : 10000,
+					"interestPayGold" : 0,
+					"interestRate" : 0.241158277,
+					"curInterestGold" : 0,
+					"term" : 1,
+					"maturityDate" : {
+						"ticks" : 410663204533150000
+					},
+					"contractDate" : {
+						"ticks" : 410321924533150000
+					},
+					"nextPaymentDate" : {
+						"ticks" : 410347844533150000
+					},
+					"interestPayCount" : 0
+				}
 			],
 			"mInvenItemInfoList" : [
-				{
-					"uid" : 200000000002,
-					"count" : 61,
-					"avrPrice" : 277,
-					"sellPrice" : 0
-				},{
-					"uid" : 200000000032,
-					"count" : 76,
-					"avrPrice" : 359,
-					"sellPrice" : 0
-				},{
-					"uid" : 200000000036,
-					"count" : 40,
-					"avrPrice" : 370,
-					"sellPrice" : 0
-				}
+				
 			]
 		}
 	}

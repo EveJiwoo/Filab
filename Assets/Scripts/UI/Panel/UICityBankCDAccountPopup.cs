@@ -204,10 +204,12 @@ public class UICityBankCDAccountPopup : UIBase
 
         var cd = new CDProductInfo();
         long amountGold = long.Parse(kDepositAmount.text);
+        cd.city         = Mng.data.myInfo.local;
         cd.depositeGold = amountGold;
         cd.interestRate = selectCD.interestRate;
         cd.term         = selectCD.term;
         cd.maturityDate = selectCD.maturityDate;
+        cd.openDate     = Mng.data.curDateTime;
 
         Mng.data.myInfo.cdProductList.Add(cd);
 

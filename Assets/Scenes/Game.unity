@@ -1198,8 +1198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36429078
 MonoBehaviour:
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 37356226}
   - component: {fileID: 37356229}
   m_Layer: 5
-  m_Name: TownMenu
+  m_Name: TopMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1718,7 +1718,7 @@ GameObject:
   - component: {fileID: 54757700}
   - component: {fileID: 54757699}
   m_Layer: 5
-  m_Name: Saving AmountGold
+  m_Name: SavingAmountGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3268,7 +3268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 274, y: -71}
+  m_AnchoredPosition: {x: 331.7, y: -71}
   m_SizeDelta: {x: 205.5, y: 111.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &131632611
@@ -4258,8 +4258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &161781870
 MonoBehaviour:
@@ -4944,8 +4944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &195140419
 MonoBehaviour:
@@ -6903,7 +6903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85, y: -5}
+  m_AnchoredPosition: {x: -61, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &273255599
@@ -11030,12 +11030,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kIsPopupType: 1
-  kTextList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  kLoanMenuGo: {fileID: 1728693356}
+  kLoanButtonList:
+  - {fileID: 1126043605}
+  - {fileID: 799233855}
+  - {fileID: 1067520417}
+  - {fileID: 1541234650}
+  - {fileID: 1438330036}
+  kLoanBankNameList:
+  - {fileID: 1982964889}
+  - {fileID: 414814302}
+  - {fileID: 246656016}
+  - {fileID: 1469003561}
+  - {fileID: 365650544}
+  kLoanGoldList:
+  - {fileID: 585038818}
+  - {fileID: 200904435}
+  - {fileID: 548114741}
+  - {fileID: 429518442}
+  - {fileID: 1694407292}
+  kLoanRateList:
+  - {fileID: 1696034743}
+  - {fileID: 2007481153}
+  - {fileID: 1981274937}
+  - {fileID: 161781870}
+  kSelectLoanAmountGold: {fileID: 1722825988}
+  kSelectLoanMonthlyPaymnetGold: {fileID: 1346929049}
+  kSelectLoanInterestRate: {fileID: 405453489}
+  kSelectLoanTerm: {fileID: 2077156499}
+  kSelectLoanDate: {fileID: 1376451887}
+  kSelectLoanMaturityDate: {fileID: 548313905}
+  kSelectLoanInterestPaidGold: {fileID: 1180312701}
+  kSaveMenuGo: {fileID: 11313276}
+  kSaveButtonList:
+  - {fileID: 1942912309}
+  - {fileID: 1365723701}
+  - {fileID: 1147612089}
+  - {fileID: 2049622621}
+  - {fileID: 1681823870}
+  kSaveBankNameList:
+  - {fileID: 403938002}
+  - {fileID: 740357781}
+  - {fileID: 1752368378}
+  - {fileID: 1791445513}
+  - {fileID: 402405148}
+  kSaveGoldList:
+  - {fileID: 858551882}
+  - {fileID: 1552182593}
+  - {fileID: 951379613}
+  - {fileID: 485878374}
+  - {fileID: 887266779}
+  kSaveRateList:
+  - {fileID: 1287526263}
+  - {fileID: 1134283755}
+  - {fileID: 195140419}
+  - {fileID: 1020900469}
+  - {fileID: 1099118473}
+  kSelectSavingAmountGold: {fileID: 54757699}
+  kSelectSavingMonthlyInterestGold: {fileID: 550486020}
+  kSelectSavingInterestRate: {fileID: 1464930273}
+  kSelectSavingTerm: {fileID: 1247303769}
+  kSelectSavingOpenDate: {fileID: 639821367}
+  kSelectSavingMaturityDate: {fileID: 1085765057}
+  kFreeDepositGold: {fileID: 1591649857}
 --- !u!1 &429518440
 GameObject:
   m_ObjectHideFlags: 0
@@ -18838,7 +18895,7 @@ GameObject:
   - component: {fileID: 639821368}
   - component: {fileID: 639821367}
   m_Layer: 5
-  m_Name: Loan Date
+  m_Name: OpenDate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23188,7 +23245,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799233856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectLoanListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &799233856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23998,7 +24067,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loan Date
+  m_text: Open Date
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be53350b6a18f48c9a4154d315bec159, type: 2}
   m_sharedMaterial: {fileID: -145069029954325622, guid: be53350b6a18f48c9a4154d315bec159, type: 2}
@@ -29168,8 +29237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020900469
 MonoBehaviour:
@@ -31102,7 +31171,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067520418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectLoanListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1067520418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32107,8 +32188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099118473
 MonoBehaviour:
@@ -33302,7 +33383,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1126043606}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectLoanListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1126043606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33750,8 +33843,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1134283755
 MonoBehaviour:
@@ -33934,9 +34027,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1346300491}
-        m_TargetAssemblyTypeName: UITradeShopPopup, Assembly-CSharp
-        m_MethodName: OnUserSellItemTapButtonClick
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSaveTapButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34408,7 +34501,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1147612090}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectSaveListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1147612090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36615,7 +36720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 523, y: -71}
+  m_AnchoredPosition: {x: 586.6, y: -71}
   m_SizeDelta: {x: 205.5, y: 111.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213148754
@@ -39370,8 +39475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1287526263
 MonoBehaviour:
@@ -41363,7 +41468,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1365723702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectSaveListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1365723702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42074,7 +42191,7 @@ GameObject:
   - component: {fileID: 1376451888}
   - component: {fileID: 1376451887}
   m_Layer: 5
-  m_Name: Loan Date
+  m_Name: LoanDate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43716,7 +43833,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1438330037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectLoanListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1438330037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47176,7 +47305,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541234651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectLoanListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541234651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51302,7 +51443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1681823871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectSaveListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1681823871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51646,8 +51799,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696034743
 MonoBehaviour:
@@ -57551,7 +57704,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1942912310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectSaveListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1942912310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58611,9 +58776,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1346300491}
-        m_TargetAssemblyTypeName: UITradeShopPopup, Assembly-CSharp
-        m_MethodName: OnUserBuyItemTapButtonClick
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnLoanTapButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -58772,8 +58937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981274937
 MonoBehaviour:
@@ -59989,8 +60154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 0}
-  m_SizeDelta: {x: 75.9, y: 80}
+  m_AnchoredPosition: {x: 140, y: 0}
+  m_SizeDelta: {x: 110, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007481153
 MonoBehaviour:
@@ -61515,7 +61680,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2049622622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426453692}
+        m_TargetAssemblyTypeName: UIFinancialsPopup, Assembly-CSharp
+        m_MethodName: OnSelectSaveListButtonClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2049622622
 MonoBehaviour:
   m_ObjectHideFlags: 0

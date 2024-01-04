@@ -66,12 +66,16 @@ namespace ClassDef
     //정기 예금 정보
     public class CDProductInfo
     {
+        //대상 은행
+        public CityType city = CityType.City1;
         //정기 예금액
         public long depositeGold = 0;
         //정기 예금 금리(년)
         public float interestRate = 0f;
         //정기 예금 기간(년)
         public int term = 1;
+        //정기 예금 계약일
+        public DateTime openDate;
         //정기 예금 만기일
         public DateTime maturityDate;
     }

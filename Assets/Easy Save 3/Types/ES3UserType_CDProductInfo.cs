@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("depositeGold", "interestRate", "term", "maturityDate")]
+	[ES3PropertiesAttribute("city", "depositeGold", "interestRate", "term", "openDate", "maturityDate")]
 	public class ES3UserType_CDProductInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -16,9 +16,11 @@ namespace ES3Types
 		{
 			var instance = (ClassDef.CDProductInfo)obj;
 			
+			writer.WriteProperty("city", instance.city, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(EnumDef.CityType)));
 			writer.WriteProperty("depositeGold", instance.depositeGold, ES3Type_long.Instance);
 			writer.WriteProperty("interestRate", instance.interestRate, ES3Type_float.Instance);
 			writer.WriteProperty("term", instance.term, ES3Type_int.Instance);
+			writer.WriteProperty("openDate", instance.openDate, ES3Type_DateTime.Instance);
 			writer.WriteProperty("maturityDate", instance.maturityDate, ES3Type_DateTime.Instance);
 		}
 
@@ -30,6 +32,9 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
+					case "city":
+						instance.city = reader.Read<EnumDef.CityType>(ES3Type_enum.Instance);
+						break;
 					case "depositeGold":
 						instance.depositeGold = reader.Read<System.Int64>(ES3Type_long.Instance);
 						break;
@@ -38,6 +43,9 @@ namespace ES3Types
 						break;
 					case "term":
 						instance.term = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "openDate":
+						instance.openDate = reader.Read<System.DateTime>(ES3Type_DateTime.Instance);
 						break;
 					case "maturityDate":
 						instance.maturityDate = reader.Read<System.DateTime>(ES3Type_DateTime.Instance);

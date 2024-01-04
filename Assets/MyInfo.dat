@@ -2,20 +2,42 @@
 	"MyInfo" : {
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
-			"local" : 6,
-			"gold" : 50000,
+			"local" : 1,
+			"gold" : 158,
 			"occupation" : 500,
 			"freeDepositGold" : 0,
-			"monthPurchasePrice" : 0,
+			"monthPurchasePrice" : 108784,
 			"extraInterestRate" : 0,
 			"mCdProductList" : [
-				
+				{
+					"depositeGold" : 5000,
+					"interestRate" : 0.08334076,
+					"term" : 4,
+					"maturityDate" : {
+						"ticks" : 417641194620000000
+					}
+				}
 			],
 			"mLoanConditionList" : [
 				
 			],
 			"mInvenItemInfoList" : [
-				
+				{
+					"uid" : 200000000002,
+					"count" : 61,
+					"avrPrice" : 277,
+					"sellPrice" : 0
+				},{
+					"uid" : 200000000032,
+					"count" : 76,
+					"avrPrice" : 359,
+					"sellPrice" : 0
+				},{
+					"uid" : 200000000036,
+					"count" : 40,
+					"avrPrice" : 370,
+					"sellPrice" : 0
+				}
 			]
 		}
 	}

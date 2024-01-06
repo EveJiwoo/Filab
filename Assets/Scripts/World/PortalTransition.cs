@@ -33,8 +33,13 @@ public class PortalTransition : MonoBehaviour
 
                 if (kLoadMap == LoadMap.Home || kLoadMap == LoadMap.Bank || kLoadMap == LoadMap.Shop)
                     portal.kLoadMap = Mng.data.myInfo.local.ToLoadMap();
-                
-                if( IsCity(kLoadMap) == true)
+
+                if (kLoadMap == LoadMap.World)
+                    Mng.play.player.ChangeModel(Player.ModelType.Ship);
+                else
+                    Mng.play.player.ChangeModel(Player.ModelType.Character);
+
+                if ( IsCity(kLoadMap) == true)
                     Mng.data.myInfo.local = map.kCityType;
 
                 Mng.play.LoadMap(map, portal.transform.position);

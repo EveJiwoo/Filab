@@ -35,6 +35,11 @@ public class UITopMenu : MonoBehaviour
     public void MyGoldUpdate()
     {
         kMyGoldText.text = Mng.data.myInfo.gold.ToColumnString();
+
+        if(Mng.data.myInfo.gold < Mng.data.endGoldLimit)
+        {
+            MessageBox.Open("I have too much debt.", () => Application.Quit());
+        }
     }
 
     public void MyOccupationUpdate()

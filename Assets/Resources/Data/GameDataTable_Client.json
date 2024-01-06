@@ -26,5 +26,26 @@
     "GameDataValue": 0,
     "GameDataCount": 0,
     "GameDataRatio": 0.2
+  },
+  {
+    "UID": 220000000005,
+    "GameDataID": "EndGoldLimit",
+    "GameDataValue": -5000000,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.2
+  },
+  {
+    "UID": 220000000006,
+    "GameDataID": "GamePlayTimeSpeed",
+    "GameDataValue": 15000,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
+  },
+  {
+    "UID": 220000000007,
+    "GameDataID": "GameEndYear",
+    "GameDataValue": 1347,
+    "GameDataCount": 0,
+    "GameDataRatio": 0.0
   }
 ]

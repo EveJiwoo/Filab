@@ -8,9 +8,8 @@ using UnityEditor;
 public class PlayManager : MonoBehaviour
 {
     static public PlayManager Instance = null;    
-
-    [Header("게임 시간 가속값")]
-    public float kTimeSpeed = 5000f;    
+        
+    float mTimeSpeed = 5000f;    
 
     int mCurMonth = 0;
 
@@ -22,6 +21,8 @@ public class PlayManager : MonoBehaviour
 
     Map mMap;
     public Map map { get { return mMap; } }
+    
+    bool mGameEnd = false;
 
     private void Awake()
     {
@@ -31,6 +32,8 @@ public class PlayManager : MonoBehaviour
 
         var loadMapType = Mng.data.myInfo.local.ToLoadMap();
         var map = loadMapType.LoadResource();
+
+        mTimeSpeed = Mng.data.gamePlayTimeSpeed;
 
         //최초 맵 로드
         LoadMap(map, map.kResetPosition.position);
@@ -63,17 +66,26 @@ public class PlayManager : MonoBehaviour
 
     private void Update()
     {
-        if( isTimer == true ){
-            Mng.data.curDateTime = Mng.data.curDateTime.AddSeconds(Time.deltaTime * kTimeSpeed);
+        if (mGameEnd == true)
+            return;
+
+        if ( isTimer == true ){
+            Mng.data.curDateTime = Mng.data.curDateTime.AddSeconds(Time.deltaTime * mTimeSpeed);
             TimeUpdate(Mng.data.curDateTime);
         }
     }
-
+    
     void TimeUpdate(DateTime _time)
     {
         Mng.canvas.kTopMenu.SetDateTime(_time);
 
-        if( mCurMonth != Mng.data.curDateTime.Month){
+        if( mCurMonth != Mng.data.curDateTime.Month ){
+            if (Mng.data.curDateTime.Year >= Mng.data.gameEndYear){
+                MessageBox.Open("Game play time has ended.", () => Application.Quit());
+                mGameEnd = true;
+                return;
+            }
+
             mCurMonth = Mng.data.curDateTime.Month;
             float rate = Mng.table.GetBaseInterestRate(_time);
             Mng.canvas.kTopMenu.TempRate(rate);

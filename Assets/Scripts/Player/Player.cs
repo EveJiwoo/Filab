@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     MoveDirection mMoveHorizon = MoveDirection.None;
     MoveDirection mMoveVeritcal = MoveDirection.None;
 
-    [Header("ƒ≥∏Ø≈Õ ¿Ãµø º”µµ")]
+    [Header("Ï∫êÎ¶≠ÌÑ∞ Ïù¥Îèô ÏÜçÎèÑ")]
     public float kSpeed = 1f;
 
     Rigidbody2D mRigidbody;
@@ -91,9 +91,9 @@ public class Player : MonoBehaviour
     void AnimationUpdate()
     {
         if(mMoveHorizon == MoveDirection.Left)
-            mSpriteRenderer.flipX = true;
-        if (mMoveHorizon == MoveDirection.Right)
             mSpriteRenderer.flipX = false;
+        if (mMoveHorizon == MoveDirection.Right)
+            mSpriteRenderer.flipX = true;
 
         if (mMoveHorizon != MoveDirection.None || mMoveVeritcal != MoveDirection.None)
             mAnimator.Play("Run");

@@ -3,7 +3,7 @@
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
 			"local" : 0,
-			"gold" : 58777,
+			"gold" : 58577,
 			"occupation" : 500,
 			"freeDepositGold" : 1223,
 			"monthPurchasePrice" : 0,
@@ -37,7 +37,7 @@
 				{
 					"city" : 0,
 					"loanGold" : 10000,
-					"interestPayGold" : 0,
+					"interestPayGold" : 200,
 					"interestRate" : 0.241158277,
 					"curInterestGold" : 0,
 					"term" : 1,
@@ -48,9 +48,9 @@
 						"ticks" : 410321924533150000
 					},
 					"nextPaymentDate" : {
-						"ticks" : 410347844533150000
+						"ticks" : 410374628533150000
 					},
-					"interestPayCount" : 0
+					"interestPayCount" : 1
 				}
 			],
 			"mInvenItemInfoList" : [

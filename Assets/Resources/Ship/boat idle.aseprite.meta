@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: e8a3415488dd14c3fbedd4146c37fef9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: boat idle_Frame_0
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.07017544}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 52
+      height: 57
+    spriteID: 16566922212cb488bb3c00713d71e9ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: boat idle_Frame_1
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.07017544}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 69
+      width: 52
+      height: 57
+    spriteID: a94d111b9a42b432eb2f7d64ce0952f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 69}
+  - name: boat idle_Frame_2
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.07017544}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 134
+      width: 52
+      height: 57
+    spriteID: 82e75e6a0020848d2abe730bed47ad3a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 134}
+  - name: boat idle_Frame_3
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.07017544}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 199
+      width: 52
+      height: 57
+    spriteID: e33891b965bbd4c128a64c2d2b4a64f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 199}
+  - name: boat idle_Frame_4
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.07017544}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 264
+      width: 52
+      height: 57
+    spriteID: 2af6f56e750f24d21b0c6c7ab5880343
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 264}
+  - name: boat idle_Frame_5
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.07017544}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 329
+      width: 52
+      height: 57
+    spriteID: 6b7c694cb0e4e4c06b84d8135a1e2a70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 329}
+  - name: boat idle_Frame_6
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.07017544}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 394
+      width: 52
+      height: 57
+    spriteID: 6f528ee6f389c454aaefbd89cbaf85f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 394}
+  - name: boat idle_Frame_7
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 4
+      width: 52
+      height: 56
+    spriteID: f65073b62d71e468780babbe829dbb6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 4}
+  - name: boat idle_Frame_8
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 68
+      width: 52
+      height: 56
+    spriteID: 8eebfd9d78ba645f7be4e1786709c84d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 68}
+  - name: boat idle_Frame_9
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 132
+      width: 52
+      height: 56
+    spriteID: 5d48e41d4a0884aea8e49c25e5798b6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 132}
+  - name: boat idle_Frame_10
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 196
+      width: 52
+      height: 56
+    spriteID: 2c54e8250ecb84fbc8b7476152ac9be9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 196}
+  - name: boat idle_Frame_11
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 260
+      width: 52
+      height: 56
+    spriteID: d68e7019e02d14586a41022dafe17a18
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 260}
+  - name: boat idle_Frame_12
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 324
+      width: 52
+      height: 56
+    spriteID: a20da2fd13f474e19b9672e2fc916a4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 324}
+  - name: boat idle_Frame_13
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 388
+      width: 52
+      height: 56
+    spriteID: 54bd5c2a536a04549855000faffaf033
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 388}
+  - name: boat idle_Frame_14
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 452
+      width: 52
+      height: 56
+    spriteID: 0e6f671d4812a4e5aa77a2ee3338ffe3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 452}
+  - name: boat idle_Frame_15
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 4
+      width: 52
+      height: 56
+    spriteID: 99bc2fab788444b07a6c32b585fc253a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 270390454
+    name: boat idle
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: boat idle_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 57
+      spriteId: 16566922212cb488bb3c00713d71e9ce
+    - name: boat idle_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 57
+      spriteId: a94d111b9a42b432eb2f7d64ce0952f6
+    - name: boat idle_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 57
+      spriteId: 82e75e6a0020848d2abe730bed47ad3a
+    - name: boat idle_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 57
+      spriteId: e33891b965bbd4c128a64c2d2b4a64f7
+    - name: boat idle_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 57
+      spriteId: 2af6f56e750f24d21b0c6c7ab5880343
+    - name: boat idle_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 57
+      spriteId: 6b7c694cb0e4e4c06b84d8135a1e2a70
+    - name: boat idle_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 57
+      spriteId: 6f528ee6f389c454aaefbd89cbaf85f4
+    - name: boat idle_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: f65073b62d71e468780babbe829dbb6c
+    - name: boat idle_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: 8eebfd9d78ba645f7be4e1786709c84d
+    - name: boat idle_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: 5d48e41d4a0884aea8e49c25e5798b6c
+    - name: boat idle_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: 2c54e8250ecb84fbc8b7476152ac9be9
+    - name: boat idle_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: d68e7019e02d14586a41022dafe17a18
+    - name: boat idle_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: a20da2fd13f474e19b9672e2fc916a4e
+    - name: boat idle_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: 54bd5c2a536a04549855000faffaf033
+    - name: boat idle_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: 0e6f671d4812a4e5aa77a2ee3338ffe3
+    - name: boat idle_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 3
+        y: 4
+        width: 52
+        height: 56
+      spriteId: 99bc2fab788444b07a6c32b585fc253a
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

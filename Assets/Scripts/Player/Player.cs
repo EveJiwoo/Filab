@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {        
+    public enum ModelType
+    {
+        Character,
+        Ship
+    }
+
     MoveDirection mMoveHorizon = MoveDirection.None;
     MoveDirection mMoveVeritcal = MoveDirection.None;
 
-    [Header("ƒ≥∏Ø≈Õ ¿Ãµø º”µµ")]
+    [Header("Ï∫êÎ¶≠ÌÑ∞ Ïù¥Îèô ÏÜçÎèÑ")]
     public float kSpeed = 1f;
 
     Rigidbody2D mRigidbody;
@@ -16,9 +22,12 @@ public class Player : MonoBehaviour
     Animator mAnimator;
     
     GameObject mModel;
+    public GameObject kShadowGo;
 
     public bool isCanMove { get; set; }
     public bool isPortalTransit { get; set; }
+
+    ModelType mModelType = ModelType.Character;
 
     void Awake()
     {
@@ -91,13 +100,50 @@ public class Player : MonoBehaviour
     void AnimationUpdate()
     {
         if(mMoveHorizon == MoveDirection.Left)
-            mSpriteRenderer.flipX = true;
-        if (mMoveHorizon == MoveDirection.Right)
             mSpriteRenderer.flipX = false;
+        if (mMoveHorizon == MoveDirection.Right)
+            mSpriteRenderer.flipX = true;
 
         if (mMoveHorizon != MoveDirection.None || mMoveVeritcal != MoveDirection.None)
-            mAnimator.Play("Run");
+        {
+            switch(mModelType)
+            {
+                case ModelType.Character:
+                    mAnimator.Play("Character Run");
+                    break;
+                case ModelType.Ship:
+                    mAnimator.Play("Ship Run");
+                    break;
+            }            
+        }
         else
-            mAnimator.Play("Stand");
+        {
+            switch (mModelType)
+            {
+                case ModelType.Character:
+                    mAnimator.Play("Character Stand");
+                    break;
+                case ModelType.Ship:
+                    mAnimator.Play("Ship Stand");
+                    break;
+            }
+        }   
+    }
+
+    public void ChangeModel(ModelType _type)
+    {
+        mModelType = _type;
+
+        switch (mModelType)
+        {
+            case ModelType.Character:
+                mAnimator.Play("Character Stand");
+                kShadowGo.SetActive(true);
+                break;
+            case ModelType.Ship:
+                mAnimator.Play("Ship Stand");
+                kShadowGo.SetActive(false);
+                break;
+        }
     }
 }

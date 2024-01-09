@@ -3,55 +3,21 @@
 		"__type" : "ClassDef.MyInfo,Assembly-CSharp",
 		"value" : {
 			"local" : 0,
-			"gold" : 58777,
+			"gold" : 50000,
 			"occupation" : 500,
-			"freeDepositGold" : 1223,
+			"freeDepositGold" : 0,
 			"monthPurchasePrice" : 0,
 			"extraInterestRate" : 0,
+			"curYear" : 1300,
+			"curMonth" : 1,
+			"curDay" : 24,
+			"curHour" : 19,
+			"curMin" : 56,
 			"mCdProductList" : [
-				{
-					"city" : 0,
-					"depositeGold" : 1000,
-					"interestRate" : 0.09536098,
-					"term" : 4,
-					"openDate" : {
-						"ticks" : 410337444917760000
-					},
-					"maturityDate" : {
-						"ticks" : 411593965930000000
-					}
-				},{
-					"city" : 0,
-					"depositeGold" : 1000,
-					"interestRate" : 0.0804815143,
-					"term" : 3,
-					"openDate" : {
-						"ticks" : 410338435606900000
-					},
-					"maturityDate" : {
-						"ticks" : 411278605930000000
-					}
-				}
+				
 			],
 			"mLoanConditionList" : [
-				{
-					"city" : 0,
-					"loanGold" : 10000,
-					"interestPayGold" : 0,
-					"interestRate" : 0.241158277,
-					"curInterestGold" : 0,
-					"term" : 1,
-					"maturityDate" : {
-						"ticks" : 410663204533150000
-					},
-					"contractDate" : {
-						"ticks" : 410321924533150000
-					},
-					"nextPaymentDate" : {
-						"ticks" : 410347844533150000
-					},
-					"interestPayCount" : 0
-				}
+				
 			],
 			"mInvenItemInfoList" : [
 				

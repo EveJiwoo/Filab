@@ -18,29 +18,10 @@ public class DataManager : MonoBehaviour
 {
     static public DataManager Instance = null;
     
-    [Header("최초의 게임 시작 시간 : 년도")]
-    public int kStartYear;
-    [Header("최초의 게임 시작 시간 : 월")]
-    public int kStartMonth;
-    [Header("최초의 게임 시작 시간 : 일")]
-    public int kStartDay;
-    [Header("최초의 게임 시작 시간 : 시")]
-    public int kStartHour;
-    [Header("최초의 게임 시작 시간 : 분")]
-    public int kStartMin;
-
-    [PropertySpace]
-    [Button("시작날짜 초기화")]
-    void ResetGameDateTime()
-    {
-        PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, "");
-    }
-
     [PropertySpace]
     [Button("데이터 초기화")]
     void ResetInventory()
     {
-        PlayerPrefs.DeleteKey(ConstDef.GAME_DATE_TIME);
         ES3.DeleteFile(Application.dataPath + "/MyInventory.dat");
     }
 
@@ -57,6 +38,9 @@ public class DataManager : MonoBehaviour
 
     public int maxCdCount = 0;
     public int maxLoanCount = 0;
+    public int endGoldLimit = 0;
+    public int gamePlayTimeSpeed = 0;
+    public int gameEndYear = 0;
 
     public float minLoanInterestRate = 0f;
     public float maxLoanInterestRate = 0f;
@@ -69,35 +53,29 @@ public class DataManager : MonoBehaviour
         myInfo = ES3.Load("MyInfo", Application.dataPath + "/MyInfo.dat", new MyInfo());
         foreach (var item in myInfo.invenItemInfoList)
             item.table = Mng.table.FindItemDataTable(item.uid);
+        
+        curDateTime = new DateTime(myInfo.curYear, myInfo.curMonth, myInfo.curDay, myInfo.curHour, myInfo.curMin, 0);
+        mCurMonth = curDateTime.Month;
 
         maxCdCount = (int)Mng.table.GetGameDataTable("CDMaxCount").GameDataValue;
         maxLoanCount = (int)Mng.table.GetGameDataTable("LoanMaxCount").GameDataValue;
         minLoanInterestRate = Mng.table.GetGameDataTable("LoanMinInterestRate").GameDataRatio;
         maxLoanInterestRate = Mng.table.GetGameDataTable("LoanMaxInterestRate").GameDataRatio;
 
-        TimeUpdate();
+        endGoldLimit = (int)Mng.table.GetGameDataTable("EndGoldLimit").GameDataValue;
+        gamePlayTimeSpeed = (int)Mng.table.GetGameDataTable("GamePlayTimeSpeed").GameDataValue;
+        gameEndYear = (int)Mng.table.GetGameDataTable("GameEndYear").GameDataValue;
+
         CityShopUpdate();
         CityBankCdAndLoanUpdate();
         MyExtralInterestRateUpdate();
     }
 
-    public void TimeUpdate()
-    {
-        //저장된 시간 복구
-        var time = PlayerPrefs.GetString(ConstDef.GAME_DATE_TIME);
-        if (time == "")
-            curDateTime = new DateTime(kStartYear, kStartMonth, kStartDay, kStartHour, kStartMin, 0);
-        else
-            curDateTime = DateTime.Parse(time);
-
-        mCurMonth = curDateTime.Month;
-    }
-    
     private void FixedUpdate()
-    {
-        if (curDateTime.Month != mCurMonth)
-        {
+    {   
+        if (curDateTime.Month != mCurMonth){
             mCurMonth = curDateTime.Month;
+
             AllShopItemUpdate();
             CityBankCdAndLoanUpdate();
             MyOccupationScoreUpdate();
@@ -419,8 +397,12 @@ public class DataManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        //현재까지의 시간 저장
-        PlayerPrefs.SetString(ConstDef.GAME_DATE_TIME, curDateTime.ToString());
+        //현재까지의 시간 저장        
+        myInfo.curYear = curDateTime.Year;
+        myInfo.curMonth = curDateTime.Month;
+        myInfo.curDay = curDateTime.Day;
+        myInfo.curHour = curDateTime.Hour;
+        myInfo.curMin = curDateTime.Minute;
 
         ES3.Save("MyInfo", Mng.data.myInfo, Application.dataPath + "/MyInfo.dat");
     }

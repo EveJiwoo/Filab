@@ -143,6 +143,13 @@ namespace ClassDef
         /// <summary>대출 금리 할인율</summary>
         public float extraInterestRate = 0f;
 
+        /// <summary>현재 시간</summary>
+        public int curYear = 1300;
+        public int curMonth = 1;
+        public int curDay = 1;
+        public int curHour = 0;
+        public int curMin = 0;
+
         //정기 예금 정보
         List<CDProductInfo> mCdProductList = new List<CDProductInfo>();
         public List<CDProductInfo> cdProductList {

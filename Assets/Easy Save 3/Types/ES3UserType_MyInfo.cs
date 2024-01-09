@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("local", "gold", "occupation", "freeDepositGold", "monthPurchasePrice", "extraInterestRate", "mCdProductList", "mLoanConditionList", "mInvenItemInfoList")]
+	[ES3PropertiesAttribute("local", "gold", "occupation", "freeDepositGold", "monthPurchasePrice", "extraInterestRate", "curYear", "curMonth", "curDay", "curHour", "curMin", "mCdProductList", "mLoanConditionList", "mInvenItemInfoList")]
 	public class ES3UserType_MyInfo : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -22,6 +22,11 @@ namespace ES3Types
 			writer.WriteProperty("freeDepositGold", instance.freeDepositGold, ES3Type_long.Instance);
 			writer.WriteProperty("monthPurchasePrice", instance.monthPurchasePrice, ES3Type_long.Instance);
 			writer.WriteProperty("extraInterestRate", instance.extraInterestRate, ES3Type_float.Instance);
+			writer.WriteProperty("curYear", instance.curYear, ES3Type_int.Instance);
+			writer.WriteProperty("curMonth", instance.curMonth, ES3Type_int.Instance);
+			writer.WriteProperty("curDay", instance.curDay, ES3Type_int.Instance);
+			writer.WriteProperty("curHour", instance.curHour, ES3Type_int.Instance);
+			writer.WriteProperty("curMin", instance.curMin, ES3Type_int.Instance);
 			writer.WritePrivateField("mCdProductList", instance);
 			writer.WritePrivateField("mLoanConditionList", instance);
 			writer.WritePrivateField("mInvenItemInfoList", instance);
@@ -52,6 +57,21 @@ namespace ES3Types
 						break;
 					case "extraInterestRate":
 						instance.extraInterestRate = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
+					case "curYear":
+						instance.curYear = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "curMonth":
+						instance.curMonth = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "curDay":
+						instance.curDay = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "curHour":
+						instance.curHour = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "curMin":
+						instance.curMin = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					case "mCdProductList":
 					instance = (ClassDef.MyInfo)reader.SetPrivateField("mCdProductList", reader.Read<System.Collections.Generic.List<ClassDef.CDProductInfo>>(), instance);

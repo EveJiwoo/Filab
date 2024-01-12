@@ -40,6 +40,9 @@ public class UICityBankCDAccountPopup : UIBase
     [Header("만기일")]
     public TMP_Text kMaturityDate;
 
+    [Header("예금 버튼")]
+    public Button kSavingDepisitButton;
+
     int mSelectButtonIndex = ConstDef.NONE;
 
     // Start is called before the first frame update
@@ -55,7 +58,8 @@ public class UICityBankCDAccountPopup : UIBase
         kDepositAmount.interactable = false;
         kMonthlyInterestGold.text = "0 Gold";
         kTotalInterestEarned.text = "0 Gold";
-        kMaturityDate.text = "";        
+        kMaturityDate.text = "";
+        kSavingDepisitButton.interactable = false;
     }
 
     void CdMaturityCheck()
@@ -165,6 +169,12 @@ public class UICityBankCDAccountPopup : UIBase
     {
         if (mSelectButtonIndex == ConstDef.NONE)
             return;
+
+        int gold = int.Parse(kDepositAmount.text);
+        if (gold <= 0 || mSelectButtonIndex == ConstDef.NONE)
+            kSavingDepisitButton.interactable = false;
+        else
+            kSavingDepisitButton.interactable = true;
 
         var bankInfo = Mng.data.GetBankInfo(Mng.data.myInfo.local);
         var cd = bankInfo.cdList[mSelectButtonIndex];

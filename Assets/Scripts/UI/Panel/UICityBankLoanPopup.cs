@@ -38,7 +38,10 @@ public class UICityBankLoanPopup : UIBase
 
     LoanCondition mBankLoan;
     LoanCondition mMyLoan;
-    
+
+    [Header("대출 버튼")]
+    public Button kAcceptTermButton;
+
     protected override void onEnable()
     {
         ResetMenu();
@@ -115,6 +118,11 @@ public class UICityBankLoanPopup : UIBase
         kLoanAmountTxt.text = $"{(int)kLoanAmountSlider.value * 1000} Gold";
 
         LoanProductInfoUpdate();
+
+        if(kLoanAmountSlider.value == 0 || kTermSlider.value == 0)
+            kAcceptTermButton.interactable = false;
+        else
+            kAcceptTermButton.interactable = true;
     }
 
     public void OnTermSlider()
@@ -122,6 +130,11 @@ public class UICityBankLoanPopup : UIBase
         kProductTermTxt.text = $"{(int)kTermSlider.value} Year";
 
         LoanProductInfoUpdate();
+
+        if (kLoanAmountSlider.value == 0 || kTermSlider.value == 0)
+            kAcceptTermButton.interactable = false;
+        else
+            kAcceptTermButton.interactable = true;
     }
 
     /// <summary> 상품 정보 갱신 </summary>
@@ -180,6 +193,8 @@ public class UICityBankLoanPopup : UIBase
         kFrontMenuGo.SetActive(true);
         kLoanConditionGo.SetActive(false);
         kLoanProductGo.SetActive(false);
+
+        kAcceptTermButton.interactable = false;
     }
 
     public void OnMakePaymentButtonClick()

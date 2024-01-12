@@ -43980,7 +43980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1439585573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52168,7 +52168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1698628739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66161,7 +66161,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2904146371025557620, guid: f28f2bb817ea54b9b9bf92a010448632, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131981702619213146, guid: f28f2bb817ea54b9b9bf92a010448632, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094626298030629109, guid: f28f2bb817ea54b9b9bf92a010448632, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380787176427860468, guid: f28f2bb817ea54b9b9bf92a010448632, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979969569686792893, guid: f28f2bb817ea54b9b9bf92a010448632, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28f2bb817ea54b9b9bf92a010448632, type: 3}
